@@ -1,0 +1,50 @@
+name: Publish PR preview to GitHub Pages
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed # The PR preview is removed when the PR is merged
+    paths-ignore:
+      - ".gitignore"
+      - "README.md"
+
+concurrency: pr-preview-${{ github.ref }}
+
+jobs:
+  build:
+    permissions:
+      actions: write
+      checks: write
+      contents: write
+      deployments: write
+      issues: write
+      packages: write
+      pull-requests: write
+      repository-projects: write
+      security-events: write
+      statuses: write
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install Antora
+        run: npm ci
+
+      - name: Generate Site
+        run: npm run build
+
+      - name: Publish PR preview to GitHub Pages
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./build/site

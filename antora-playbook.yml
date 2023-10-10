@@ -1,0 +1,16 @@
+site:
+  title: Placeholder Course Title
+  start_page: placeholder-course-name::index.adoc
+
+content:
+  sources:
+  - url: ./
+
+asciidoc:
+  attributes:
+    page-pagination: true
+
+ui:
+  bundle:
+    url: ./ui-bundle/ui-bundle.zip
+  supplemental_files: ./supplemental-ui

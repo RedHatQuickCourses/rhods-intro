@@ -1,0 +1,6 @@
+= An Example Quick Course
+:navtitle: Home
+
+== Introduction
+
+This is an example quick course demonstrating the usage of Antora for authoring and publishing quick courses.

@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@antora/cli": "3.1.3",
+    "@antora/site-generator": "3.1.3",
+    "http-server": "^14.1.1",
+    "watch": "^1.0.2"
+  },
+  "scripts": {
+    "build": "antora antora-playbook.yml",
+    "watch:adoc": "watch 'npx antora antora-playbook.yml' ./modules",
+    "serve": "npx http-server build/site -c-1"
+  }
+}
