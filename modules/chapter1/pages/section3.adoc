@@ -1,6 +1,8 @@
 :experimental:
 = Demo
 
+In this exercise, you will use RHODS to train and evaluate a simple machine learning model, by using JuypterLab and other common ML libraries.
+
 
 1. *Open the RHODS dashboard.*
 
@@ -90,5 +92,6 @@ Keep pressing btn:[Shift+Enter] until you reach the bottom.
 5. *Run the intro-text-generation notebook*
 
 a. Open the `intro-demo/notebook.ipynb` notebook in Jupyter and execute the steps.
+The instructions are embedded in the notebook.
 
 
