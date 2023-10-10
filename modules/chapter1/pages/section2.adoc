@@ -27,15 +27,7 @@ Pipelines are useful to standardize the `data gathering - data cleaning - model 
 Model servers::
 A model server can read an exported model file and serve the model in a standard API.
 
-== Installation
-
-Install the RHODS operator in OpenShift to start using RHODS.
-
-== Open Data Hub
-
 RHODS is based on the upstream Open Data Hub project.
 Open Data Hub is an open source AI platform designed for the hybrid cloud.
 
-.Source: https://opendatahub.io/
-image::open-data-hub-arch.png[]
 
