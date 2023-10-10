@@ -3,6 +3,8 @@
 
 This quick course covers the foundations of Red{nbsp}Hat OpenShift Data Science (RHODS).
 
+*TODO*: explain the classroom environment.
+
 == Prerequisites
 
 * Experience with Red{nbsp}Hat OpenShift (optional)
