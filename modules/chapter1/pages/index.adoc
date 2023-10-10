@@ -1,3 +1,6 @@
-= Chapter 1
+= Introduction to Red{nbsp}Hat OpenShift Data Science
 
-This is the home page of _Chapter_ 1 in the *hello* quick course...
+Goals:
+
+* Identify the main features of Red{nbsp}Hat OpenShift Data Science
+* Describe the architecture and components of Red{nbsp}Hat OpenShift Data Science

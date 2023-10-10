@@ -3,4 +3,16 @@
 
 This quick course covers the foundations of Red{nbsp}Hat OpenShift Data Science (RHODS).
 
-You will become familiar with the general architecture and main features of RHODS.
+== Prerequisites
+
+* Experience with Red{nbsp}Hat OpenShift (optional)
+
+== Objectives
+
+* Become familiar with the general architecture and main features of Red{nbsp}Hat OpenShift Data Science
+* Accessing and logging in to the Red{nbsp}Hat OpenShift Data Science web console
+* Creating, sharing and deleting data science projects
+* Creating a Workbench within a data science project
+* Creating and deleting data connections
+* Creating, importing (from Git repositories) and sharing Jupyter notebooks
+* Install Python packages in your Jupyter notebooks
