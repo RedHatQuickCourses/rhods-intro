@@ -1,3 +1,40 @@
-= Section 2
+= Architecture of Red{nbsp}Hat OpenShift Data Science
 
-This is _Section 2_ of _Chapter 1_ in the *hello* quick course....
+
+Red{nbsp}Hat OpenShift Data Science (RHODS) is a collection of tools that run on top of OpenShift.
+
+image::architecture.svg[width=800px]
+
+These tools can be organized into the following main concepts:
+
+Workspaces::
+A workspace is a pod that often contains tools such as Jupyter notebooks, and libraries such as Tensorflow or PyTorch.
+RHODS provides several preconfigured container images for creating workspaces.
+
+Storage::
+You can mount different storage types into a workspace to persist your work.
+For example, you can use persistent volume claims
+
+Data connections::
+A map of configuration values for connecting to external cloud storage providers, such as AWS S3.
+Data connections are associated with workspaces and inject the configuration values as environment variables.
+
+Pipelines::
+A workflow that executes scripts or Jupyter notebooks in an automated fashion.
+Pipelines are useful to standardize the `data gathering - data cleaning - model training - model evaluation` cycle.
+
+Model servers::
+A model server can read an exported model file and serve the model in a standard API.
+
+== Installation
+
+Install the RHODS operator in OpenShift to start using RHODS.
+
+== Open Data Hub
+
+RHODS is based on the upstream Open Data Hub project.
+Open Data Hub is an open source AI platform designed for the hybrid cloud.
+
+.Source: https://opendatahub.io/
+image::open-data-hub-arch.png[]
+
