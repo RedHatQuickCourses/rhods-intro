@@ -1,6 +1,6 @@
-= An Example Quick Course
+= Welcome
 :navtitle: Home
 
-== Introduction
+This quick course covers the foundations of Red{nbsp}Hat OpenShift Data Science (RHODS).
 
-This is an example quick course demonstrating the usage of Antora for authoring and publishing quick courses.
+You will become familiar with the general architecture and main features of RHODS.
