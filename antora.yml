@@ -1,6 +1,6 @@
-name: placeholder-course-name
-title: Placeholder Course Title
-version: 1
+name: rhods-intro
+title: Introduction to Red Hat OpenShift Data Science
+version: 1.33
 nav:
 - modules/ROOT/nav.adoc
 - modules/chapter1/nav.adoc

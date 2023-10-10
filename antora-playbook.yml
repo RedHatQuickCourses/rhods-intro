@@ -1,6 +1,6 @@
 site:
-  title: Placeholder Course Title
-  start_page: placeholder-course-name::index.adoc
+  title: Introduction to Red Hat OpenShift Data Science
+  start_page: rhods-intro::index.adoc
 
 content:
   sources:
