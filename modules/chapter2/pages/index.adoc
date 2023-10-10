@@ -1,3 +1,5 @@
-= Chapter 2
+= Working with Data Science Projects
 
-This is the home page of _Chapter 2_ in the *hello* quick course....
+Goals:
+
+* Organize code and configuration using data science projects, workbenches, and data connections
