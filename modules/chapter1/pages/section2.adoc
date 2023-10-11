@@ -2,34 +2,60 @@
 :navtitle: Architecture
 
 
-Red{nbsp}Hat OpenShift Data Science (RHODS) is a collection of tools that run on top of OpenShift.
+Red{nbsp}Hat OpenShift Data Science (RHODS) is a unified platform for data scientists, developers, and IT ops.
+The platform is designed to manage the complete lifecycle of AI/ML projects in the hybrid cloud.
 
-*TODO: improve this diagram*
+As the following diagram shows, RHODS is deployed as an operator, and includes several components to handle AI/ML development/training, automation pipelines, and model serving:
 
 image::architecture.svg[width=800px]
 
-These tools can be organized into the following main concepts:
+These architectural components can be organized into the following main concepts:
 
-Workspaces::
-A workspace is a pod that often contains tools such as Jupyter notebooks, and libraries such as Tensorflow or PyTorch.
-RHODS provides several preconfigured container images for creating workspaces.
+Workbenches::
+A workbench is a containerized, cloud-native data science working environment.
+Workbenches run as pods and often contain common data science tools such as JupyterLab, libraries such as Tensorflow, or ready-to-use GPU capabilities.
+RHODS provides several preconfigured container images for creating workbenches.
 
-Storage::
+[NOTE]
+====
+To use the RHODS GPU capabilities, the NVIDIA GPU operator must be installed.
+====
+
+
+Workbench Images::
+Container images to be used as workbench containers.
+RHODS includes a number of images ready to use for different common working environments.
+Each image contains a different set of libraries and versions.
+`Pytorch`, `TensorFlow`, `Minimal Python`, or `Standard Data Science` are examples of these images.
+
+[NOTE]
+====
+You can create custom workbench images.
+====
+
+Persistent Storage::
 You can mount different storage types into a workspace to persist your work.
-For example, you can use persistent volume claims
+For example, you can use persistent volume claims.
 
 Data connections::
-A map of configuration values for connecting to external cloud storage providers, such as AWS S3.
-Data connections are associated with workspaces and inject the configuration values as environment variables.
+A data connection is a map of configuration values for connecting workbenches to external cloud storage providers, such as AWS S3.
+Data connections inject the configuration values as environment variables in the associated workbench.
 
 Pipelines::
 A workflow that executes scripts or Jupyter notebooks in an automated fashion.
-Pipelines are useful to standardize the `data gathering - data cleaning - model training - model evaluation` cycle.
+Pipelines are useful to standardize the `data gathering - data cleaning - model training - model evaluation - model upload` cycle.
+Typically, a pipeline ends after the trained model has been uploaded to an S3 bucket or similar cloud storage.
+
+[NOTE]
+====
+To use pipelines in RHODS, the Red{nbsp}Hat OpenShift Pipelines operator must be installed.
+====
 
 Model servers::
 A model server can read an exported model file and serve the model in a standard API.
+Model servers require a data connection to download the model files from the cloud storage.
 
-RHODS is based on the upstream Open Data Hub project.
-Open Data Hub is an open source AI platform designed for the hybrid cloud.
-
-
+RHODS is based on the _Open Data Hub_ upstream project.
+https://opendatahub.io/[Open Data Hub] is an open source, community-driven AI platform, designed for the hybrid cloud, and built on popular AI open source tools.
+RHODS is a subset of Open Data Hub, delivered both as a cloud service or self-managed.
+RHODS can be optionally delivered with additional independent software vendor (ISV) features.
