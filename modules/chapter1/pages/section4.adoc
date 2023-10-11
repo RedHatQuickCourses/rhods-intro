@@ -1,0 +1,16 @@
+= Conclusion
+
+// TODO: we might want to complete remove this section (ask Ted)
+
+In this chapter, you learned:
+
+* RHODS helps teams bridge gap between data science and engineering, by operationalizing the lifecycle of AI projects.
+* RHODS is based on the upstream open source OpenDataHub project.
+* RHODS provides users with ready-to-use environments that include stable versions of the most common AI/ML tools.
+* Users can seamlesly run training pipelines, deploy, and monitor their models in production environments.
+
+== Next Steps
+
+* Create data science projects and workbenches
+* Using the features of workbenches and data science projects
+* Using Jupyter notebooks in workbenches

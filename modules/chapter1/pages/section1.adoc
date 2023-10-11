@@ -1,3 +1,46 @@
-= Section 1
+= Introduction
 
-This is _Section 1_ of _Chapter 1_ in the *hello* quick course....
+Red{nbsp}Hat OpenShift Data Science (RHODS) is a platform for data scientists, machine learning engineers, and operation teams to implement the full lifecycle of AI-based applications.
+
+With RHODS, uses can gather data, use the data to train and evaluate their AI models, and serve and monitor those models.
+
+Users can also create _Data Science Pipelines_ to implement and automate model workflows.
+
+
+== The Value of RHODS
+
+*RHODS bridges the gap between data science and engineering.*
+
+> **Obstacle 1**: Many AI models do not go beyond the training stages because the teams that train these models lack the tools to deploy, deliver, and maintain AI-based systems in production.
+
+To solve this problem,  RHODS  helps data scientists, developers and administrators to operationalize the lifecycle of AI models and bring those models to production.
+
+> **Obstacle 2**: AI practioners often struggle with the myriad tools, libraries and versions to maintain during the development and maintenance of AI-based applications, not to mention the significant effort required to configure GPU support and drivers.
+
+To solve this problem, RHODS provides data scientists with functional ability to interact with the industry norms and standard tools of the AI/ML ecosystem.
+
+
+
+RHODS augments OpenShift with the common tools used in the AI ecosystem, including:
+
+Jupyter notebooks::
+Arguably the number one tool for data scientists.
+Jupyter notebooks provide interactive/executable Python documents and shells on the browser.
+
+Portable working environments::
+Each environment is made available as a container image.
+Users can create pods based on the specific container image that they need (e.g. Python 3.11).
+RHODS provides many of these images but users can create custom ones.
+
+GPU-ready environments::
+RHODS provides stable working environments that are preconfigured for CUDA and NVIDIA GPUs.
+
+Cloud-first Model Serving::
+RHODS ships with OpenVino, which allows users to serve their models right after tranining them, without having to develop specific APIs.
+
+Data Science Pipelines::
+Users can automate the workflow of data gathering, model training, evaluation, and release instead of performing these tasks manually
+
+Model monitoring::
+You can monitor the performance of AI models in production with Prometheus and Grafana dashboards.
+
