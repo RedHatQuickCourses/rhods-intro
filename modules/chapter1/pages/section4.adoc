@@ -1,5 +1,7 @@
 = Conclusion
 
+// TODO: we might want to complete remove this section (ask Ted)
+
 In this chapter, you learned:
 
 * RHODS helps teams bridge gap between data science and engineering, by operationalizing the lifecycle of AI projects.

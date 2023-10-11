@@ -4,6 +4,8 @@
 
 Red{nbsp}Hat OpenShift Data Science (RHODS) is a collection of tools that run on top of OpenShift.
 
+*TODO: improve this diagram*
+
 image::architecture.svg[width=800px]
 
 These tools can be organized into the following main concepts:
