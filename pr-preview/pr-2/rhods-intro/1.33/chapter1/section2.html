@@ -188,25 +188,10 @@ RHODS provides several preconfigured container images for creating workbenches.<
 RHODS includes a number of images ready to use for different common working environments.
 Each image contains a different set of libraries and versions.
 <code>Pytorch</code>, <code>TensorFlow</code>, <code>Minimal Python</code>, or <code>Standard Data Science</code> are examples of these images.</p>
-</dd>
-</dl>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
 <div class="paragraph">
-<p>You can create custom workbench images.</p>
+<p>You can use the provided workbench images or you can create custom workbench images adapted to your needs.</p>
 </div>
-</td>
-</tr>
-</table>
-</div>
-<div class="dlist">
-<dl>
+</dd>
 <dt class="hdlist1">Persistent Storage</dt>
 <dd>
 <p>You can mount different storage types into a workspace to persist your work.
@@ -217,30 +202,15 @@ For example, you can use persistent volume claims.</p>
 <p>A data connection is a map of configuration values for connecting workbenches to external cloud storage providers, such as AWS S3.
 Data connections inject the configuration values as environment variables in the associated workbench.</p>
 </dd>
-<dt class="hdlist1">Pipelines</dt>
+<dt class="hdlist1">Data Science Pipelines</dt>
 <dd>
 <p>A workflow that executes scripts or Jupyter notebooks in an automated fashion.
 Pipelines are useful to standardize the <code>data gathering - data cleaning - model training - model evaluation - model upload</code> cycle.
 Typically, a pipeline ends after the trained model has been uploaded to an S3 bucket or similar cloud storage.</p>
-</dd>
-</dl>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
 <div class="paragraph">
 <p>To use pipelines in RHODS, the Red&#160;Hat OpenShift Pipelines operator must be installed.</p>
 </div>
-</td>
-</tr>
-</table>
-</div>
-<div class="dlist">
-<dl>
+</dd>
 <dt class="hdlist1">Model servers</dt>
 <dd>
 <p>A model server can read an exported model file and serve the model in a standard API.
