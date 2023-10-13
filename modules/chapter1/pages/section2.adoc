@@ -19,7 +19,7 @@ In short, a model takes input data, applies the algorithm (decision tree, neural
 Generally, the training process repeatedly adjusts the coefficients of these algorithms until the output values are similar to the training data.
 
 Notebooks::
-A Jupyter notebook is an web-based application that allows users to interactively create live documents that contain narrative text, executable code, and visualizations.
+A Jupyter notebook is a web-based application that allows users to interactively create live documents that contain narrative text, executable code, and visualizations.
 Jupyter notebooks are popular tool in data science and machine learning.
 To run and serve notebooks, you must use a notebook execution environment, such as JuypterLab.
 
