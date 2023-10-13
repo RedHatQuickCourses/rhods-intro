@@ -27,11 +27,8 @@ Container images to be used as workbench containers.
 RHODS includes a number of images ready to use for different common working environments.
 Each image contains a different set of libraries and versions.
 `Pytorch`, `TensorFlow`, `Minimal Python`, or `Standard Data Science` are examples of these images.
-
-[NOTE]
-====
-You can create custom workbench images.
-====
++
+You can use the provided workbench images or you can create custom workbench images adapted to your needs.
 
 Persistent Storage::
 You can mount different storage types into a workspace to persist your work.
@@ -41,15 +38,12 @@ Data connections::
 A data connection is a map of configuration values for connecting workbenches to external cloud storage providers, such as AWS S3.
 Data connections inject the configuration values as environment variables in the associated workbench.
 
-Pipelines::
+Data Science Pipelines::
 A workflow that executes scripts or Jupyter notebooks in an automated fashion.
 Pipelines are useful to standardize the `data gathering - data cleaning - model training - model evaluation - model upload` cycle.
 Typically, a pipeline ends after the trained model has been uploaded to an S3 bucket or similar cloud storage.
-
-[NOTE]
-====
++
 To use pipelines in RHODS, the Red{nbsp}Hat OpenShift Pipelines operator must be installed.
-====
 
 Model servers::
 A model server can read an exported model file and serve the model in a standard API.
