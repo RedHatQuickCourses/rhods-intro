@@ -53,3 +53,11 @@ RHODS is based on the _Open Data Hub_ upstream project.
 https://opendatahub.io/[Open Data Hub] is an open source, community-driven AI platform, designed for the hybrid cloud, and built on popular AI open source tools.
 RHODS is a subset of Open Data Hub, delivered both as a cloud service or self-managed.
 RHODS can be optionally delivered with additional independent software vendor (ISV) features.
+
+== Data Science Project Workflow
+
+RHODS provides data scientists, machine learning engineers, and application developers with a unified platform to manage the complete lifecycle of AI applications, as the following diagram shows:
+
+image::workflow.svg[width=800px]
+
+// TODO: definition list to briefly explain some workflow concepts, training, inference... 
