@@ -9,11 +9,11 @@ As the following diagram shows, RHODS is deployed as an operator, and includes s
 
 image::architecture.svg[width=800px]
 
-These architectural components can be organized into the following main concepts:
+The following are the main concepts and terminology as it relates to RHODS:
 
 Workbenches::
-A workbench is a containerized, cloud-native data science working environment.
-Workbenches run as pods and often contain common data science tools such as JupyterLab, libraries such as Tensorflow, or ready-to-use GPU capabilities.
+A workbench is a containerized, cloud-native data science working environment that runs on OpenShift
+Workbenches run as OpenShift pods and  contain commonly used data science tools such as JupyterLab, libraries such as Tensorflow, or ready-to-use GPU capabilities.
 RHODS provides several preconfigured container images for creating workbenches.
 
 [NOTE]
