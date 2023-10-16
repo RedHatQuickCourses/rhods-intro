@@ -2,34 +2,142 @@
 :navtitle: Architecture
 
 
-Red{nbsp}Hat OpenShift Data Science (RHODS) is a collection of tools that run on top of OpenShift.
+Red{nbsp}Hat OpenShift Data Science (RHODS) is a unified platform for data scientists, developers, machine learning engineers, and IT ops.
+The platform is designed to manage the complete lifecycle of AI/ML projects in the hybrid cloud.
 
-*TODO: improve this diagram*
+As the following diagram shows, RHODS is deployed as an operator, and includes several components to handle AI/ML development/training, automation pipelines, and model serving:
 
 image::architecture.svg[width=800px]
 
-These tools can be organized into the following main concepts:
+The following are the main concepts and terminology as it relates to RHODS:
 
-Workspaces::
-A workspace is a pod that often contains tools such as Jupyter notebooks, and libraries such as Tensorflow or PyTorch.
-RHODS provides several preconfigured container images for creating workspaces.
+Models::
+An _AI model_, _machine learning model_, or just _model_ is a system or algorithm designed to simulate human capabilities, by performing tasks or making decisions that usually require human intervention.
+Internally, a model is typically a probabilistic or algebraic algorithm (e.g. a matrix).
++
+In short, a model takes input data, applies the algorithm (decision tree, neural network, naive Bayes, etc) and produces the output.
+Generally, the training process repeatedly adjusts the coefficients of these algorithms until the output values are similar to the training data.
 
-Storage::
+Notebooks::
+A Jupyter notebook is a web-based application that allows users to interactively create live documents that contain narrative text, executable code, and visualizations.
+Jupyter notebooks are popular tool in data science and machine learning.
+To run and serve notebooks, you must use a notebook execution environment, such as JuypterLab.
+
+Workbenches::
+A workbench is a containerized, cloud-native data science working environment that runs on OpenShift.
+Workbenches run as OpenShift pods and  contain commonly used data science tools such as JupyterLab, libraries such as Tensorflow, or ready-to-use GPU capabilities.
+RHODS provides several preconfigured container images for creating workbenches.
+
+[NOTE]
+====
+To use the RHODS GPU capabilities, the NVIDIA GPU operator must be installed.
+====
+
+
+Workbench Images::
+Container images to be used as workbench containers.
+RHODS includes a number of images ready to use for different common working environments.
+Each image contains a different set of libraries and versions.
+`Pytorch`, `TensorFlow`, `Minimal Python`, or `Standard Data Science` are examples of these images.
++
+You can use the provided workbench images or you can create custom workbench images adapted to your needs.
+
+Persistent Storage::
 You can mount different storage types into a workspace to persist your work.
-For example, you can use persistent volume claims
+For example, you can use persistent volume claims.
 
 Data connections::
-A map of configuration values for connecting to external cloud storage providers, such as AWS S3.
-Data connections are associated with workspaces and inject the configuration values as environment variables.
+A data connection is a map of configuration values for connecting workbenches to external cloud storage providers, such as AWS S3.
+Data connections inject the configuration values as environment variables in the associated workbench.
 
-Pipelines::
+Data Science Pipelines::
 A workflow that executes scripts or Jupyter notebooks in an automated fashion.
-Pipelines are useful to standardize the `data gathering - data cleaning - model training - model evaluation` cycle.
+Pipelines are useful to standardize the `data gathering - data cleaning - model training - model evaluation - model upload` cycle.
+Typically, a pipeline ends after the trained model has been uploaded to an S3 bucket or similar cloud storage.
++
+To use pipelines in RHODS, the Red{nbsp}Hat OpenShift Pipelines operator must be installed.
 
 Model servers::
 A model server can read an exported model file and serve the model in a standard API.
+Model servers require a data connection to download the model files from the cloud storage.
 
-RHODS is based on the upstream Open Data Hub project.
-Open Data Hub is an open source AI platform designed for the hybrid cloud.
+RHODS is based on the _Open Data Hub_ upstream project.
+https://opendatahub.io/[Open Data Hub] is an open source, community-driven AI platform, designed for the hybrid cloud, and built on popular AI open source tools.
+RHODS is a subset of Open Data Hub, delivered both as a cloud service or self-managed.
+RHODS can be optionally delivered with additional independent software vendor (ISV) features.
+Some major differences between RHODS and Open Data Hub are as follows:
+
+[cols="1,1,1"]
+|===
+| {nbsp} | Open Data Hub | RHODS
+
+| Type
+| Community project
+| Red{nbsp}Hat product, part or Red{nbsp}Hat OpenShift AI
+
+| Offerings
+| Self-managed
+| Self-managed, managed cloud service
+
+| Components
+| Community projects
+| Community projects + Red{nbsp}Hat Ecosystem Catalog
+
+| GUI
+| Open Data Science UI
+| UI Integrated in OpenShift
+|===
 
 
+== Data Science Project Workflow
+
+RHODS provides data scientists, machine learning engineers, and application developers with a unified platform to manage the complete lifecycle of AI applications, as the following diagram shows:
+
+image::workflow.svg[width=800px]
+
+The following workflow is common in AI/ML projects:
+
+Ingest data::
+In this phase, data scientists load data into the workbench.
+For example, the data scientist can upload files to the workbench, download the files from S3, query data from a database, or read a data stream.
+RHODS includes the Pandas library in many of the preexisting worbenches.
+Pandas offers functions to load data from different sources, such as CSV, JSON or SQL.
++
+Users can also add specific data ingestion capabilities by using certified ISV ecosystem apps from the Red{nbsp}Hat Marketplace.
+Starburst and Cloudera are examples of these integrations.
+
+Preprocess data::
+In this phase, data scientists explore, analyze, and preprocess the data.
+In a Juypter notebook, the data scientist uses libraries such as Matplotlib, Pandas, and Numpy to plot visualizations, normalize the data, or remove outliers.
+RHODS offers workbench images that include these libraries.
+
+Train model::
+In this phase, data scientists use the preprocessed data to train the model.
+RHODS provides workbench images for training models with commonly used libraries, such as TensorFlow, PyTorch, and Scikit-learn.
+Some of these images also include ready-to-use GPU support, to enable faster training.
+
+Evaluate model::
+After training, data scientists evaluate the performance of the trained model on test and validation subsets of the data.
+These subsets are portions of the ingested data that are reserved to validate that the trained models have the ability to generalize and perform well on unseen samples.
++
+Typically, data scientists repeat the _preprocessing-training-evaluation_ cycle until they are satisfied with the model evaluation metrics.
+
+Export and upload model::
+When the model is trained and evaluated, the data scientists use the configuration values of the data connection to upload the files to the model storage, which can be an S3 bucket.
+This step also involves the conversion of the model into a suitable format for serving, such as ONNX.
+
+Pipeline execution::
+Machine Learning engineers can build data science pipelines to automatically run the previous series of steps, for example, when new data is available.
+RHODS provides data science pipelines as a combination of Tekton, Kubeflow Pipelines, and Elyra.
+Engineers can choose whether they want to work at a high, visual level, by creating the pipelines with Elyra,
+or at a lower lever, by using deeper Tekton and Kubeflow knowledge.
+
+Deploy model::
+Machine Learning engineers can create model servers that fetch exported model from external S3 storage, and expose the model through a REST or a gRPC interface.
+The model server uses a data connection to download the model files from S3.
+
+Monitor model::
+Machine learning engineers and data scientists can monitor the performance of a model in production by using the metrics gathered with Prometheus.
+
+Develop and deploy applications::
+After the model is available in production, application developers can develop and deploy intelligent applications that use the deployed models, by pointing their applications to the REST/gRPC interfaces of the model server.
