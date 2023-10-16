@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Workbenches :: Introduction to Red Hat OpenShift Data Science</title>
+    <link rel="prev" href="section1.html">
+    <link rel="next" href="../chapter3/index.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenShift Data Science</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/rhods-intro/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header><div class="body">
+<div class="nav-container" data-component="rhods-intro" data-version="1.33">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../chapter1/index.html">Introduction to Red&#160;Hat OpenShift Data Science</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter1/section1.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter1/section2.html">Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter1/section3.html">Demo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter1/section4.html">Conclusion</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Chapter 2</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section1.html">Section 1</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="section2.html">Workbenches</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../chapter3/index.html">Chapter 3</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter3/section1.html">Section 1</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter3/section2.html">Section 2</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix A</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Introduction to Red Hat OpenShift Data Science</span>
+    <span class="version">1.33</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Introduction to Red Hat OpenShift Data Science</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1.33</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></li>
+    <li><a href="index.html">Chapter 2</a></li>
+    <li><a href="section2.html">Workbenches</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Workbenches</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In RHODS, a <em>workbench</em> is a containerized working environment that runs as any other application in OpenShift, as a pod.
+Workbenches typically include a collection of common AI/ML libraries and a JupyterLab server.
+RHODS exposes the JupyterLab URL through an OpenShift route so that you can use and interact with the workbench via the web browser.</p>
+</div>
+<div class="paragraph">
+<p>Data science projects typically include more than one workbench.
+This is useful, for example, when you need to run different experiments with different tooling.
+You might want to train a simple model with Scikit-learn and another model with PyTorch.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercise_getting_started_with_workbenches"><a class="anchor" href="#_exercise_getting_started_with_workbenches"></a>Exercise: Getting Started with Workbenches</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_creating_workbenches"><a class="anchor" href="#_creating_workbenches"></a>Creating Workbenches</h3>
+<div class="paragraph">
+<p>From the dashboard of a data science project, click <b class="button">Create workbench</b>.
+In the workbench creation page, enter the workbench name, select the workbench image, and the image version.
+For this particular example, use the recommended version of the <code>Minimal Python</code> image.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbench-create.png" alt="workbench create">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The requirements of your project dictate the image that best suits your needs.
+For example, if you plan to use TensorFlow, then you might want to select the <code>TensorFlow</code> image.
+You can view more details about the selected image by clicking <b class="button">View package information</b>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Next, select the workbench container size and the number of GPUs.
+Select <code>Tiny</code> and 0 GPUs in this case.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbench-size.png" alt="workbench size">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_define_environment_variables"><a class="anchor" href="#_define_environment_variables"></a>Define Environment Variables</h3>
+<div class="paragraph">
+<p>Environment variables are the recommended way to inject configuration into software applications.
+In this way, applications, including RHODS workbenches, are decoupled from the working environment.</p>
+</div>
+<div class="paragraph">
+<p>Scroll down to the <b class="button">Environment variables</b> section and click <b class="button">Add variable</b>.
+Choose whether you want to create a ConfigMap or a Secret.
+You can define multiple key/value pairs or upload a file.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbench-variables.png" alt="workbench variables">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Each ConfigMap or Secret can contain multiple key/value items.
+To add more items to a ConfigMap or a Secret, click <b class="button">Add another key / value pair</b>.
+Alternatively, you can upload a file that includes multiple key/value pairs.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_storage"><a class="anchor" href="#_add_storage"></a>Add Storage</h3>
+<div class="paragraph">
+<p>Workbenches require persistent storage to ensure that your progress is not lost when you stop the workbench.</p>
+</div>
+<div class="paragraph">
+<p>Scroll down to the <b class="button">Environment variables</b> section.
+Verify that RHODS automatically selects the <b class="button">Create new persistent storage</b> option.
+This is the default behavior.
+RHODS creates a dedicated persistent storage for each workbench and mounts the storage in the root directory of the container.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can select an already existing storage.
+The existing storage must not be associated with any other workbench.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbench-storage.png" alt="workbench storage">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can also create persistent storage items from the data science project page, and leave the storage unassigned.
+This is useful if you want to create the storage without assigning it to any workbench.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_create_the_workbench"><a class="anchor" href="#_create_the_workbench"></a>Create the Workbench</h3>
+<div class="paragraph">
+<p>Scroll down to the bottom of the page.
+Leave the <b class="button">Use a data connection</b> option unselected as the course covers data connections in more detail in the next section.
+Click <b class="button">Create workbench</b>.
+RHODS triggers the creation of the workbench and redirects you to the data science project page.</p>
+</div>
+<div class="paragraph">
+<p>While RHODS provision the workspace, the workbench displays with the <code>Starting&#8230;&#8203;</code> status.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbench-starting.png" alt="workbench starting">
+</div>
+</div>
+<div class="paragraph">
+<p>RHODS internally defines workbenches as stateful applications.
+When you create a workbench, RHODS creates a StatefulSet in the OpenShift namespace that corresponds to your data science project.
+The StatefulSet manages a pod that includes two containers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The workbench container, which contains JupyterLab and other packages.</p>
+</li>
+<li>
+<p>The <code>oauth-proxy</code> container, which provides authorization and authentication to access JupyterLab.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>RHODS also creates the required services and routes to enable HTTP and HTTPS traffic into the workbench container.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>NAME                       READY   STATUS    ..
+<strong>pod/my-first-workbench-0</strong>   2/2     Running   ..
+
+NAME                             TYPE        ...
+service/modelmesh-serving        ClusterIP   ...
+<strong>service/my-first-workbench</strong>       ClusterIP   ...
+<strong>service/my-first-workbench-tls</strong>   ClusterIP   ...
+
+NAME                                  READY  ...
+<strong>statefulset.apps/my-first-workbench</strong>   1/1    ...
+
+NAME                                         ...
+<strong>route.route.openshift.io/my-first-workbench</strong>  ...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Creating a new persistent storage in RHODS results in the creation of a PersistentVolumeClaim (PVC) in the corresponding OpenShift project.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you delete the PVC of a storage assigned to a running workbench, then the PVC switches to <code>Terminating</code> until you stop the workbench.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_inspect_the_workbench"><a class="anchor" href="#_inspect_the_workbench"></a>Inspect the Workbench</h3>
+<div class="paragraph">
+<p>After you create the workbench, RHODS redirects you back to the data science project, where the workbench is listed.
+To view more details about the workbench, click the <b class="button">&gt;</b> icon.
+A card displays that shows the workbench details, including storage usage.
+You can use the <b class="button">Add storage</b> button to add more storage mount points.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbench-view.png" alt="workbench view">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_open_the_workbench"><a class="anchor" href="#_open_the_workbench"></a>Open the workbench</h3>
+<div class="paragraph">
+<p>Click <b class="button">Open</b>.
+On the browser tab that opens, enter your credentials to authenticate to the workbench&#8217;s JupyterLab.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_permissions"><a class="anchor" href="#_permissions"></a>Permissions</h3>
+<div class="paragraph">
+<p>Note that, to enable workbench access to other users, you must grant permissions for those users at the data science project level.
+RHODS does not offer workbench-level permission management.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_starting_and_stopping_workbenches"><a class="anchor" href="#_starting_and_stopping_workbenches"></a>Starting and stopping workbenches</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you create a workbench, and if the cluster has the capabilities to provision the workbench, RHODS automatically starts the workbench.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbench-started.png" alt="workbench started">
+</div>
+</div>
+<div class="paragraph">
+<p>Click the <b class="button">Status</b> switch of the workbench to stop it.
+Similarly, when the workbench is stopped, toggle the switch to start the workbench.</p>
+</div>
+<div class="paragraph">
+<p>You can open the workbench JupyterLab URL by clicking <b class="button">Open</b>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_editing_the_workbench"><a class="anchor" href="#_editing_the_workbench"></a>Editing the Workbench</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Click the workbench <b class="button">⋮</b> button, then click <b class="button">Edit workbench</b>.
+When you make changes to a workbench, RHODS restarts the workbench pod.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Save your work before editing your workbench.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resources"><a class="anchor" href="#_resources"></a>Resources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If your memory and/or GPU requirements are high, then RHODS might not be able to allocate the requested resources in the workbench.
+You might see a message similar to the following:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbench-insufficient-resources.png" alt="workbench insufficient resources">
+</div>
+</div>
+<div class="paragraph">
+<p>In this case, try to decrease your resource requirements by editing the workbench, or contact your RHODS administrator.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_deleting_workbenches"><a class="anchor" href="#_deleting_workbenches"></a>Deleting Workbenches</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Click the workbench <b class="button">⋮</b> button, then click <b class="button">Delete workbench</b>.
+In the delete window, type the workbench name to confirm the operation:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbench-delete.png" alt="workbench delete">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Deleting a workbench does not delete the associated persistent storage.
+This means that you can create a new workbench and restore the data that you were using in the previous workbench.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>After you have assigned a storage to a workbench, you cannot decrease the storage size, only increase.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You cannot delete a storage item if it is assigned to a workbench.
+The storage must be unassigned if you want to delete it.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="section1.html">Section 1</a></span>
+  <span class="next"><a href="../chapter3/index.html">Chapter 3</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
