@@ -1,6 +1,8 @@
 :experimental:
 = Demo
 
+In this exercise, you will use RHODS to train and evaluate a simple machine learning model, by using JupyterLab and other common ML libraries.
+
 
 1. *Open the RHODS dashboard.*
 
@@ -16,7 +18,7 @@ c. If prompted, log in with your Red{nbsp}Hat OpenShift credentials.
 
 2. *Configure the workbench of your data science project.*
 +
-A RHODS workbench is a containerized application that includes commonly used data science tools and libraries, such as JupyterLab, Tensorflow, and PyTorch.
+A RHODS workbench is a containerized application that includes commonly used data science tools and libraries, such as JupyterLab, TensorFlow, and PyTorch.
 RHODS provides you with a collection of workbench container images, each one preconfigured and tailored to a specific data science use case.
 
 a. Click btn:[Data Science Projects] in the left sidebar.
@@ -65,7 +67,7 @@ b. If prompted, log in with your Red{nbsp}Hat OpenShift credentials.
 
 c. Click btn:[Allow selected permissions] to grant the workbench access to your data science project.
 
-d. Verify that the JuyperLab interface opens in a new browser tab.
+d. Verify that the JupyterLab interface opens in a new browser tab.
 
 e. Click the btn:[Git] icon in the left sidebar.
 
@@ -73,13 +75,14 @@ f. Click btn:[Clone a repository].
 +
 image::git-clone-menu.png[width=40%,align="center"]
 
-g. Enter https://github.com/RedHatQuickCourses/rhods-quick-course.git as the repository, and click btn:[Clone].
+g. Enter https://github.com/RedHatQuickCourses/rhods-intro.git as the repository, and click btn:[Clone].
 
 4. *Open and run the notebook.*
 
-a. In the file explorer, navigate to the `rhods-quick-course/notebooks/intro-demo` directory.
+a. In the file explorer, navigate to the `rhods-intro/notebooks/intro-demo` directory.
 
 b. To open the notebook, double `notebook.ipynb`.
+The notebook include instructions and code.
 
 c. Click the first cell, then press btn:[Shift+Enter] to execute the cell and move to the next one.
 
@@ -87,8 +90,11 @@ d. Execute and review the rest of the cells.
 Keep pressing btn:[Shift+Enter] until you reach the bottom.
 
 
-5. *Run the intro-text-generation notebook*
+5. *Run the `intro-text-generation` notebook*
 
-a. Open the `intro-demo/notebook.ipynb` notebook in Jupyter and execute the steps.
+a. In the data science project dashboard, create a workbench with the default image for PyTorch.
 
+b. In the new workbench, open JupyterLab and clone the https://github.com/RedHatQuickCourses/rhods-intro.git repository as you did in the previous step.
 
+c. Open the `rhods-intro/intro-text-generation/notebook.ipynb` notebook in JupyterLab and execute the steps.
+The instructions are embedded in the notebook.

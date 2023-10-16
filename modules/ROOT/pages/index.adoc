@@ -1,13 +1,31 @@
 = Welcome
 :navtitle: Home
 
-This quick course covers the foundations of Red{nbsp}Hat OpenShift Data Science (RHODS).
+Welcome to this quick course on the _Introduction to Red{nbsp}Hat OpenShift Data Science (RHODS)_.
+This course is the first in a series of 6 courses about Red{nbsp}Hat OpenShift Data Science:
+
+*TODO*: Provide link to the other courses when they are ready.
+
+1. Introduction to Red Hat OpenShift Data Science (_This course_)
+2. Data Analysis and Visualization with Red Hat OpenShift Data Science
+3. Creating Machine Learning Models with Red Hat OpenShift Data Science
+4. Deploying Machine Learning Models with Red Hat OpenShift Data Science
+5. Automation using Data Science Pipelines
+6. Red Hat OpenShift Data Science Administration
+
+== Classroom Environment
+
+You will use the TBD catalog item from the Red Hat Demo Platform (https://demo.redhat.com) to run the hands on exercises in this course.
+
+*TODO*: Add actual link to catalog item after discussing with Jaime and the other SMEs.
 
 == Prerequisites
 
-* Experience with Red{nbsp}Hat OpenShift (optional)
+* Basic experience with Red{nbsp}Hat OpenShift
 
 == Objectives
+
+The overall objectives of this course include:
 
 * Become familiar with the general architecture and main features of Red{nbsp}Hat OpenShift Data Science
 * Accessing and logging in to the Red{nbsp}Hat OpenShift Data Science web console
