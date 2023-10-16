@@ -1,6 +1,6 @@
 = Data Science Projects
 
-In RHODS, a _data science project_ is the preferred way to organize your resources when working on an AI/ML application.
+In RHODS, a _data science project_ is the preferred way to organize resources when working on an AI/ML application.
 Internally, a data science project is an OpenShift project that contains specific labels to identify the project as a RHODS-specific project,
 for example:
 
@@ -17,20 +17,27 @@ metadata:
     ...
 ----
 
-== The need for Data Science projects
+== The Need for Data Science projects
 
-Similarly to how you use projects in OpenShift for other workloads, you can and should use data science projects to organize the different elements that you need for your AI applications, such as worbenches, model servers, or persistent storage.
+Similarly to how you use projects in OpenShift for other workloads, you can use and should use data science projects to organize the different elements that you need for your AI applications, such as workbenches, model servers, or persistent storage.
 
-Additionally, RHODS provides a graphical dashboard to create and manage data science projects.
+You can create and manage data science projects by using the RHODS dashboard.
 
+== Exercise
 
-== Creating Data Science Projects
+=== Creating Data Science Projects
+
+First, open the RHODS dashboard.
+You might need to enter your credentials to access the dashboard.
 
 To create a data science project, click btn:[Data Science Projects] in the left navigation pane.
+
+image::rhods-side-menu.png[width=50%]
 
 In the btn:[Data science projects] page, click btn:[Create data science project].
 
 In the modal window that opens, enter the name of the project and click btn:[Create].
+You can optionally add a description and modify the OpenShift resource name for the project.
 
 image::create-ds-project.png[]
 
@@ -41,21 +48,21 @@ image::ds-project-dashboard.png[]
 From this page you can manage the project components and the permissions.
 
 
-== Configure Access
+=== Configure Access
 
-By default, only you and privileged users can access your projects in RHODS.
+By default, only the project owner and privileged users can access your projects in RHODS.
 However, you can add permissions for specific users and groups.
 
-To configure permissions, from a course dashboard page, click the btn:[Permissions] tab.
-Then, add users and groups, and specify their granted permissions.
+To configure permissions, from a project dashboard page, click the btn:[Permissions] tab.
+Then, add users and groups, and specify their permissions.
 
 image::ds-project-permissions.png[]
 
 
-== Deleting Data Science Projects
+=== Deleting Data Science Projects
 
 To delete a data science project, navigate to the btn:[Data science projects] page.
-Then, locate the project to be deleted and click menu:⋮[Delete project].
+Then, locate the project to be deleted and click its btn:[⋮] button, then click btn:[Delete project].
 Finally, type the project name to confirm the deletion.
 
 image::ds-project-delete.png[]
@@ -63,7 +70,6 @@ image::ds-project-delete.png[]
 
 // Adding and deleting cluster storage to the project
 // [Jaime R] we should cover this after the creation of a workbench
-
 
 // == TODO: Disabled self-provisioning
 // [Trevor] Include details about how to manage a DS project when Self Provisioning is disabled on a cluster (e.g. annotations on namespaces).
