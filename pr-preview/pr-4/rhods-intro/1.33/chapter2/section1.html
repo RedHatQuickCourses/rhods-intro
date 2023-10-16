@@ -144,7 +144,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>In RHODS, a <em>data science project</em> is the preferred way to organize your resources when working on an AI/ML application.
+<p>In RHODS, a <em>data science project</em> is the preferred way to organize resources when working on an AI/ML application.
 Internally, a data science project is an OpenShift project that contains specific labels to identify the project as a RHODS-specific project,
 for example:</p>
 </div>
@@ -164,27 +164,39 @@ metadata:
 </div>
 </div>
 <div class="sect1">
-<h2 id="_the_need_for_data_science_projects"><a class="anchor" href="#_the_need_for_data_science_projects"></a>The need for Data Science projects</h2>
+<h2 id="_the_need_for_data_science_projects"><a class="anchor" href="#_the_need_for_data_science_projects"></a>The Need for Data Science projects</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Similarly to how you use projects in OpenShift for other workloads, you can and should use data science projects to organize the different elements that you need for your AI applications, such as worbenches, model servers, or persistent storage.</p>
+<p>Similarly to how you use projects in OpenShift for other workloads, you can use and should use data science projects to organize the different elements that you need for your AI applications, such as workbenches, model servers, or persistent storage.</p>
 </div>
 <div class="paragraph">
-<p>Additionally, RHODS provides a graphical dashboard to create and manage data science projects.</p>
+<p>You can create and manage data science projects by using the RHODS dashboard.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_creating_data_science_projects"><a class="anchor" href="#_creating_data_science_projects"></a>Creating Data Science Projects</h2>
+<h2 id="_exercise"><a class="anchor" href="#_exercise"></a>Exercise</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_creating_data_science_projects"><a class="anchor" href="#_creating_data_science_projects"></a>Creating Data Science Projects</h3>
+<div class="paragraph">
+<p>First, open the RHODS dashboard.
+You might need to enter your credentials to access the dashboard.</p>
+</div>
 <div class="paragraph">
 <p>To create a data science project, click <b class="button">Data Science Projects</b> in the left navigation pane.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/rhods-side-menu.png" alt="rhods side menu" width="50%">
+</div>
 </div>
 <div class="paragraph">
 <p>In the <b class="button">Data science projects</b> page, click <b class="button">Create data science project</b>.</p>
 </div>
 <div class="paragraph">
-<p>In the modal window that opens, enter the name of the project and click <b class="button">Create</b>.</p>
+<p>In the modal window that opens, enter the name of the project and click <b class="button">Create</b>.
+You can optionally add a description and modify the OpenShift resource name for the project.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -203,17 +215,15 @@ metadata:
 <p>From this page you can manage the project components and the permissions.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_configure_access"><a class="anchor" href="#_configure_access"></a>Configure Access</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_configure_access"><a class="anchor" href="#_configure_access"></a>Configure Access</h3>
 <div class="paragraph">
-<p>By default, only you and privileged users can access your projects in RHODS.
+<p>By default, only the project owner and privileged users can access your projects in RHODS.
 However, you can add permissions for specific users and groups.</p>
 </div>
 <div class="paragraph">
-<p>To configure permissions, from a course dashboard page, click the <b class="button">Permissions</b> tab.
-Then, add users and groups, and specify their granted permissions.</p>
+<p>To configure permissions, from a project dashboard page, click the <b class="button">Permissions</b> tab.
+Then, add users and groups, and specify their permissions.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -221,18 +231,17 @@ Then, add users and groups, and specify their granted permissions.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_deleting_data_science_projects"><a class="anchor" href="#_deleting_data_science_projects"></a>Deleting Data Science Projects</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_deleting_data_science_projects"><a class="anchor" href="#_deleting_data_science_projects"></a>Deleting Data Science Projects</h3>
 <div class="paragraph">
 <p>To delete a data science project, navigate to the <b class="button">Data science projects</b> page.
-Then, locate the project to be deleted and click menu:⋮[Delete project].
+Then, locate the project to be deleted and click its <b class="button">⋮</b> button, then click <b class="button">Delete project</b>.
 Finally, type the project name to confirm the deletion.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/ds-project-delete.png" alt="ds project delete">
+</div>
 </div>
 </div>
 </div>
