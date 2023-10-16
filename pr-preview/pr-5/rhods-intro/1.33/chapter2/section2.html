@@ -152,9 +152,10 @@ Workbenches typically include a collection of common AI/ML libraries and a Jupyt
 RHODS exposes the JupyterLab URL through an OpenShift route so that you can use and interact with the workbench via the web browser.</p>
 </div>
 <div class="paragraph">
-<p>Data science projects typically include more than one workbench.
-This is useful, for example, when you need to run different experiments with different tooling.
-You might want to train a simple model with Scikit-learn and another model with PyTorch.</p>
+<p>Data science projects can include more than one workbench.
+This is useful when you need to run different experiments that belong to the same project, but with different tooling.
+For example, you might want to train a simple model with Scikit-learn and another model with PyTorch.
+Or you might have a workbench only for data exploration and another workbench for model training.</p>
 </div>
 </div>
 </div>
@@ -164,7 +165,10 @@ You might want to train a simple model with Scikit-learn and another model with 
 <div class="sect2">
 <h3 id="_creating_workbenches"><a class="anchor" href="#_creating_workbenches"></a>Creating Workbenches</h3>
 <div class="paragraph">
-<p>From the dashboard of a data science project, click <b class="button">Create workbench</b>.
+<p>Create a data science project (or use an existing one) and navigate to the project dashboard page.</p>
+</div>
+<div class="paragraph">
+<p>From this page, click <b class="button">Create workbench</b>.
 In the workbench creation page, enter the workbench name, select the workbench image, and the image version.
 For this particular example, use the recommended version of the <code>Minimal Python</code> image.</p>
 </div>
@@ -203,7 +207,7 @@ Select <code>Tiny</code> and 0 GPUs in this case.</p>
 <h3 id="_define_environment_variables"><a class="anchor" href="#_define_environment_variables"></a>Define Environment Variables</h3>
 <div class="paragraph">
 <p>Environment variables are the recommended way to inject configuration into software applications.
-In this way, applications, including RHODS workbenches, are decoupled from the working environment.</p>
+In this way, the application, or in this case the RHODS workbench, is decoupled from the working environment.</p>
 </div>
 <div class="paragraph">
 <p>Scroll down to the <b class="button">Environment variables</b> section and click <b class="button">Add variable</b>.
@@ -235,10 +239,10 @@ Alternatively, you can upload a file that includes multiple key/value pairs.</p>
 <div class="sect2">
 <h3 id="_add_storage"><a class="anchor" href="#_add_storage"></a>Add Storage</h3>
 <div class="paragraph">
-<p>Workbenches require persistent storage to ensure that your progress is not lost when you stop the workbench.</p>
+<p>Workbenches require persistent storage to ensure that your progress is not lost when you stop or remove the workbench.</p>
 </div>
 <div class="paragraph">
-<p>Scroll down to the <b class="button">Environment variables</b> section.
+<p>Scroll down to the <b class="button">Cluster storage</b> section.
 Verify that RHODS automatically selects the <b class="button">Create new persistent storage</b> option.
 This is the default behavior.
 RHODS creates a dedicated persistent storage for each workbench and mounts the storage in the root directory of the container.</p>
@@ -246,6 +250,9 @@ RHODS creates a dedicated persistent storage for each workbench and mounts the s
 <div class="paragraph">
 <p>Alternatively, you can select an already existing storage.
 The existing storage must not be associated with any other workbench.</p>
+</div>
+<div class="paragraph">
+<p>You can adjust the storage size, which by default is 20 GiB.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -261,7 +268,36 @@ The existing storage must not be associated with any other workbench.</p>
 <td class="content">
 <div class="paragraph">
 <p>You can also create persistent storage items from the data science project page, and leave the storage unassigned.
-This is useful if you want to create the storage without assigning it to any workbench.</p>
+This is useful to create persistent storage that you plan to mount in workbench directories different from <code>/</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You cannot decrease the storage size of storage that is associated to a workbench.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You cannot delete a storage item if it is assigned to a workbench.
+The storage must be unassigned if you want to delete it.</p>
 </div>
 </td>
 </tr>
@@ -271,19 +307,137 @@ This is useful if you want to create the storage without assigning it to any wor
 <div class="sect2">
 <h3 id="_create_the_workbench"><a class="anchor" href="#_create_the_workbench"></a>Create the Workbench</h3>
 <div class="paragraph">
-<p>Scroll down to the bottom of the page.
-Leave the <b class="button">Use a data connection</b> option unselected as the course covers data connections in more detail in the next section.
-Click <b class="button">Create workbench</b>.
-RHODS triggers the creation of the workbench and redirects you to the data science project page.</p>
+<p>Scroll down to the bottom of the page.</p>
 </div>
 <div class="paragraph">
-<p>While RHODS provision the workspace, the workbench displays with the <code>Starting&#8230;&#8203;</code> status.</p>
+<p>The <b class="button">Data connections</b> lets you inject S3 connection parameters into your workbench.
+Leave this section unchanged.
+Data connections are covered later in the course.</p>
+</div>
+<div class="paragraph">
+<p>Click <b class="button">Create workbench</b>.
+RHODS triggers the creation of the workbench and redirects you to the data science project page.
+While RHODS is provisioning the workbench, the workbench displays with the <code>Starting&#8230;&#8203;</code> status.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/workbench-starting.png" alt="workbench starting">
 </div>
 </div>
+<div class="paragraph">
+<p>If the workbench creation is successful, you should see the workbench running in the project dashboard.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbench-started.png" alt="workbench started">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_inspect_the_workbench"><a class="anchor" href="#_inspect_the_workbench"></a>Inspect the Workbench</h3>
+<div class="paragraph">
+<p>After you create the workbench, RHODS redirects you back to the data science project, where the workbench is listed.
+To view more details about the workbench, click the <b class="button">&gt;</b> icon.
+A card displays that shows the workbench details, including storage usage.
+You can use the <b class="button">Add storage</b> button to add more storage mount points.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbench-view.png" alt="workbench view">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_open_the_workbench"><a class="anchor" href="#_open_the_workbench"></a>Open the workbench</h3>
+<div class="paragraph">
+<p>Click <b class="button">Open</b>.
+On the browser tab that opens, enter your credentials to authenticate to the workbench&#8217;s JupyterLab.
+Next, allow the selected permissions to access Jupyter lab.
+Click <b class="button">Allow selected permissions</b>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbench-auth.png" alt="workbench auth">
+</div>
+</div>
+<div class="paragraph">
+<p>Verify that you see the JuypterLab application:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/jupyterlab-home.png" alt="jupyterlab home">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_starting_and_stopping_workbenches"><a class="anchor" href="#_starting_and_stopping_workbenches"></a>Starting and stopping workbenches</h3>
+<div class="paragraph">
+<p>RHODS can start and stop workbenches without losing data.</p>
+</div>
+<div class="paragraph">
+<p>Return to the project page.
+Click the <b class="button">Status</b> switch of the workbench to stop it.
+Similarly, when the workbench is stopped, toggle the switch to start the workbench.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_edit_the_workbench"><a class="anchor" href="#_edit_the_workbench"></a>Edit the Workbench</h3>
+<div class="paragraph">
+<p>Click the workbench <b class="button">⋮</b> button, then click <b class="button">Edit workbench</b>.</p>
+</div>
+<div class="paragraph">
+<p>Switch the image to <code>Standard Data Science</code> and click <b class="button">Update workbench</b>.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Make sure that you save your work at JuypterLab before updating a workbench.</p>
+</div>
+<div class="paragraph">
+<p>When you edit a workbench, RHODS restarts the workbench, so any unsaved work will be lost.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_delete_the_workbench"><a class="anchor" href="#_delete_the_workbench"></a>Delete the Workbench</h3>
+<div class="paragraph">
+<p>From the project dashboard, click the workbench <b class="button">⋮</b> button, then click <b class="button">Delete workbench</b>.
+In the delete window, type the workbench name to confirm the operation:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbench-delete.png" alt="workbench delete">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Deleting a workbench does not delete the associated persistent storage.
+This means that you can create a new workbench and restore the data that you were using in the previous workbench.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_workbench_resources"><a class="anchor" href="#_workbench_resources"></a>Workbench Resources</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>RHODS internally defines workbenches as stateful applications.
 When you create a workbench, RHODS creates a StatefulSet in the OpenShift namespace that corresponds to your data science project.
@@ -300,7 +454,8 @@ The StatefulSet manages a pod that includes two containers:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>RHODS also creates the required services and routes to enable HTTP and HTTPS traffic into the workbench container.</p>
+<p>RHODS also creates the required services and routes to enable HTTP and HTTPS traffic into the workbench container.
+If you list the resources of your OpenShift namespace that corresponds to your data science project, you should see something similar to this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -337,81 +492,18 @@ NAME                                         ...
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_inspect_the_workbench"><a class="anchor" href="#_inspect_the_workbench"></a>Inspect the Workbench</h3>
+</div>
+<div class="sect1">
+<h2 id="_permissions"><a class="anchor" href="#_permissions"></a>Permissions</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>After you create the workbench, RHODS redirects you back to the data science project, where the workbench is listed.
-To view more details about the workbench, click the <b class="button">&gt;</b> icon.
-A card displays that shows the workbench details, including storage usage.
-You can use the <b class="button">Add storage</b> button to add more storage mount points.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/workbench-view.png" alt="workbench view">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_open_the_workbench"><a class="anchor" href="#_open_the_workbench"></a>Open the workbench</h3>
-<div class="paragraph">
-<p>Click <b class="button">Open</b>.
-On the browser tab that opens, enter your credentials to authenticate to the workbench&#8217;s JupyterLab.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_permissions"><a class="anchor" href="#_permissions"></a>Permissions</h3>
-<div class="paragraph">
-<p>Note that, to enable workbench access to other users, you must grant permissions for those users at the data science project level.
+<p>To enable workbench access to other users, you must grant permissions to those users at the data science project level.
 RHODS does not offer workbench-level permission management.</p>
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="_starting_and_stopping_workbenches"><a class="anchor" href="#_starting_and_stopping_workbenches"></a>Starting and stopping workbenches</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>After you create a workbench, and if the cluster has the capabilities to provision the workbench, RHODS automatically starts the workbench.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/workbench-started.png" alt="workbench started">
-</div>
-</div>
-<div class="paragraph">
-<p>Click the <b class="button">Status</b> switch of the workbench to stop it.
-Similarly, when the workbench is stopped, toggle the switch to start the workbench.</p>
-</div>
-<div class="paragraph">
-<p>You can open the workbench JupyterLab URL by clicking <b class="button">Open</b>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_editing_the_workbench"><a class="anchor" href="#_editing_the_workbench"></a>Editing the Workbench</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Click the workbench <b class="button">⋮</b> button, then click <b class="button">Edit workbench</b>.
-When you make changes to a workbench, RHODS restarts the workbench pod.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Save your work before editing your workbench.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_resources"><a class="anchor" href="#_resources"></a>Resources</h2>
+<h2 id="_limits"><a class="anchor" href="#_limits"></a>Limits</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>If your memory and/or GPU requirements are high, then RHODS might not be able to allocate the requested resources in the workbench.
@@ -424,64 +516,6 @@ You might see a message similar to the following:</p>
 </div>
 <div class="paragraph">
 <p>In this case, try to decrease your resource requirements by editing the workbench, or contact your RHODS administrator.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_deleting_workbenches"><a class="anchor" href="#_deleting_workbenches"></a>Deleting Workbenches</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Click the workbench <b class="button">⋮</b> button, then click <b class="button">Delete workbench</b>.
-In the delete window, type the workbench name to confirm the operation:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/workbench-delete.png" alt="workbench delete">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Deleting a workbench does not delete the associated persistent storage.
-This means that you can create a new workbench and restore the data that you were using in the previous workbench.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>After you have assigned a storage to a workbench, you cannot decrease the storage size, only increase.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>You cannot delete a storage item if it is assigned to a workbench.
-The storage must be unassigned if you want to delete it.</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
