@@ -1,0 +1,208 @@
+= Workbenches
+
+
+// Description
+// What is a Workbench? Why do you need it?
+// Describe the concept of a workbench and why you need it
+
+In RHODS, a _workbench_ is a containerized working environment that runs as any other application in OpenShift, as a pod.
+Workbenches typically include a collection of common AI/ML libraries and a JupyterLab server.
+RHODS exposes the JupyterLab URL through an OpenShift route so that you can use and interact with the workbench via the web browser.
+
+Data science projects typically include more than one workbench.
+This is useful, for example, when you need to run different experiments with different tooling.
+You might want to train a simple model with Scikit-learn and another model with PyTorch.
+
+
+// Screenshot walkthrough of workbench creation and deletion
+
+== Exercise: Getting Started with Workbenches
+
+=== Creating Workbenches
+
+From the dashboard of a data science project, click btn:[Create workbench].
+In the workbench creation page, enter the workbench name, select the workbench image, and the image version.
+For this particular example, use the recommended version of the `Minimal Python` image.
+
+image::workbench-create.png[]
+
+[NOTE]
+====
+The requirements of your project dictate the image that best suits your needs.
+For example, if you plan to use TensorFlow, then you might want to select the `TensorFlow` image.
+You can view more details about the selected image by clicking btn:[View package information].
+====
+
+Next, select the workbench container size and the number of GPUs.
+Select `Tiny` and 0 GPUs in this case.
+
+image::workbench-size.png[]
+
+=== Define Environment Variables
+// Workbench env vars - what? How? why?
+
+Environment variables are the recommended way to inject configuration into software applications.
+In this way, applications, including RHODS workbenches, are decoupled from the working environment.
+
+Scroll down to the btn:[Environment variables] section and click btn:[Add variable].
+Choose whether you want to create a ConfigMap or a Secret.
+You can define multiple key/value pairs or upload a file.
+
+image::workbench-variables.png[]
+
+[NOTE]
+====
+Each ConfigMap or Secret can contain multiple key/value items.
+To add more items to a ConfigMap or a Secret, click btn:[Add another key / value pair].
+Alternatively, you can upload a file that includes multiple key/value pairs.
+====
+
+=== Add Storage
+
+// Adding and deleting cluster storage to the workbench (You can add storage to the project as well as to individual workbenches)
+
+Workbenches require persistent storage to ensure that your progress is not lost when you stop the workbench.
+
+Scroll down to the btn:[Environment variables] section.
+Verify that RHODS automatically selects the btn:[Create new persistent storage] option.
+This is the default behavior.
+RHODS creates a dedicated persistent storage for each workbench and mounts the storage in the root directory of the container.
+
+Alternatively, you can select an already existing storage.
+The existing storage must not be associated with any other workbench.
+
+image::workbench-storage.png[]
+
+[NOTE]
+====
+You can also create persistent storage items from the data science project page, and leave the storage unassigned.
+This is useful if you want to create the storage without assigning it to any workbench.
+====
+
+=== Create the Workbench
+
+Scroll down to the bottom of the page.
+Leave the btn:[Use a data connection] option unselected as the course covers data connections in more detail in the next section.
+Click btn:[Create workbench].
+RHODS triggers the creation of the workbench and redirects you to the data science project page.
+
+While RHODS provision the workspace, the workbench displays with the `Starting...` status.
+
+image::workbench-starting.png[]
+
+RHODS internally defines workbenches as stateful applications.
+When you create a workbench, RHODS creates a StatefulSet in the OpenShift namespace that corresponds to your data science project.
+The StatefulSet manages a pod that includes two containers:
+
+* The workbench container, which contains JupyterLab and other packages.
+* The `oauth-proxy` container, which provides authorization and authentication to access JupyterLab.
+
+RHODS also creates the required services and routes to enable HTTP and HTTPS traffic into the workbench container.
+
+[subs=+quotes]
+----
+NAME                       READY   STATUS    ..
+*pod/my-first-workbench-0*   2/2     Running   ..
+
+NAME                             TYPE        ...
+service/modelmesh-serving        ClusterIP   ...
+*service/my-first-workbench*       ClusterIP   ...
+*service/my-first-workbench-tls*   ClusterIP   ...
+
+NAME                                  READY  ...
+*statefulset.apps/my-first-workbench*   1/1    ...
+
+NAME                                         ...
+*route.route.openshift.io/my-first-workbench*  ...
+----
+
+Creating a new persistent storage in RHODS results in the creation of a PersistentVolumeClaim (PVC) in the corresponding OpenShift project.
+
+[NOTE]
+====
+If you delete the PVC of a storage assigned to a running workbench, then the PVC switches to `Terminating` until you stop the workbench.
+====
+
+=== Inspect the Workbench
+
+After you create the workbench, RHODS redirects you back to the data science project, where the workbench is listed.
+To view more details about the workbench, click the btn:[>] icon.
+A card displays that shows the workbench details, including storage usage.
+You can use the btn:[Add storage] button to add more storage mount points.
+
+image::workbench-view.png[]
+
+=== Open the workbench
+
+Click btn:[Open].
+On the browser tab that opens, enter your credentials to authenticate to the workbench's JupyterLab.
+
+=== Permissions
+// Can you share specific workbenches instead of entire projects?
+Note that, to enable workbench access to other users, you must grant permissions for those users at the data science project level.
+RHODS does not offer workbench-level permission management.
+
+
+
+
+== Starting and stopping workbenches
+
+After you create a workbench, and if the cluster has the capabilities to provision the workbench, RHODS automatically starts the workbench.
+
+image::workbench-started.png[]
+
+Click the btn:[Status] switch of the workbench to stop it.
+Similarly, when the workbench is stopped, toggle the switch to start the workbench.
+
+You can open the workbench JupyterLab URL by clicking btn:[Open].
+
+
+== Editing the Workbench
+
+Click the workbench btn:[⋮] button, then click btn:[Edit workbench].
+When you make changes to a workbench, RHODS restarts the workbench pod.
+
+[WARNING]
+====
+Save your work before editing your workbench.
+====
+
+== Resources
+
+If your memory and/or GPU requirements are high, then RHODS might not be able to allocate the requested resources in the workbench.
+You might see a message similar to the following:
+
+image::workbench-insufficient-resources.png[]
+
+In this case, try to decrease your resource requirements by editing the workbench, or contact your RHODS administrator.
+
+== Deleting Workbenches
+
+Click the workbench btn:[⋮] button, then click btn:[Delete workbench].
+In the delete window, type the workbench name to confirm the operation:
+
+image::workbench-delete.png[]
+
+[NOTE]
+====
+Deleting a workbench does not delete the associated persistent storage.
+This means that you can create a new workbench and restore the data that you were using in the previous workbench.
+====
+
+
+
+// Add appropriate NOTES and WARNINGS for corner cases involving cluster storage - for example, can you delete storage when the workbench image is running? What are the cascading effects of cluster storage, workbench and project deletion? Clarify these concepts clearly
+
+[NOTE]
+====
+After you have assigned a storage to a workbench, you cannot decrease the storage size, only increase.
+====
+
+[NOTE]
+====
+You cannot delete a storage item if it is assigned to a workbench.
+The storage must be unassigned if you want to delete it.
+====
+
+
+
