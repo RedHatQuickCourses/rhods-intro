@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Data Connections :: Introduction to Red Hat OpenShift Data Science</title>
+    <link rel="prev" href="section1.html">
+    <link rel="next" href="../chapter3/index.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenShift Data Science</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/rhods-intro/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header><div class="body">
+<div class="nav-container" data-component="rhods-intro" data-version="1.33">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../chapter1/index.html">Introduction to Red&#160;Hat OpenShift Data Science</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter1/section1.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter1/section2.html">Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter1/section3.html">Demo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter1/section4.html">Conclusion</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Working with Data Science Projects</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section1.html">Data Science Projects</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="section3.html">Data Connections</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../chapter3/index.html">Chapter 3</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter3/section1.html">Section 1</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter3/section2.html">Section 2</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix A</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Introduction to Red Hat OpenShift Data Science</span>
+    <span class="version">1.33</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Introduction to Red Hat OpenShift Data Science</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1.33</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></li>
+    <li><a href="index.html">Working with Data Science Projects</a></li>
+    <li><a href="section3.html">Data Connections</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Data Connections</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In data science, AI, and ML environments, the availability of data is a key factor for the success of the project.
+For simple projects, where a relatively small amount of data is used, you can load data by uploading files to the workbench via JuypterLab, or by making database queries from your notebooks.</p>
+</div>
+<div class="paragraph">
+<p>More complex projects, however, involve larger datasets.
+Depending on the dataset size, uploading files or querying databases might not be a feasible solution.
+Storing the data directly in your code repository is not recommended either, due to the overload that this can cause in your repository.
+In fact, many source control systems include file size limits.</p>
+</div>
+<div class="paragraph">
+<p>The recommended approach is to store the data in a dedicated storage system, and download the data into your workbench when you need it.
+Similarly, trained models can result in large files when you export them, so you can upload the model files to the storage system.</p>
+</div>
+<div class="paragraph">
+<p>RHODS introduces the concept of <em>data connection</em> to define a set of configuration values that you can use to connect to storage systems.
+You can use the external storage to store the data for training, but also your trained models.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Do not confuse data connections with cluster storage.</p>
+</div>
+<div class="paragraph">
+<p>Cluster storage provides persistent storage for your workbench, by using PVCs in your cluster.
+Cluster storage is used to persist your progress in the workbench.</p>
+</div>
+<div class="paragraph">
+<p>Data connections are a set of configuration values that you can use to connect to S3, in order to read data and save models.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_s3"><a class="anchor" href="#_s3"></a>S3</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A data connection is a collection of key/value configuration values for connecting to Amazon Web Services (AWS) Simple Storage Service (S3).
+When you associate a data connection to a workbench, RHODS injects this key/value pairs as configuration values into the workbench.</p>
+</div>
+<div class="paragraph">
+<p>You can use a data connection to connect with any storage system that exposes an S3 API, such as OpenShift Data Foundation, IBM Cloud Object Storage, and AWS S3.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When using a data connection in a workbench, the data connection does not open a connection from the workbench to AWS S3.</p>
+</div>
+<div class="paragraph">
+<p>You are responsible for using the environment variables of the data connection in the notebook to connect to S3</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Similarly, you should store your trained models in the S3 that corresponds to the data connection.
+Storing your models in the data connection enables you to use Model Serving.
+Model Serving downloads the model files from S3 by using a data connection.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_data_storage"><a class="anchor" href="#_other_data_storage"></a>Other Data Storage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you need access to data available in other systems, such as Kafka, MongoDB, then you must use the necessary libraries to retrieve data from those systems into your notebook.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="section1.html">Data Science Projects</a></span>
+  <span class="next"><a href="../chapter3/index.html">Chapter 3</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
