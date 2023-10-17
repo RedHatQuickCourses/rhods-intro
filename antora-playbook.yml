@@ -10,7 +10,6 @@ asciidoc:
   attributes:
     experimental: true
     page-pagination: true
-    experimental: true
 
 ui:
   bundle:
