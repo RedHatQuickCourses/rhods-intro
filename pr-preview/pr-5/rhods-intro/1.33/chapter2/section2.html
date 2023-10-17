@@ -69,10 +69,10 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="index.html">Chapter 2</a>
+    <a class="nav-link" href="index.html">Working with Data Science Projects</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="section1.html">Section 1</a>
+    <a class="nav-link" href="section1.html">Data Science Projects</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="section2.html">Workbenches</a>
@@ -133,7 +133,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></li>
-    <li><a href="index.html">Chapter 2</a></li>
+    <li><a href="index.html">Working with Data Science Projects</a></li>
     <li><a href="section2.html">Workbenches</a></li>
   </ul>
 </nav>
@@ -150,6 +150,9 @@
 <p>In RHODS, a <em>workbench</em> is a containerized working environment that runs as any other application in OpenShift, as a pod.
 Workbenches typically include a collection of common AI/ML libraries and a JupyterLab server.
 RHODS exposes the JupyterLab URL through an OpenShift route so that you can use and interact with the workbench via the web browser.</p>
+</div>
+<div class="paragraph">
+<p>Workbenches are stateful, meaning that you can stop and restart them without losing your work.</p>
 </div>
 <div class="paragraph">
 <p>Data science projects can include more than one workbench.
@@ -219,21 +222,10 @@ You can define multiple key/value pairs or upload a file.</p>
 <img src="_images/workbench-variables.png" alt="workbench variables">
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
 <div class="paragraph">
 <p>Each ConfigMap or Secret can contain multiple key/value items.
 To add more items to a ConfigMap or a Secret, click <b class="button">Add another key / value pair</b>.
 Alternatively, you can upload a file that includes multiple key/value pairs.</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 </div>
 <div class="sect2">
@@ -310,7 +302,7 @@ The storage must be unassigned if you want to delete it.</p>
 <p>Scroll down to the bottom of the page.</p>
 </div>
 <div class="paragraph">
-<p>The <b class="button">Data connections</b> lets you inject S3 connection parameters into your workbench.
+<p>The <b class="button">Data connections</b> section lets you inject S3 connection parameters into your workbench.
 Leave this section unchanged.
 Data connections are covered later in the course.</p>
 </div>
@@ -325,7 +317,8 @@ While RHODS is provisioning the workbench, the workbench displays with the <code
 </div>
 </div>
 <div class="paragraph">
-<p>If the workbench creation is successful, you should see the workbench running in the project dashboard.</p>
+<p>If the workbench creation is successful, then you should see the workbench running in the project dashboard.
+The dashboard should also display the persistent storage associated with the workbench.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -336,10 +329,9 @@ While RHODS is provisioning the workbench, the workbench displays with the <code
 <div class="sect2">
 <h3 id="_inspect_the_workbench"><a class="anchor" href="#_inspect_the_workbench"></a>Inspect the Workbench</h3>
 <div class="paragraph">
-<p>After you create the workbench, RHODS redirects you back to the data science project, where the workbench is listed.
-To view more details about the workbench, click the <b class="button">&gt;</b> icon.
-A card displays that shows the workbench details, including storage usage.
-You can use the <b class="button">Add storage</b> button to add more storage mount points.</p>
+<p>In the data science project page, click the <b class="button">&gt;</b> icon to view more details about the workbench.
+The card that slides down displays the workbench details, including storage usage.
+You can use the <b class="button">Add storage</b> button to add more storage mount points to the workbench.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -348,11 +340,11 @@ You can use the <b class="button">Add storage</b> button to add more storage mou
 </div>
 </div>
 <div class="sect2">
-<h3 id="_open_the_workbench"><a class="anchor" href="#_open_the_workbench"></a>Open the workbench</h3>
+<h3 id="_open_the_workbench"><a class="anchor" href="#_open_the_workbench"></a>Open the Workbench</h3>
 <div class="paragraph">
 <p>Click <b class="button">Open</b>.
 On the browser tab that opens, enter your credentials to authenticate to the workbench&#8217;s JupyterLab.
-Next, allow the selected permissions to access Jupyter lab.
+Next, allow the selected permissions to access JupyterLab.
 Click <b class="button">Allow selected permissions</b>.</p>
 </div>
 <div class="imageblock">
@@ -361,29 +353,69 @@ Click <b class="button">Allow selected permissions</b>.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Verify that you see the JuypterLab application:</p>
+<p>Verify that you see the JupyterLab application:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/jupyterlab-home.png" alt="jupyterlab home">
 </div>
 </div>
+<div class="paragraph">
+<p>In the right pane, click the <b class="button">Terminal</b> item to open a new terminal.
+In the terminal, verify that the <code>DATA_FILE</code> environment variable has been injected into the workbench:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>(app-root) (app-root) <strong>echo $DATA_FILE</strong>
+data.csv</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next, create a file.
+You will use this file to verify that the state of the workbench is preserved after a restart.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>(app-root) (app-root) <strong>touch hello.txt</strong>
+(app-root) (app-root)</pre>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_starting_and_stopping_workbenches"><a class="anchor" href="#_starting_and_stopping_workbenches"></a>Starting and stopping workbenches</h3>
 <div class="paragraph">
-<p>RHODS can start and stop workbenches without losing data.</p>
+<p>Return to the RHODS data science project page.
+Click the <b class="button">Status</b> switch of the workbench to stop it.
+The workbench status changes to <code>Stopping&#8230;&#8203;</code>.</p>
 </div>
 <div class="paragraph">
-<p>Return to the project page.
-Click the <b class="button">Status</b> switch of the workbench to stop it.
-Similarly, when the workbench is stopped, toggle the switch to start the workbench.</p>
+<p>After the workbench is stopped, toggle the switch to start the workbench again.
+The workbench status changes to <code>Starting&#8230;&#8203;</code>.</p>
+</div>
+<div class="paragraph">
+<p>When the workbench is running, switch to the JupyterLab browser tab.
+You might see a message indicating that the server is unavailable.
+Press <kbd>F5</kbd> to refresh the page.</p>
+</div>
+<div class="paragraph">
+<p>Verify that the <code>hello.txt</code> file that you created still exists.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbench-state.png" alt="workbench state">
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_edit_the_workbench"><a class="anchor" href="#_edit_the_workbench"></a>Edit the Workbench</h3>
 <div class="paragraph">
-<p>Click the workbench <b class="button">⋮</b> button, then click <b class="button">Edit workbench</b>.</p>
+<p>Return to the RHODS data science project page.
+Click the workbench <b class="button">⋮</b> button, then click <b class="button">Edit workbench</b>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbench-edit.png" alt="workbench edit">
+</div>
 </div>
 <div class="paragraph">
 <p>Switch the image to <code>Standard Data Science</code> and click <b class="button">Update workbench</b>.</p>
@@ -396,10 +428,24 @@ Similarly, when the workbench is stopped, toggle the switch to start the workben
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Make sure that you save your work at JuypterLab before updating a workbench.</p>
+<p>Make sure that you save your work at JupyterLab before updating a workbench.</p>
 </div>
 <div class="paragraph">
 <p>When you edit a workbench, RHODS restarts the workbench, so any unsaved work will be lost.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You cannot edit a workbench while the workbench is starting or stopping.</p>
 </div>
 </td>
 </tr>
@@ -426,7 +472,7 @@ In the delete window, type the workbench name to confirm the operation:</p>
 <td class="content">
 <div class="paragraph">
 <p>Deleting a workbench does not delete the associated persistent storage.
-This means that you can create a new workbench and restore the data that you were using in the previous workbench.</p>
+This means that you can create another workbench and restore the data that you were using in the previous workbench.</p>
 </div>
 </td>
 </tr>
@@ -446,7 +492,8 @@ The StatefulSet manages a pod that includes two containers:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The workbench container, which contains JupyterLab and other packages.</p>
+<p>The workbench container, which contains JupyterLab and other packages.
+You interact with this container when you use the JupyterLab web interface.</p>
 </li>
 <li>
 <p>The <code>oauth-proxy</code> container, which provides authorization and authentication to access JupyterLab.</p>
@@ -455,7 +502,7 @@ The StatefulSet manages a pod that includes two containers:</p>
 </div>
 <div class="paragraph">
 <p>RHODS also creates the required services and routes to enable HTTP and HTTPS traffic into the workbench container.
-If you list the resources of your OpenShift namespace that corresponds to your data science project, you should see something similar to this:</p>
+If you list the resources of the OpenShift namespace that corresponds to your data science project, you should see something similar to this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -485,7 +532,7 @@ NAME                                         ...
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you delete the PVC of a storage assigned to a running workbench, then the PVC switches to <code>Terminating</code> until you stop the workbench.</p>
+<p>If you delete the PVC of a storage assigned to a running workbench, then the PVC switches to <code>Terminating</code> state until you stop the workbench.</p>
 </div>
 </td>
 </tr>
@@ -520,7 +567,7 @@ You might see a message similar to the following:</p>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="section1.html">Section 1</a></span>
+  <span class="prev"><a href="section1.html">Data Science Projects</a></span>
   <span class="next"><a href="../chapter3/index.html">Chapter 3</a></span>
 </nav>
 </article>
