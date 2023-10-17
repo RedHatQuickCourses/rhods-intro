@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Data Connections :: Introduction to Red Hat OpenShift Data Science</title>
-    <link rel="prev" href="section1.html">
+    <link rel="prev" href="section2.html">
     <link rel="next" href="../chapter3/index.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
@@ -73,6 +73,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="section1.html">Data Science Projects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section2.html">Workbenches</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="section3.html">Data Connections</a>
@@ -229,8 +232,120 @@ Model Serving downloads the model files from S3 by using a data connection.</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_exercise"><a class="anchor" href="#_exercise"></a>Exercise</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_adding_a_data_connection_to_a_workbench"><a class="anchor" href="#_adding_a_data_connection_to_a_workbench"></a>Adding a data connection to a workbench</h3>
+<div class="paragraph">
+<p>You can add a data connection to a workbench when you are creating the workbench.
+Alternatively, you can add a connection by editing the workbench.</p>
+</div>
+<div class="paragraph">
+<p>Scroll down to the <b class="button">Data connections</b> section and select <b class="button">Create data connection</b>.
+This option creates the data connection and assigns it to the workbench that you are editing or creating.
+Complete the form with your S3 connection parameters.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dataconnection-new.png" alt="dataconnection new">
+</div>
+</div>
+<div class="paragraph">
+<p>Save the workbench.
+In the data science project page, notice the newly created data connection.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dataconnection-list.png" alt="dataconnection list">
+</div>
+</div>
+<div class="paragraph">
+<p>From this page, you can edit existing data connections.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The association between workbenches and data connections follows a <code>N to 1</code> schema:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The same data connection can be used in multiple workbenches.</p>
+</li>
+<li>
+<p>A workbench can have only one data connection.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dataconnection-edit.png" alt="dataconnection edit">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_the_boto3_library"><a class="anchor" href="#_using_the_boto3_library"></a>Using the boto3 library</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_internals"><a class="anchor" href="#_internals"></a>Internals</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A data connection is a Secret.
+If you inspect the created Secret, you will see something similar to this definition:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">apiVersion: v1
+kind: Secret
+data:
+  AWS_ACCESS_KEY_ID: ...
+  AWS_DEFAULT_REGION: ...
+  AWS_S3_BUCKET: ...
+  AWS_S3_ENDPOINT: ...
+  AWS_SECRET_ACCESS_KEY: ...
+metadata:
+  annotations:
+    opendatahub.io/connection-type: s3
+    openshift.io/display-name: my-first-data-connection
+  labels:
+    opendatahub.io/dashboard: "true"
+    opendatahub.io/managed: "true"
+  name: aws-connection-my-first-data-connection</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If no data connection is created, then developers can still test the connection by hardcoding the S3 config values into the notebook, but that, of course, is a security risk, as s3 config can be easily leaked to the git repository.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 <nav class="pagination">
-  <span class="prev"><a href="section1.html">Data Science Projects</a></span>
+  <span class="prev"><a href="section2.html">Workbenches</a></span>
   <span class="next"><a href="../chapter3/index.html">Chapter 3</a></span>
 </nav>
 </article>
