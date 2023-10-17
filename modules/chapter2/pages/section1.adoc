@@ -58,6 +58,7 @@ Then, add users and groups, and specify their permissions.
 
 image::ds-project-permissions.png[]
 
+// TODO: Link to the admin course (user and groups creation)
 
 === Deleting Data Science Projects
 
@@ -74,3 +75,4 @@ image::ds-project-delete.png[]
 // == TODO: Disabled self-provisioning
 // [Trevor] Include details about how to manage a DS project when Self Provisioning is disabled on a cluster (e.g. annotations on namespaces).
 // [Jaime R] This might be more suitable for the admin-oriented quick course.
+// TODO: link to the admin course section that teaches this
