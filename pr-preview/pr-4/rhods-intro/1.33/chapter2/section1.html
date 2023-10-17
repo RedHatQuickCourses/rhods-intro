@@ -145,7 +145,13 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>In RHODS, a <em>data science project</em> is the preferred way to organize resources when working on an AI/ML application.
-Internally, a data science project is an OpenShift project that contains specific labels to identify the project as a RHODS-specific project,
+Similarly to how you use projects in OpenShift for other workloads, you can use and should use data science projects to organize the different elements that you need for your AI applications, such as workbenches, model servers, or persistent storage.</p>
+</div>
+<div class="paragraph">
+<p>You can create and manage data science projects by using the RHODS dashboard.</p>
+</div>
+<div class="paragraph">
+<p>Internally, a data science project is an OpenShift project that contains specific labels to identify the project as a RHODS-specific project,
 for example:</p>
 </div>
 <div class="listingblock">
@@ -161,16 +167,26 @@ metadata:
     ...</code></pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_the_need_for_data_science_projects"><a class="anchor" href="#_the_need_for_data_science_projects"></a>The Need for Data Science projects</h2>
-<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>Similarly to how you use projects in OpenShift for other workloads, you can use and should use data science projects to organize the different elements that you need for your AI applications, such as workbenches, model servers, or persistent storage.</p>
+<p>Regular OpenShift projects are not shown in the RHODS dashboard.</p>
 </div>
 <div class="paragraph">
-<p>You can create and manage data science projects by using the RHODS dashboard.</p>
+<p>If you cannot use the RHODS dashboard, for example because you are automating the creation of your projects, then make sure that the <code>opendatahub.io/dashboard: 'true'</code> label is included in the project definition.
+This label identifies the project as a data science project.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, if you wish to use model serving in your project, then you must add the <code>modelmesh-enabled: 'true'</code> label.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
