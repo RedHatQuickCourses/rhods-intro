@@ -1,6 +1,10 @@
 = Data Science Projects
 
 In RHODS, a _data science project_ is the preferred way to organize resources when working on an AI/ML application.
+Similarly to how you use projects in OpenShift for other workloads, you can use and should use data science projects to organize the different elements that you need for your AI applications, such as workbenches, model servers, or persistent storage.
+
+You can create and manage data science projects by using the RHODS dashboard.
+
 Internally, a data science project is an OpenShift project that contains specific labels to identify the project as a RHODS-specific project,
 for example:
 
@@ -17,11 +21,17 @@ metadata:
     ...
 ----
 
-== The Need for Data Science projects
+[IMPORTANT]
+====
+Regular OpenShift projects are not shown in the RHODS dashboard.
 
-Similarly to how you use projects in OpenShift for other workloads, you can use and should use data science projects to organize the different elements that you need for your AI applications, such as workbenches, model servers, or persistent storage.
+If you cannot use the RHODS dashboard, for example because you are automating the creation of your projects, then make sure that the `opendatahub.io/dashboard: 'true'` label is included in the project definition.
+This label identifies the project as a data science project.
 
-You can create and manage data science projects by using the RHODS dashboard.
+Additionally, if you wish to use model serving in your project, then you must add the `modelmesh-enabled: 'true'` label.
+====
+
+
 
 == Exercise
 
