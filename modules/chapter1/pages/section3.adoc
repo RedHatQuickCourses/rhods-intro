@@ -1,7 +1,7 @@
 :experimental:
 = Demo
 
-In this exercise, you will use RHODS to train and evaluate a simple machine learning model, by using JuypterLab and other common ML libraries.
+In this exercise, you will use RHODS to train and evaluate a simple machine learning model, by using JupyterLab and other common ML libraries.
 
 
 1. *Open the RHODS dashboard.*
@@ -18,7 +18,7 @@ c. If prompted, log in with your Red{nbsp}Hat OpenShift credentials.
 
 2. *Configure the workbench of your data science project.*
 +
-A RHODS workbench is a containerized application that includes commonly used data science tools and libraries, such as JupyterLab, Tensorflow, and PyTorch.
+A RHODS workbench is a containerized application that includes commonly used data science tools and libraries, such as JupyterLab, TensorFlow, and PyTorch.
 RHODS provides you with a collection of workbench container images, each one preconfigured and tailored to a specific data science use case.
 
 a. Click btn:[Data Science Projects] in the left sidebar.
@@ -67,7 +67,7 @@ b. If prompted, log in with your Red{nbsp}Hat OpenShift credentials.
 
 c. Click btn:[Allow selected permissions] to grant the workbench access to your data science project.
 
-d. Verify that the JuyperLab interface opens in a new browser tab.
+d. Verify that the JupyterLab interface opens in a new browser tab.
 
 e. Click the btn:[Git] icon in the left sidebar.
 
@@ -94,7 +94,7 @@ Keep pressing btn:[Shift+Enter] until you reach the bottom.
 
 a. In the data science project dashboard, create a workbench with the default image for PyTorch.
 
-b. In the new worbench, open JuypterLab and clone the https://github.com/RedHatQuickCourses/rhods-intro.git repository as you did in the previous step.
+b. In the new workbench, open JupyterLab and clone the https://github.com/RedHatQuickCourses/rhods-intro.git repository as you did in the previous step.
 
-c. Open the `rhods-intro/intro-text-generation/notebook.ipynb` notebook in Jupyter and execute the steps.
+c. Open the `rhods-intro/intro-text-generation/notebook.ipynb` notebook in JupyterLab and execute the steps.
 The instructions are embedded in the notebook.

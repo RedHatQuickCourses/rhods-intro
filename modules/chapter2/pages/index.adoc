@@ -1,3 +1,9 @@
-= Chapter 2
+= Working with Data Science Projects
 
-This is the home page of _Chapter 2_ in the *hello* quick course....
+This chapter introduces you to the initial steps and concepts required to start your projects in RHODS.
+You will learn how to use RHODS to organize your work in data science projects.
+You will also learn how to create working environments and connect those environments to storage providers.
+
+Chapter goals:
+
+* Organize code and configuration using data science projects, workbenches, and data connections
