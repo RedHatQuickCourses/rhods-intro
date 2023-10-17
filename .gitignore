@@ -106,3 +106,4 @@ dist
 
 # Local VSCode settings
 .vscode/settings*
+.vscode/spell*
