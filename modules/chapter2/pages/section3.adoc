@@ -6,6 +6,7 @@
 // S3 data connections
 // Local cluster storage
 
+// What is a data connection? Why do you need it?
 In data science, AI, and ML environments, the availability of data is a key factor for the success of the project.
 For simple projects, where a relatively small amount of data is used, you can load data by uploading files to the workbench via JuypterLab, or by making database queries from your notebooks.
 
@@ -35,6 +36,7 @@ Data connections are a set of configuration values that you can use to connect t
 A data connection is a collection of key/value configuration values for connecting to Amazon Web Services (AWS) Simple Storage Service (S3).
 When you associate a data connection to a workbench, RHODS injects this key/value pairs as configuration values into the workbench.
 
+// What are the different types of data connections (AWS S3 etc)
 You can use a data connection to connect with any storage system that exposes an S3 API, such as OpenShift Data Foundation, IBM Cloud Object Storage, and AWS S3.
 
 [IMPORTANT]
@@ -52,19 +54,80 @@ Model Serving downloads the model files from S3 by using a data connection.
 
 If you need access to data available in other systems, such as Kafka, MongoDB, then you must use the necessary libraries to retrieve data from those systems into your notebook.
 
-// Notes
-// What is a data connection? Why do you need it?
-// What are the different types of data connections (AWS S3 etc)
+
+
+== Exercise
+
+=== Adding a data connection to a workbench
+
+You can add a data connection to a workbench when you are creating the workbench.
+Alternatively, you can add a connection by editing the workbench.
+
+Scroll down to the btn:[Data connections] section and select btn:[Create data connection].
+This option creates the data connection and assigns it to the workbench that you are editing or creating.
+Complete the form with your S3 connection parameters.
+
+image::dataconnection-new.png[]
+
+Save the workbench.
+In the data science project page, notice the newly created data connection.
+
+image::dataconnection-list.png[]
+
+From this page, you can edit existing data connections.
+
+[NOTE]
+====
+The association between workbenches and data connections follows a `N to 1` schema:
+
+* The same data connection can be used in multiple workbenches.
+* A workbench can have only one data connection.
+====
+
+image::dataconnection-edit.png[]
+
+
 // Screenshot walkthrough of AWS S3 data connection creation and deletion
 // Can data connections be shared?
 // Adding data connections to existing workbenches
-// [Trevor] I'm not sure what Local cluster storage has to do with the data connections features and I don't see anything in the notes discussing anything related to storage.  It seems like "local cluster storage" would most likely fall under the topic of adding storage to a workbench in the previous section more so than the data connections section.
-// [Andres] - Maybe this has to do with the Local Storage Operator (LSO) or the NFS Storage provisioner, but I'm not sure.
-// [Trevor] - A data connection is just a k8s secret with a pre-defined format.  No provisioning of storage in the cluster is needed.  I would assume that some form of s3 compatible storage would already be provisioned for the user for the exercises. I'm unsure if the RHODS Dashboard uses the users permissions in the NS to determine if they can create a data connection (i.e. secret) or if it allows users to create data connections as long as they have access to the project.  That might be something worth checking into.
+
+== Using the boto3 library
+
 // Verifying data connections in Notebooks
 // Creating an Amazon S3 client using notebook cells
 // Listing available Amazon S3 buckets using notebook cells
 // Listing files in available Amazon S3 buckets using notebook cells
-// Uploading and downloading files from available Amazon S3 buckets using notebook cells
-// [Jaime] - When a data connection is linked with a workbench, RHODS injects the S3 config values as environment variables into the workbench. From that point, the developer must use these variables inside the workbench (in a notebook) and pass them to boto3 or any other lib. 
-// If no data connection is created, then developers can still test the connection by hardcoding the S3 config values into the notebook, but that, of course, is a security risk, as s3 config can be easily leaked to the git repository.
+
+
+== Internals
+
+A data connection is a Secret.
+If you inspect the created Secret, you will see something similar to this definition:
+
+[source,yaml]
+----
+apiVersion: v1
+kind: Secret
+data:
+  AWS_ACCESS_KEY_ID: ...
+  AWS_DEFAULT_REGION: ...
+  AWS_S3_BUCKET: ...
+  AWS_S3_ENDPOINT: ...
+  AWS_SECRET_ACCESS_KEY: ...
+metadata:
+  annotations:
+    opendatahub.io/connection-type: s3
+    openshift.io/display-name: my-first-data-connection
+  labels:
+    opendatahub.io/dashboard: "true"
+    opendatahub.io/managed: "true"
+  name: aws-connection-my-first-data-connection
+----
+
+// [Trevor] - A data connection is just a k8s secret with a pre-defined format.  No provisioning of storage in the cluster is needed.  I would assume that some form of s3 compatible storage would already be provisioned for the user for the exercises. I'm unsure if the RHODS Dashboard uses the users permissions in the NS to determine if they can create a data connection (i.e. secret) or if it allows users to create data connections as long as they have access to the project.  That might be something worth checking into.
+
+
+[WARNING]
+====
+If no data connection is created, then developers can still test the connection by hardcoding the S3 config values into the notebook, but that, of course, is a security risk, as s3 config can be easily leaked to the git repository.
+====
