@@ -235,6 +235,9 @@ NAME                                         ...
 ----
 
 Creating a new persistent storage in RHODS results in the creation of a PersistentVolumeClaim (PVC) in the corresponding OpenShift project.
+The following diagram represents the OpenShift resources involved in a workbench:
+
+image::workbench-ocp-resources.svg[width="1000px"]
 
 
 [NOTE]
