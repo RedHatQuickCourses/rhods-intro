@@ -1,0 +1,184 @@
+= Data Connections
+
+// What is a data connection? Why do you need it?
+In data science, AI, and ML environments, the availability of data is a key factor for the success of a project.
+For simple projects, where a relatively small amount of data is used, you can load data by uploading files to the workbench via JuypterLab, or by making database queries from your notebooks.
+
+More complex projects, however, involve larger datasets.
+Depending on the dataset size, uploading files or querying databases might not be a feasible solution.
+Storing the data directly in your code repository is not recommended either, due to the overload that this can cause in your repository.
+In fact, many source control systems include file size limits.
+
+A better approach is to store the data in a dedicated storage system, and download the data into your workbench when you need it.
+
+Similarly, a dedicated storage system is also required to store the artifacts that the training phase produces, i.e. the trained models.
+Trained models can result in large files when you export them, so the recommendation is to store them in a dedicated storage system.
+
+== Data Connections are Secrets
+
+RHODS introduces the concept of _data connection_ to define a set of configuration values that you can use to connect your workbench to storage systems.
+You can use the external storage to store your datasets and your trained models.
+
+
+[IMPORTANT]
+====
+Do not confuse data connections with cluster storage.
+
+Cluster storage provides persistent storage for your workbench, by using PersistentVolumeClaim (PVC) objects in your cluster.
+Cluster storage is used to persist your progress in the workbench.
+
+Data connections are a set of configuration values that you can use to connect to storage systems.
+====
+
+RHODS creates data connections in OpenShift as Secret objects.
+RHODS stores these secrets in the OpenShift namespace that corresponds to your data science project.
+The secret associated with each data connection includes these key/value pairs:
+
+* `AWS_ACCESS_KEY_ID`
+* `AWS_DEFAULT_REGION`
+* `AWS_S3_BUCKET`
+* `AWS_S3_ENDPOINT`
+* `AWS_SECRET_ACCESS_KEY`
+
+You can set these values by using a web form in the RHODS dashboard, as you will learn in the exercise.
+
+Although the naming of these variables suggests the use of AWS S3, these values are only environment variables, so you decide how you use them in your notebooks.
+You can use them to connect to systems such as OpenShift Data Foundation, IBM Cloud Object Storage, and AWS S3.
+
+If you inspect the Secret object associated with a data connection, then you should see something similar to this definition:
+
+[source,yaml]
+----
+apiVersion: v1
+kind: Secret
+data:
+  AWS_ACCESS_KEY_ID: ...
+  AWS_DEFAULT_REGION: ...
+  AWS_S3_BUCKET: ...
+  AWS_S3_ENDPOINT: ...
+  AWS_SECRET_ACCESS_KEY: ...
+metadata:
+  annotations:
+    opendatahub.io/connection-type: s3
+    openshift.io/display-name: my-first-data-connection
+  labels:
+    opendatahub.io/dashboard: "true"
+    opendatahub.io/managed: "true"
+  name: aws-connection-my-first-data-connection
+...
+----
+
+[NOTE]
+====
+Although the `opendatahub.io/connection-type` annotation indicates supports for different types of data connections, the RHODS dashboard, for now, only allows the creation of S3 data connections.
+====
+
+
+== Using the Data Connection Environment Variables
+When you associate a data connection to a workbench, RHODS injects the key/value pairs of the data connection as environment variables into the workbench container.
+
+[IMPORTANT]
+====
+RHODS does not open a connection from the workbench to AWS S3.
+You are responsible for reading and using the environment variables of the data connection in the notebook.
+====
+
+Typically, you should read the data connection variables and then use them to configure the connection to the storage system.
+For S3 storage, this can be done with the `boto3` library, as you will learn in the following exercise.
+
+After you are connected to S3, then you can start downloading the files required for data exploration or model training.
+
+Similarly, you should store your trained models in the S3 bucket that corresponds to the data connection.
+In fact, storing your models in the data connection enables you to use Model Serving.
+Model Serving downloads the model files from S3 by using a data connection.
+
+
+
+
+
+
+== Exercise: Getting Started with Data Connections
+
+=== Create a Workbench with a Data connection
+
+From a data science project page, click btn:[Create Workbench].
+
+Select the btn `Standard Data Science` notebook image for this workbench.
+
+[IMPORTANT]
+====
+Make sure you use the `Standard Data Science` image.
+This image contains the `boto3` library, required for the second part of the exercise.
+====
+
+[NOTE]
+====
+Alternatively, you can add a data connection to an existing workbench by editing the workbench.
+====
+
+Scroll down to the btn:[Data connections] section and select btn:[Create data connection].
+This option creates the data connection and assigns it to the workbench that you are creating.
+Complete the form with your S3 connection parameters.
+
+image::dataconnection-new.png[]
+
+Save the workbench.
+In the data science project page, notice the newly created data connection, which is associated with the workbench.
+
+image::dataconnection-list.png[]
+
+[NOTE]
+====
+The association between data connections and workbenches follows a `1 to N` schema:
+
+* The same data connection can be used in multiple workbenches.
+* A workbench can have only one data connection.
+====
+
+=== Edit a Data connection
+
+Next, click the btn:[⋮] button of the data connection, then click btn:[Edit data connection].
+Note that you can assign more workbenches to the same data connection.
+
+image::dataconnection-edit.png[]
+
+You do not need to make any changes.
+
+[NOTE]
+====
+You can use the data science project page to create new data connections and assign them to existing workspaces.
+
+You can also use this page to delete data connections.
+Deleting a data connection that is assigned to a workbench results in a workbench restart.
+====
+
+=== Using the Data Connection in a Workbench
+
+After you have created the data connection and assigned it to your workbench, follow these steps:
+
+1. *Clone the demo code.*
+
+a. Open the workbench JuypterLab URL.
+
+b. If prompted, log in with your Red{nbsp}Hat OpenShift credentials.
+
+c. Click btn:[Allow selected permissions] to grant the workbench access to your data science project.
+
+d. Click the btn:[Git] icon in the left sidebar of JupyterLab.
+
+e. Click btn:[Clone a repository].
++
+image::git-clone-menu.png[width=40%,align="center"]
+
+f. Enter https://github.com/RedHatQuickCourses/rhods-intro.git as the repository, and click btn:[Clone].
+
+2. *Open and run the notebook.*
+
+a. In the file explorer, navigate to the `rhods-intro/notebooks/data-connections` directory.
+
+b. Open the `exercise.ipynb` notebook.
+
+c. Follow the instructions in the notebook.
+Click the first cell, then press btn:[Shift+Enter] to execute the cell and move to the next one.
+Next, execute and review the rest of the cells.
+Keep pressing btn:[Shift+Enter] until you reach the bottom.
