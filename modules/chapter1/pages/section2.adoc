@@ -46,7 +46,7 @@ Persistent Storage::
 You can mount different storage types into a workspace to persist your work.
 For example, you can use persistent volume claims.
 
-Data connections::
+Data Connections::
 A data connection is a map of configuration values for connecting workbenches to external cloud storage providers, such as AWS S3.
 Data connections inject the configuration values as environment variables in the associated workbench.
 
@@ -57,7 +57,7 @@ Typically, a pipeline ends after the trained model has been uploaded to an S3 bu
 +
 To use pipelines in RHODS, the Red{nbsp}Hat OpenShift Pipelines operator must be installed.
 
-Model servers::
+Model Servers::
 A model server can read an exported model file and serve the model in a standard API.
 Model servers require a data connection to download the model files from the cloud storage.
 
@@ -100,7 +100,7 @@ The following workflow is common in AI/ML projects:
 Ingest data::
 In this phase, data scientists load data into the workbench.
 For example, the data scientist can upload files to the workbench, download the files from S3, query data from a database, or read a data stream.
-RHODS includes the Pandas library in many of the preexisting worbenches.
+RHODS includes the Pandas library in many of the preexisting workbenches.
 Pandas offers functions to load data from different sources, such as CSV, JSON or SQL.
 +
 Users can also add specific data ingestion capabilities by using certified ISV ecosystem apps from the Red{nbsp}Hat Marketplace.
