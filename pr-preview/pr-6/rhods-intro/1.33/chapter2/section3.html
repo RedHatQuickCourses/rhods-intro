@@ -150,7 +150,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>In data science, AI, and ML environments, the availability of data is a key factor for the success of the project.
+<p>In data science, AI, and ML environments, the availability of data is a key factor for the success of a project.
 For simple projects, where a relatively small amount of data is used, you can load data by uploading files to the workbench via JuypterLab, or by making database queries from your notebooks.</p>
 </div>
 <div class="paragraph">
@@ -160,12 +160,20 @@ Storing the data directly in your code repository is not recommended either, due
 In fact, many source control systems include file size limits.</p>
 </div>
 <div class="paragraph">
-<p>The recommended approach is to store the data in a dedicated storage system, and download the data into your workbench when you need it.
-Similarly, trained models can result in large files when you export them, so you can upload the model files to the storage system.</p>
+<p>A better approach is to store the data in a dedicated storage system, and download the data into your workbench when you need it.</p>
 </div>
 <div class="paragraph">
-<p>RHODS introduces the concept of <em>data connection</em> to define a set of configuration values that you can use to connect to storage systems.
-You can use the external storage to store the data for training, but also your trained models.</p>
+<p>Similarly, a dedicated storage system is also required to store the artifacts that the training phase produces, i.e. the trained models.
+Trained models can result in large files when you export them, so the recommendation is to store them in a dedicated storage system.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_connections_are_secrets"><a class="anchor" href="#_data_connections_are_secrets"></a>Data Connections are Secrets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>RHODS introduces the concept of <em>data connection</em> to define a set of configuration values that you can use to connect your workbench to storage systems.
+You can use the external storage to store your datasets and your trained models.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -182,131 +190,45 @@ You can use the external storage to store the data for training, but also your t
 Cluster storage is used to persist your progress in the workbench.</p>
 </div>
 <div class="paragraph">
-<p>Data connections are a set of configuration values that you can use to connect to S3, in order to read data and save models.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_s3"><a class="anchor" href="#_s3"></a>S3</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>A data connection is a collection of key/value configuration values for connecting to Amazon Web Services (AWS) Simple Storage Service (S3).
-When you associate a data connection to a workbench, RHODS injects this key/value pairs as configuration values into the workbench.</p>
-</div>
-<div class="paragraph">
-<p>You can use a data connection to connect with any storage system that exposes an S3 API, such as OpenShift Data Foundation, IBM Cloud Object Storage, and AWS S3.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>When using a data connection in a workbench, the data connection does not open a connection from the workbench to AWS S3.</p>
-</div>
-<div class="paragraph">
-<p>You are responsible for using the environment variables of the data connection in the notebook to connect to S3</p>
+<p>Data connections are a set of configuration values that you can use to connect to storage systems.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Similarly, you should store your trained models in the S3 that corresponds to the data connection.
-Storing your models in the data connection enables you to use Model Serving.
-Model Serving downloads the model files from S3 by using a data connection.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_other_data_storage"><a class="anchor" href="#_other_data_storage"></a>Other Data Storage</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you need access to data available in other systems, such as Kafka, MongoDB, then you must use the necessary libraries to retrieve data from those systems into your notebook.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_exercise"><a class="anchor" href="#_exercise"></a>Exercise</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_adding_a_data_connection_to_a_workbench"><a class="anchor" href="#_adding_a_data_connection_to_a_workbench"></a>Adding a data connection to a workbench</h3>
-<div class="paragraph">
-<p>You can add a data connection to a workbench when you are creating the workbench.
-Alternatively, you can add a connection by editing the workbench.</p>
-</div>
-<div class="paragraph">
-<p>Scroll down to the <b class="button">Data connections</b> section and select <b class="button">Create data connection</b>.
-This option creates the data connection and assigns it to the workbench that you are editing or creating.
-Complete the form with your S3 connection parameters.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/dataconnection-new.png" alt="dataconnection new">
-</div>
-</div>
-<div class="paragraph">
-<p>Save the workbench.
-In the data science project page, notice the newly created data connection.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/dataconnection-list.png" alt="dataconnection list">
-</div>
-</div>
-<div class="paragraph">
-<p>From this page, you can edit existing data connections.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The association between workbenches and data connections follows a <code>N to 1</code> schema:</p>
+<p>RHODS creates data connections in OpenShift as Secret objects.
+RHODS stores these secrets in the OpenShift namespace that corresponds to your data science project.
+The secret associated with each data connection includes these key/value pairs:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The same data connection can be used in multiple workbenches.</p>
+<p><code>AWS_ACCESS_KEY_ID</code></p>
 </li>
 <li>
-<p>A workbench can have only one data connection.</p>
+<p><code>AWS_DEFAULT_REGION</code></p>
+</li>
+<li>
+<p><code>AWS_S3_BUCKET</code></p>
+</li>
+<li>
+<p><code>AWS_S3_ENDPOINT</code></p>
+</li>
+<li>
+<p><code>AWS_SECRET_ACCESS_KEY</code></p>
 </li>
 </ul>
 </div>
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/dataconnection-edit.png" alt="dataconnection edit">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_using_the_boto3_library"><a class="anchor" href="#_using_the_boto3_library"></a>Using the boto3 library</h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_internals"><a class="anchor" href="#_internals"></a>Internals</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>A data connection is a Secret.
-If you inspect the created Secret, you will see something similar to this definition:</p>
+<p>You can set these values by using a web form in the RHODS dashboard, as you will learn in the exercise.</p>
+</div>
+<div class="paragraph">
+<p>Although the naming of these variables suggests the use of AWS S3, these values are only environment variables, such you decide how you use them in your notebooks.
+You can use them to connect to systems such as OpenShift Data Foundation, IBM Cloud Object Storage, and AWS S3.</p>
+</div>
+<div class="paragraph">
+<p>If you inspect the Secret object associated with a data connection, then you should see something similar to this definition:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -325,22 +247,236 @@ metadata:
   labels:
     opendatahub.io/dashboard: "true"
     opendatahub.io/managed: "true"
-  name: aws-connection-my-first-data-connection</code></pre>
+  name: aws-connection-my-first-data-connection
+...</code></pre>
 </div>
 </div>
-<div class="admonitionblock warning">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If no data connection is created, then developers can still test the connection by hardcoding the S3 config values into the notebook, but that, of course, is a security risk, as s3 config can be easily leaked to the git repository.</p>
+<p>Although the <code>opendatahub.io/connection-type</code> annotation indicates supports for different types of data connections, the RHODS dashboard, for now, only allows the creation of S3 data connections.</p>
 </div>
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_the_data_connection_environment_variables"><a class="anchor" href="#_using_the_data_connection_environment_variables"></a>Using the Data Connection Environment Variables</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you associate a data connection to a workbench, RHODS injects the key/value pairs of the data connection as environment variables into the workbench container.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>RHODS does not open a connection from the workbench to AWS S3.
+You are responsible for reading and using the environment variables of the data connection in the notebook.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Typically, you should read the data connection variables and then use them to configure the connection to the storage system.
+For S3 storage, this can be done with the <code>boto3</code> library, as you will learn in the following exercise.</p>
+</div>
+<div class="paragraph">
+<p>After you are connected to S3, then you can start downloading the files required for data exploration or model training.</p>
+</div>
+<div class="paragraph">
+<p>Similarly, you should store your trained models in the S3 that corresponds to the data connection.
+In fact, storing your models in the data connection enables you to use Model Serving.
+Model Serving downloads the model files from S3 by using a data connection.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercise_getting_started_with_data_connections"><a class="anchor" href="#_exercise_getting_started_with_data_connections"></a>Exercise: Getting Started with Data Connections</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_create_a_workbench_with_a_data_connection"><a class="anchor" href="#_create_a_workbench_with_a_data_connection"></a>Create a Workbench with a Data connection</h3>
+<div class="paragraph">
+<p>From a data science project page, click <b class="button">Create Workbench</b>.</p>
+</div>
+<div class="paragraph">
+<p>Select the btn <code>Standard Data Science</code> notebook image for this workbench.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Make sure you use the <code>Standard Data Science</code> image.
+This image contains the <code>boto3</code> library, required for the second part of the exercise.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Alternatively, you can add a data connection to an existing workbench by editing the workbench.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Scroll down to the <b class="button">Data connections</b> section and select <b class="button">Create data connection</b>.
+This option creates the data connection and assigns it to the workbench that you are creating.
+Complete the form with your S3 connection parameters.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dataconnection-new.png" alt="dataconnection new">
+</div>
+</div>
+<div class="paragraph">
+<p>Save the workbench.
+In the data science project page, notice the newly created data connection, which is associated with the workbench.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dataconnection-list.png" alt="dataconnection list">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The association between data connections and workbenches follows a <code>1 to N</code> schema:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The same data connection can be used in multiple workbenches.</p>
+</li>
+<li>
+<p>A workbench can have only one data connection.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_edit_a_data_connection"><a class="anchor" href="#_edit_a_data_connection"></a>Edit a Data connection</h3>
+<div class="paragraph">
+<p>Next, click the <b class="button">⋮</b> button of the data connection, then click <b class="button">Edit data connection</b>.
+Note that you can assign more workbenches to the same data connection.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dataconnection-edit.png" alt="dataconnection edit">
+</div>
+</div>
+<div class="paragraph">
+<p>You do not need to make any changes.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can use the data science project page to create new data connections and assign them to existing workspaces.</p>
+</div>
+<div class="paragraph">
+<p>You can also use this page to delete data connections.
+Deleting a data connection that is assigned to a workbench results in a workbench restart.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_the_data_connection_in_a_workbench"><a class="anchor" href="#_using_the_data_connection_in_a_workbench"></a>Using the Data Connection in a Workbench</h3>
+<div class="paragraph">
+<p>After you have created the data connection and assigned it to your workbench, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Clone the demo code.</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Open the workbench JuypterLab URL.</p>
+</li>
+<li>
+<p>If prompted, log in with your Red&#160;Hat OpenShift credentials.</p>
+</li>
+<li>
+<p>Click <b class="button">Allow selected permissions</b> to grant the workbench access to your data science project.</p>
+</li>
+<li>
+<p>Click the <b class="button">Git</b> icon in the left sidebar of JupyterLab.</p>
+</li>
+<li>
+<p>Click <b class="button">Clone a repository</b>.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/git-clone-menu.png" alt="git clone menu" width="40%">
+</div>
+</div>
+</li>
+<li>
+<p>Enter <a href="https://github.com/RedHatQuickCourses/rhods-intro.git" class="bare">https://github.com/RedHatQuickCourses/rhods-intro.git</a> as the repository, and click <b class="button">Clone</b>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Open and run the notebook.</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the file explorer, navigate to the <code>rhods-intro/notebooks/data-connections</code> directory.</p>
+</li>
+<li>
+<p>Open the <code>exercise.ipynb</code> notebook.</p>
+</li>
+<li>
+<p>Follow the instructions in the notebook.
+Click the first cell, then press <b class="button">Shift+Enter</b> to execute the cell and move to the next one.
+Next, execute and review the rest of the cells.
+Keep pressing <b class="button">Shift+Enter</b> until you reach the bottom.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div>
