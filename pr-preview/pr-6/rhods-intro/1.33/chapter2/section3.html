@@ -186,7 +186,7 @@ You can use the external storage to store your datasets and your trained models.
 <p>Do not confuse data connections with cluster storage.</p>
 </div>
 <div class="paragraph">
-<p>Cluster storage provides persistent storage for your workbench, by using PVCs in your cluster.
+<p>Cluster storage provides persistent storage for your workbench, by using PersistentVolumeClaim (PVC) objects in your cluster.
 Cluster storage is used to persist your progress in the workbench.</p>
 </div>
 <div class="paragraph">
@@ -224,7 +224,7 @@ The secret associated with each data connection includes these key/value pairs:<
 <p>You can set these values by using a web form in the RHODS dashboard, as you will learn in the exercise.</p>
 </div>
 <div class="paragraph">
-<p>Although the naming of these variables suggests the use of AWS S3, these values are only environment variables, as such you decide how you use them in your notebooks.
+<p>Although the naming of these variables suggests the use of AWS S3, these values are only environment variables, so you decide how you use them in your notebooks.
 You can use them to connect to systems such as OpenShift Data Foundation, IBM Cloud Object Storage, and AWS S3.</p>
 </div>
 <div class="paragraph">
