@@ -164,13 +164,13 @@ b. If prompted, log in with your Red{nbsp}Hat OpenShift credentials.
 
 c. Click btn:[Allow selected permissions] to grant the workbench access to your data science project.
 
-e. Click the btn:[Git] icon in the left sidebar of JupyterLab.
+d. Click the btn:[Git] icon in the left sidebar of JupyterLab.
 
-f. Click btn:[Clone a repository].
+e. Click btn:[Clone a repository].
 +
 image::git-clone-menu.png[width=40%,align="center"]
 
-g. Enter https://github.com/RedHatQuickCourses/rhods-intro.git as the repository, and click btn:[Clone].
+f. Enter https://github.com/RedHatQuickCourses/rhods-intro.git as the repository, and click btn:[Clone].
 
 2. *Open and run the notebook.*
 
@@ -182,4 +182,3 @@ c. Follow the instructions in the notebook.
 Click the first cell, then press btn:[Shift+Enter] to execute the cell and move to the next one.
 Next, execute and review the rest of the cells.
 Keep pressing btn:[Shift+Enter] until you reach the bottom.
-
