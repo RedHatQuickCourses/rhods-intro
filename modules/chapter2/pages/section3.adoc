@@ -24,7 +24,7 @@ You can use the external storage to store your datasets and your trained models.
 ====
 Do not confuse data connections with cluster storage.
 
-Cluster storage provides persistent storage for your workbench, by using PVCs in your cluster.
+Cluster storage provides persistent storage for your workbench, by using PersistentVolumeClaim (PVC) objects in your cluster.
 Cluster storage is used to persist your progress in the workbench.
 
 Data connections are a set of configuration values that you can use to connect to storage systems.
@@ -42,7 +42,7 @@ The secret associated with each data connection includes these key/value pairs:
 
 You can set these values by using a web form in the RHODS dashboard, as you will learn in the exercise.
 
-Although the naming of these variables suggests the use of AWS S3, these values are only environment variables, as such you decide how you use them in your notebooks.
+Although the naming of these variables suggests the use of AWS S3, these values are only environment variables, so you decide how you use them in your notebooks.
 You can use them to connect to systems such as OpenShift Data Foundation, IBM Cloud Object Storage, and AWS S3.
 
 If you inspect the Secret object associated with a data connection, then you should see something similar to this definition:
