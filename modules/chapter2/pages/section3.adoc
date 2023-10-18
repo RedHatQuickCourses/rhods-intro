@@ -42,7 +42,7 @@ The secret associated with each data connection includes these key/value pairs:
 
 You can set these values by using a web form in the RHODS dashboard, as you will learn in the exercise.
 
-Although the naming of these variables suggests the use of AWS S3, these values are only environment variables, such you decide how you use them in your notebooks.
+Although the naming of these variables suggests the use of AWS S3, these values are only environment variables, as such you decide how you use them in your notebooks.
 You can use them to connect to systems such as OpenShift Data Foundation, IBM Cloud Object Storage, and AWS S3.
 
 If you inspect the Secret object associated with a data connection, then you should see something similar to this definition:
@@ -88,7 +88,7 @@ For S3 storage, this can be done with the `boto3` library, as you will learn in 
 
 After you are connected to S3, then you can start downloading the files required for data exploration or model training.
 
-Similarly, you should store your trained models in the S3 that corresponds to the data connection.
+Similarly, you should store your trained models in the S3 bucket that corresponds to the data connection.
 In fact, storing your models in the data connection enables you to use Model Serving.
 Model Serving downloads the model files from S3 by using a data connection.
 
