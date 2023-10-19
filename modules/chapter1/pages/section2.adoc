@@ -7,7 +7,7 @@ The platform is designed to manage the complete lifecycle of AI/ML projects in t
 
 As the following diagram shows, RHODS is deployed as an operator, and includes several components to handle AI/ML development/training, automation pipelines, and model serving:
 
-image::architecture.svg[width=800px]
+image::architecture.svg[]
 
 The following are the main concepts and terminology as it relates to RHODS:
 
