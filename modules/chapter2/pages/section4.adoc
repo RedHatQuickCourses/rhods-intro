@@ -74,7 +74,7 @@ d. Enter the configuration values of your S3 connection.
 e. Click btn:[Create workbench] to finish the creation of the workbench and the data connection.
 
 
-3. Verify the connection of the workench in `intro-projects-a`.
+3. Verify the connection of the workbench in `intro-projects-a`.
 
 a. Open the workbench of the `intro-projects-a` project.
 
@@ -103,7 +103,7 @@ e. Enter `STUDENT_NAME` as the key, and your name as the value.
 f. Click btn:[Create workbench] to finish the creation of the workbench and the data connection.
 
 
-5. Verify the variable injected in the workench in `intro-projects-b`.
+5. Verify the variable injected in the workbench in `intro-projects-b`.
 
 a. Open the workbench of the `intro-projects-b` project.
 
@@ -129,7 +129,7 @@ Verify that both users have access to the `intro-projects-a` project.
 
 a. Navigate the `intro-projects-b` dashboard and click btn:[Permissions].
 
-b. Click btn:[Add user] and enter `user-4` as the user name.
+b. Click btn:[Add user] and enter `user-4` as the username.
 Verify that the btn:[Permission selector] is set to btn:[Edit] and click the btn:[✓] button.
 
 c. Log out and log back in with both `user-4` and `user-5` users.
