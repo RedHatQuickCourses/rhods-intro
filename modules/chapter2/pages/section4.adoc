@@ -10,7 +10,7 @@ In this exercise, you will practice the use of data science projects, permission
 To perform this exercise, ensure that your platform meets the following conditions:
 
 * The `data-scientists` user group exists in OpenShift.
-* The `user-4` and `user-5` users exist in OpenShift and are assigned to the `data-scientists` group.
+* The `user4` and `user5` users exist in OpenShift and are assigned to the `data-scientists` group.
 
 The identity provided of your demo platform already includes these users.
 To create the group, log in as an administrator user in OpenShift and then apply the https://github.com/RedHatQuickCourses/rhods-qc-apps/blob/ch02s04-lab/1.intro/chapter2/lab/group.yaml file.
@@ -28,7 +28,7 @@ https://github.com/RedHatQuickCourses/rhods-qc-apps/blob/ch02s04-lab/1.intro/cha
 
 == Specifications
 
-* Create two data science projects: `intro-projects-a` and `intro-projects-b`.
+* Create two data science projects as `user1`: `intro-projects-a` and `intro-projects-b`.
 
 * Create a workbench in `intro-projects-a`.
   - Use the `Standard Data Science` image.
@@ -44,7 +44,7 @@ https://github.com/RedHatQuickCourses/rhods-qc-apps/blob/ch02s04-lab/1.intro/cha
 
 * The `data-scientists` group must have edit permissions in `intro-projects-a`.
 
-* Only the `user-4` user must have edit permissions in `intro-projects-b`.
+* Only the `user4` user must have edit permissions in `intro-projects-b`.
 
 
 == Solution
@@ -122,17 +122,19 @@ a. Navigate the `intro-projects-a` dashboard and click btn:[Permissions].
 b. Click btn:[Add group] and enter `data-scientists` as the group name.
 Verify that the btn:[Permission selector] is set to btn:[Edit] and click the btn:[✓] button.
 
-c. Log out and log back in with both `user-4` and `user-5` users.
+c. Log out and log back in with both `user4` and `user5` users.
 Verify that both users have access to the `intro-projects-a` project.
 
 7. Set the project permissions of `intro-projects-b`.
 
-a. Navigate the `intro-projects-b` dashboard and click btn:[Permissions].
+a. Log out and log back in as `user1`.
 
-b. Click btn:[Add user] and enter `user-4` as the username.
+b. Navigate the `intro-projects-b` dashboard and click btn:[Permissions].
+
+c. Click btn:[Add user] and enter `user4` as the username.
 Verify that the btn:[Permission selector] is set to btn:[Edit] and click the btn:[✓] button.
 
-c. Log out and log back in with both `user-4` and `user-5` users.
-Verify that `user-4` can access the `intro-projects-b` project.
-Next, verify that `user-5` cannot access the `intro-projects-b` project.
+d. Log out and log back in with both `user4` and `user5` users.
+Verify that `user4` can access the `intro-projects-b` project.
+Next, verify that `user5` cannot access the `intro-projects-b` project.
 
