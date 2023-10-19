@@ -9,6 +9,7 @@ In this exercise, you will practice the use of data science projects, permission
 
 To perform this exercise, ensure that your platform meets the following conditions:
 
+* An S3 bucket.
 * The `data-scientists` user group exists in OpenShift.
 * The `user4` and `user5` users exist in OpenShift and are assigned to the `data-scientists` group.
 
