@@ -166,10 +166,13 @@
 <div class="ulist">
 <ul>
 <li>
+<p>An S3 bucket.</p>
+</li>
+<li>
 <p>The <code>data-scientists</code> user group exists in OpenShift.</p>
 </li>
 <li>
-<p>The <code>user-4</code> and <code>user-5</code> users exist in OpenShift and are assigned to the <code>data-scientists</code> group.</p>
+<p>The <code>user4</code> and <code>user5</code> users exist in OpenShift and are assigned to the <code>data-scientists</code> group.</p>
 </li>
 </ul>
 </div>
@@ -196,7 +199,7 @@ https://github.com/RedHatQuickCourses/rhods-qc-apps/blob/ch02s04-lab/1.intro/cha
 <div class="ulist">
 <ul>
 <li>
-<p>Create two data science projects: <code>intro-projects-a</code> and <code>intro-projects-b</code>.</p>
+<p>Create two data science projects as <code>user1</code>: <code>intro-projects-a</code> and <code>intro-projects-b</code>.</p>
 </li>
 <li>
 <p>Create a workbench in <code>intro-projects-a</code>.</p>
@@ -240,7 +243,7 @@ https://github.com/RedHatQuickCourses/rhods-qc-apps/blob/ch02s04-lab/1.intro/cha
 <p>The <code>data-scientists</code> group must have edit permissions in <code>intro-projects-a</code>.</p>
 </li>
 <li>
-<p>Only the <code>user-4</code> user must have edit permissions in <code>intro-projects-b</code>.</p>
+<p>Only the <code>user4</code> user must have edit permissions in <code>intro-projects-b</code>.</p>
 </li>
 </ul>
 </div>
@@ -372,7 +375,7 @@ You should see a hello message that includes your name.</p>
 Verify that the <b class="button">Permission selector</b> is set to <b class="button">Edit</b> and click the <b class="button">✓</b> button.</p>
 </li>
 <li>
-<p>Log out and log back in with both <code>user-4</code> and <code>user-5</code> users.
+<p>Log out and log back in with both <code>user4</code> and <code>user5</code> users.
 Verify that both users have access to the <code>intro-projects-a</code> project.</p>
 </li>
 </ol>
@@ -383,16 +386,19 @@ Verify that both users have access to the <code>intro-projects-a</code> project.
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
+<p>Log out and log back in as <code>user1</code>.</p>
+</li>
+<li>
 <p>Navigate the <code>intro-projects-b</code> dashboard and click <b class="button">Permissions</b>.</p>
 </li>
 <li>
-<p>Click <b class="button">Add user</b> and enter <code>user-4</code> as the username.
+<p>Click <b class="button">Add user</b> and enter <code>user4</code> as the username.
 Verify that the <b class="button">Permission selector</b> is set to <b class="button">Edit</b> and click the <b class="button">✓</b> button.</p>
 </li>
 <li>
-<p>Log out and log back in with both <code>user-4</code> and <code>user-5</code> users.
-Verify that <code>user-4</code> can access the <code>intro-projects-b</code> project.
-Next, verify that <code>user-5</code> cannot access the <code>intro-projects-b</code> project.</p>
+<p>Log out and log back in with both <code>user4</code> and <code>user5</code> users.
+Verify that <code>user4</code> can access the <code>intro-projects-b</code> project.
+Next, verify that <code>user5</code> cannot access the <code>intro-projects-b</code> project.</p>
 </li>
 </ol>
 </div>
