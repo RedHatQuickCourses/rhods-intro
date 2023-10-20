@@ -12,16 +12,18 @@ To perform this exercise, ensure that your platform meets the following conditio
 * An S3 bucket.
 * The `data-scientists` user group exists in OpenShift.
 * The `user4` and `user5` users exist in OpenShift and are assigned to the `data-scientists` group.
+* The `oc` CLI installed on your computer.
+Alternatively, you can use the OpenShift web console.
 
 The identity provided of your demo platform already includes these users.
-To create the group, log in as an administrator user in OpenShift and then apply the https://github.com/RedHatQuickCourses/rhods-qc-apps/blob/ch02s04-lab/1.intro/chapter2/lab/group.yaml file.
+To create the group, log in as an administrator user in OpenShift and then apply the https://raw.githubusercontent.com/RedHatQuickCourses/rhods-qc-apps/main/1.intro/chapter2/lab/group.yaml file.
 
 If you use the `oc` CLI in your computer, then you can run:
 
 [subs=+quotes]
 ----
 $ *oc create -f \
-https://github.com/RedHatQuickCourses/rhods-qc-apps/blob/ch02s04-lab/1.intro/chapter2/lab/group.yaml*
+https://raw.githubusercontent.com/RedHatQuickCourses/rhods-qc-apps/main/1.intro/chapter2/lab/group.yaml*
 ----
 
 // TODO adjust yaml URL after merging to main
@@ -36,12 +38,14 @@ https://github.com/RedHatQuickCourses/rhods-qc-apps/blob/ch02s04-lab/1.intro/cha
   - This workbench must be connected to the S3 bucket that is available in your demo platform.
   - Clone the https://github.com/RedHatQuickCourses/rhods-qc-apps repository in this workbench.
   - Execute the `rhods-qc-apps/1.intro/chapter2/lab/test_connection.ipynb` notebook in this workbench.
+  This notebook contains code to verify that the connection to S3.
 
 * Create a workbench in `intro-projects-b`.
   - Select any image for this workbench.
   - Pass your name in the `STUDENT_NAME` environment variable.
   - Clone the https://github.com/RedHatQuickCourses/rhods-qc-apps repository in this workbench.
   - Execute the `rhods-qc-apps/1.intro/chapter2/lab/test_env_vars.ipynb` notebook in this workbench.
+  This notebook contains code to read the environment variable.
 
 * The `data-scientists` group must have edit permissions in `intro-projects-a`.
 
@@ -81,10 +85,12 @@ a. Open the workbench of the `intro-projects-a` project.
 
 b. Log in to JupyterLab and accept the access form.
 
-c. Clone the https://github.com/RedHatQuickCourses/rhods-intro repository.
+c. Clone the https://github.com/RedHatQuickCourses/rhods-qc-apps repository.
 
 d. Navigate to `rhods-qc-apps/1.intro/chapter2/lab` and run the `test_connection.ipynb` notebook.
 You should see the buckets available in S3.
++
+image::lab-test-connection.png[]
 
 
 4. Create a workbench that receives the `STUDENT_NAME` environment variable in `intro-projects-b`.
@@ -100,6 +106,8 @@ d. Select btn:[Config Map] as the environment variable type.
 Then select btn:[Key/value].
 
 e. Enter `STUDENT_NAME` as the key, and your name as the value.
++
+image::lab-env-vars.png[]
 
 f. Click btn:[Create workbench] to finish the creation of the workbench and the data connection.
 
@@ -110,10 +118,12 @@ a. Open the workbench of the `intro-projects-b` project.
 
 b. Log in to JupyterLab and accept the access form.
 
-c. Clone the https://github.com/RedHatQuickCourses/rhods-intro repository.
+c. Clone the https://github.com/RedHatQuickCourses/rhods-qc-apps repository.
 
 d. Navigate to `rhods-qc-apps/1.intro/chapter2/lab` and run the `test_env_vars.ipynb` notebook.
 You should see a hello message that includes your name.
++
+image::lab-test-env-vars.png[]
 
 
 6. Set the project permissions of `intro-projects-a`.
