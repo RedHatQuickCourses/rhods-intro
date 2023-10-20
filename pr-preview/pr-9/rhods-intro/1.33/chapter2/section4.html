@@ -174,11 +174,15 @@
 <li>
 <p>The <code>user4</code> and <code>user5</code> users exist in OpenShift and are assigned to the <code>data-scientists</code> group.</p>
 </li>
+<li>
+<p>The <code>oc</code> CLI installed on your computer.
+Alternatively, you can use the OpenShift web console.</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
 <p>The identity provided of your demo platform already includes these users.
-To create the group, log in as an administrator user in OpenShift and then apply the <a href="https://github.com/RedHatQuickCourses/rhods-qc-apps/blob/ch02s04-lab/1.intro/chapter2/lab/group.yaml" class="bare">https://github.com/RedHatQuickCourses/rhods-qc-apps/blob/ch02s04-lab/1.intro/chapter2/lab/group.yaml</a> file.</p>
+To create the group, log in as an administrator user in OpenShift and then apply the <a href="https://raw.githubusercontent.com/RedHatQuickCourses/rhods-qc-apps/main/1.intro/chapter2/lab/group.yaml" class="bare">https://raw.githubusercontent.com/RedHatQuickCourses/rhods-qc-apps/main/1.intro/chapter2/lab/group.yaml</a> file.</p>
 </div>
 <div class="paragraph">
 <p>If you use the <code>oc</code> CLI in your computer, then you can run:</p>
@@ -186,7 +190,7 @@ To create the group, log in as an administrator user in OpenShift and then apply
 <div class="listingblock">
 <div class="content">
 <pre>$ <strong>oc create -f \
-https://github.com/RedHatQuickCourses/rhods-qc-apps/blob/ch02s04-lab/1.intro/chapter2/lab/group.yaml</strong></pre>
+https://raw.githubusercontent.com/RedHatQuickCourses/rhods-qc-apps/main/1.intro/chapter2/lab/group.yaml</strong></pre>
 </div>
 </div>
 </div>
@@ -215,7 +219,8 @@ https://github.com/RedHatQuickCourses/rhods-qc-apps/blob/ch02s04-lab/1.intro/cha
 <p>Clone the <a href="https://github.com/RedHatQuickCourses/rhods-qc-apps" class="bare">https://github.com/RedHatQuickCourses/rhods-qc-apps</a> repository in this workbench.</p>
 </li>
 <li>
-<p>Execute the <code>rhods-qc-apps/1.intro/chapter2/lab/test_connection.ipynb</code> notebook in this workbench.</p>
+<p>Execute the <code>rhods-qc-apps/1.intro/chapter2/lab/test_connection.ipynb</code> notebook in this workbench.
+This notebook contains code to verify that the connection to S3.</p>
 </li>
 </ul>
 </div>
@@ -234,7 +239,8 @@ https://github.com/RedHatQuickCourses/rhods-qc-apps/blob/ch02s04-lab/1.intro/cha
 <p>Clone the <a href="https://github.com/RedHatQuickCourses/rhods-qc-apps" class="bare">https://github.com/RedHatQuickCourses/rhods-qc-apps</a> repository in this workbench.</p>
 </li>
 <li>
-<p>Execute the <code>rhods-qc-apps/1.intro/chapter2/lab/test_env_vars.ipynb</code> notebook in this workbench.</p>
+<p>Execute the <code>rhods-qc-apps/1.intro/chapter2/lab/test_env_vars.ipynb</code> notebook in this workbench.
+This notebook contains code to read the environment variable.</p>
 </li>
 </ul>
 </div>
@@ -307,11 +313,16 @@ In the workbench creation page, enter the workbench name, select the workbench i
 <p>Log in to JupyterLab and accept the access form.</p>
 </li>
 <li>
-<p>Clone the <a href="https://github.com/RedHatQuickCourses/rhods-intro" class="bare">https://github.com/RedHatQuickCourses/rhods-intro</a> repository.</p>
+<p>Clone the <a href="https://github.com/RedHatQuickCourses/rhods-qc-apps" class="bare">https://github.com/RedHatQuickCourses/rhods-qc-apps</a> repository.</p>
 </li>
 <li>
 <p>Navigate to <code>rhods-qc-apps/1.intro/chapter2/lab</code> and run the <code>test_connection.ipynb</code> notebook.
 You should see the buckets available in S3.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/lab-test-connection.png" alt="lab test connection">
+</div>
+</div>
 </li>
 </ol>
 </div>
@@ -336,6 +347,11 @@ Then select <b class="button">Key/value</b>.</p>
 </li>
 <li>
 <p>Enter <code>STUDENT_NAME</code> as the key, and your name as the value.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/lab-env-vars.png" alt="lab env vars">
+</div>
+</div>
 </li>
 <li>
 <p>Click <b class="button">Create workbench</b> to finish the creation of the workbench and the data connection.</p>
@@ -354,11 +370,16 @@ Then select <b class="button">Key/value</b>.</p>
 <p>Log in to JupyterLab and accept the access form.</p>
 </li>
 <li>
-<p>Clone the <a href="https://github.com/RedHatQuickCourses/rhods-intro" class="bare">https://github.com/RedHatQuickCourses/rhods-intro</a> repository.</p>
+<p>Clone the <a href="https://github.com/RedHatQuickCourses/rhods-qc-apps" class="bare">https://github.com/RedHatQuickCourses/rhods-qc-apps</a> repository.</p>
 </li>
 <li>
 <p>Navigate to <code>rhods-qc-apps/1.intro/chapter2/lab</code> and run the <code>test_env_vars.ipynb</code> notebook.
 You should see a hello message that includes your name.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/lab-test-env-vars.png" alt="lab test env vars">
+</div>
+</div>
 </li>
 </ol>
 </div>
