@@ -1,3 +1,7 @@
-= Chapter 3
+= Jupyter Notebooks
 
-This is the home page of _Chapter 3_ in the *hello* quick course....
+This chapter introduces you to Jupyter notebooks, why they are considered a useful tool for data science, and how you can use them.
+
+Chapter goals:
+
+* Use Jupyter notebooks to execute and test code interactively
