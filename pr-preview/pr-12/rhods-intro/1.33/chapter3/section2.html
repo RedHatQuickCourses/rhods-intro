@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Creating, Importing and Collaborating on Notebooks :: Introduction to Red Hat OpenShift Data Science</title>
+    <link rel="prev" href="section1.html">
+    <link rel="next" href="../appendix/appendix.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenShift Data Science</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/rhods-intro/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header><div class="body">
+<div class="nav-container" data-component="rhods-intro" data-version="1.33">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../chapter1/index.html">Introduction to Red&#160;Hat OpenShift Data Science</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter1/section1.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter1/section2.html">Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter1/section3.html">Demo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter1/section4.html">Conclusion</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../chapter2/index.html">Working with Data Science Projects</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter2/section1.html">Data Science Projects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter2/section2.html">Workbenches</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter2/section3.html">Data Connections</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter2/section4.html">Lab</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Chapter 3</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section1.html">Section 1</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="section2.html">Git</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix A</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Introduction to Red Hat OpenShift Data Science</span>
+    <span class="version">1.33</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Introduction to Red Hat OpenShift Data Science</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1.33</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></li>
+    <li><a href="index.html">Chapter 3</a></li>
+    <li><a href="section2.html">Git</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Creating, Importing and Collaborating on Notebooks</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this section, you will learn how to create, import, and share notebooks by using a Git repository.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercise_creating_a_notebook"><a class="anchor" href="#_exercise_creating_a_notebook"></a>Exercise: Creating a Notebook</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In a new or an existing RHODS data science project, create a <code>Minimal Python</code> workbench.</p>
+</li>
+<li>
+<p>Open the JupyterLab interface of the notebook.</p>
+</li>
+<li>
+<p>Press <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd></span> to open a new launcher.</p>
+</li>
+<li>
+<p>In the <b class="button">Notebook</b> section, click <b class="button">Python 3.9</b>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/jupyter-notebook-create.png" alt="jupyter notebook create">
+</div>
+</div>
+<div class="paragraph">
+<p>JuypterLab creates a new <code>Untitiled.ipynb</code> notebook file.</p>
+</div>
+</li>
+<li>
+<p>Press <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>S</kbd></span> to save the notebook.
+Enter a name for the notebook and click <b class="button">Rename</b>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/jupyter-notebook-rename.png" alt="jupyter notebook rename">
+</div>
+</div>
+<div class="paragraph">
+<p>You have now created your first notebook.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Before creating a notebook, verify that your are at the directory where you wish to create the notebook.
+Use the JupyterLab file browser to navigate to the right directory.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercise_importing_a_notebook_from_git"><a class="anchor" href="#_exercise_importing_a_notebook_from_git"></a>Exercise: Importing a Notebook from Git</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the same JupyterLab window, click the Git icon.</p>
+</li>
+<li>
+<p>Click <b class="button">Clone a repository</b>.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/git-clone-menu.png" alt="git clone menu" width="40%">
+</div>
+</div>
+</li>
+<li>
+<p>Enter <a href="https://github.com/RedHatQuickCourses/rhods-qc-apps" class="bare">https://github.com/RedHatQuickCourses/rhods-qc-apps</a> as the repository, and click <b class="button">Clone</b>.</p>
+</li>
+<li>
+<p>Navigate to any of the subdirectories of <code>rhods-qc-apps</code> and double click a notebook file to open it.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercise_creating_a_notebook_in_a_git_repository"><a class="anchor" href="#_exercise_creating_a_notebook_in_a_git_repository"></a>Exercise: Creating a Notebook in a Git Repository</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a public GitHub repository with your GitHub account.
+Refer to <a href="https://docs.github.com/en/get-started/quickstart/create-a-repo" class="bare">https://docs.github.com/en/get-started/quickstart/create-a-repo</a> if you need help with this step.</p>
+</li>
+<li>
+<p>In the same JupyterLab window, click the Git icon.</p>
+</li>
+<li>
+<p>Click <b class="button">Clone a repository</b>.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/git-clone-menu.png" alt="git clone menu" width="40%">
+</div>
+</div>
+</li>
+<li>
+<p>Enter the URL of your Git repository and click <b class="button">Clone</b>.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/git-clone-modal.png" alt="git clone modal">
+</div>
+</div>
+</li>
+<li>
+<p>In the file browser, navigate to the repository directory.</p>
+</li>
+<li>
+<p>In this directory, create a notebook file called <code>hello.ipynb</code>.
+You can follow the steps given in the first exercise.</p>
+</li>
+<li>
+<p>Add the following code in the first cell:</p>
+<div class="listingblock">
+<div class="content">
+<pre>print("Hello world")</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Press <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Enter</kbd></span> to execute the cell.
+Your notebook should display as follows:</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/hello-world-notebook.png" alt="hello world notebook">
+</div>
+</div>
+</li>
+<li>
+<p>Press <b class="button">Ctrl+S</b> to save the notebook.
+Alternatively, you can click <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Save Notebook</b></span>.</p>
+</li>
+<li>
+<p>Click the Git tab in the side bar.
+Git displays the newly added file:</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/git-untracked-file.png" alt="git untracked file">
+</div>
+</div>
+</li>
+<li>
+<p>Stage the <code>hello.ipynb</code> file.
+Right click the file and click <b class="button">Track</b>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/git-track-file.png" alt="git track file">
+</div>
+</div>
+<div class="paragraph">
+<p>The file is now staged.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/git-file-staged.png" alt="git file staged">
+</div>
+</div>
+</li>
+<li>
+<p>Enter the commit message and the description at the bottom, and click <b class="button">Commit</b>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/git-commit-changes.png" alt="git commit changes">
+</div>
+</div>
+<div class="paragraph">
+<p>At this point, JupyterLab prompts for the committer information.
+Enter your name and email.</p>
+</div>
+</li>
+<li>
+<p>Push your changes to GitHub.
+Click the <b class="button">up arrow cloud</b> icon at the top.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/git-push-icon.png" alt="git push icon">
+</div>
+</div>
+<div class="paragraph">
+<p>At this point, JupyterLab requires you to authenticate into GitHub.
+Enter your GitHub username and token.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/jupyter-git-credentials.png" alt="jupyter git credentials">
+</div>
+</div>
+</li>
+<li>
+<p>Return to GitHub and verify that your repository contains the <code>hello.ipynb</code> file.
+Notice that GitHub can render the notebook in view-only mode.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pulling_changes"><a class="anchor" href="#_pulling_changes"></a>Pulling Changes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To pull changes from a remote repository, you can use the <b class="button">down arrow cloud</b> icon.</p>
+</div>
+<div class="paragraph">
+<p>If you have uncommitted changes in your workbench, then you might see a message indicating that your changes forbid pulling the changes, as follows:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/git-forbid-changes.png" alt="git forbid changes">
+</div>
+</div>
+<div class="paragraph">
+<p>To solve this problem, commit your changes in the workbench before pulling.</p>
+</div>
+<div class="paragraph">
+<p>After you have committed your changes in the workbench, you might still find problems.
+For example, if the remote and the local branches have diverged, then you must configure the git strategy to reconcile the branches.
+Open a terminal and run the following command to configure Git to merge branches:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>git config pull.rebase false</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, you might occasionally find conflicts if multiple contributors are working on the same branch.
+In that case, JupyterLab opens the <em>diff view</em>, which allows you to view the differences and solve the conflicts.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/git-diff-view.png" alt="git diff view">
+</div>
+</div>
+<div class="paragraph">
+<p>After you have solved the conflicts, click the <b class="button">Mark as resolved</b> button at the top right.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="section1.html">Section 1</a></span>
+  <span class="next"><a href="../appendix/appendix.html">Appendix A</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Demo :: Introduction to Red Hat OpenShift Data Science</title>
+    <link rel="prev" href="section2.html">
+    <link rel="next" href="section4.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenShift Data Science</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/rhods-intro/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header><div class="body">
+<div class="nav-container" data-component="rhods-intro" data-version="1.33">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Introduction to Red&#160;Hat OpenShift Data Science</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section1.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section2.html">Architecture</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="section3.html">Demo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section4.html">Conclusion</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../chapter2/index.html">Working with Data Science Projects</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter2/section1.html">Data Science Projects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter2/section2.html">Workbenches</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter2/section3.html">Data Connections</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter2/section4.html">Lab</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../chapter3/index.html">Chapter 3</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter3/section1.html">Section 1</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter3/section2.html">Git</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix A</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Introduction to Red Hat OpenShift Data Science</span>
+    <span class="version">1.33</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Introduction to Red Hat OpenShift Data Science</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1.33</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></li>
+    <li><a href="index.html">Introduction to Red&#160;Hat OpenShift Data Science</a></li>
+    <li><a href="section3.html">Demo</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Demo</h1>
+<div class="paragraph">
+<p>In this exercise, you will use RHODS to train and evaluate a simple machine learning model, by using JupyterLab and other common ML libraries.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Open the RHODS dashboard.</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In a web browser, navigate to the Web Console of your Red&#160;Hat OpenShift cluster, and log in.</p>
+</li>
+<li>
+<p>Click the applications menu in the top navigation bar of OpenShift,
+then click <b class="button">Red&#160;Hat OpenShift Data Science</b>.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/ocp-top-bar.png" alt="ocp top bar" width="35%">
+</div>
+</div>
+</li>
+<li>
+<p>If prompted, log in with your Red&#160;Hat OpenShift credentials.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Configure the workbench of your data science project.</strong></p>
+<div class="paragraph">
+<p>A RHODS workbench is a containerized application that includes commonly used data science tools and libraries, such as JupyterLab, TensorFlow, and PyTorch.
+RHODS provides you with a collection of workbench container images, each one preconfigured and tailored to a specific data science use case.</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click <b class="button">Data Science Projects</b> in the left sidebar.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/rhods-side-menu.png" alt="rhods side menu" width="35%">
+</div>
+</div>
+</li>
+<li>
+<p>Create a data science project.
+Click <b class="button">Create data science project</b>.
+In the modal window that opens, enter a name and click <b class="button">Create</b>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you are using Red&#160;Hat OpenShift from the developer sandbox, then a project is already created for you.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Click the newly created project.</p>
+</li>
+<li>
+<p>In the project page, click <b class="button">Create workbench</b> and complete the form with the following values.</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>intro</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Notebook image</strong> - Image selection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TensorFlow</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Notebook image</strong> - Version selection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the recommended option</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Do not modify the default values of the rest of the fields.</p>
+</div>
+</li>
+<li>
+<p>Click <b class="button">Create workbench</b>.
+RHODS creates the workbench and the associated persistent storage.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/created-workbench.png" alt="created workbench" width="90%">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Open the workbench and clone the demo code.</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Make sure that the <code>intro</code> workbench is running and click <b class="button">Open</b>.</p>
+</li>
+<li>
+<p>If prompted, log in with your Red&#160;Hat OpenShift credentials.</p>
+</li>
+<li>
+<p>Click <b class="button">Allow selected permissions</b> to grant the workbench access to your data science project.</p>
+</li>
+<li>
+<p>Verify that the JupyterLab interface opens in a new browser tab.</p>
+</li>
+<li>
+<p>Click the <b class="button">Git</b> icon in the left sidebar.</p>
+</li>
+<li>
+<p>Click <b class="button">Clone a repository</b>.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/git-clone-menu.png" alt="git clone menu" width="40%">
+</div>
+</div>
+</li>
+<li>
+<p>Enter <a href="https://github.com/RedHatQuickCourses/rhods-intro.git" class="bare">https://github.com/RedHatQuickCourses/rhods-intro.git</a> as the repository, and click <b class="button">Clone</b>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Open and run the notebook.</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the file explorer, navigate to the <code>rhods-intro/notebooks/intro-demo</code> directory.</p>
+</li>
+<li>
+<p>To open the notebook, double <code>notebook.ipynb</code>.
+The notebook include instructions and code.</p>
+</li>
+<li>
+<p>Click the first cell, then press <b class="button">Shift+Enter</b> to execute the cell and move to the next one.</p>
+</li>
+<li>
+<p>Execute and review the rest of the cells.
+Keep pressing <b class="button">Shift+Enter</b> until you reach the bottom.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Run the <code>intro-text-generation</code> notebook</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the data science project dashboard, create a workbench with the default image for PyTorch.</p>
+</li>
+<li>
+<p>In the new workbench, open JupyterLab and clone the <a href="https://github.com/RedHatQuickCourses/rhods-intro.git" class="bare">https://github.com/RedHatQuickCourses/rhods-intro.git</a> repository as you did in the previous step.</p>
+</li>
+<li>
+<p>Open the <code>rhods-intro/intro-text-generation/notebook.ipynb</code> notebook in JupyterLab and execute the steps.
+The instructions are embedded in the notebook.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="section2.html">Architecture</a></span>
+  <span class="next"><a href="section4.html">Conclusion</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
