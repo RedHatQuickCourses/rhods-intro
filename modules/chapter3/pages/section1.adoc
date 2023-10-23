@@ -133,6 +133,7 @@ To push (and pull) changes, use the cloud icons at the top.
 image::jupyter-git-push.png[]
 
 At this point, JupyterLab might prompt you to enter your Git credentials.
+You can select the btn:[Save my login temporarily] option to cache the credentials in the workbench.
 
 image::jupyter-git-credentials.png[]
 
