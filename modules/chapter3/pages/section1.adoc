@@ -1,3 +1,143 @@
-= Section 1
+= Introduction
 
-This is _Section 1_ of _Chapter 3_ in the *hello* quick course....
+A Jupyter notebook is a web-based application that allows users to interactively create live documents that contain narrative text, executable code, and visualizations.
+Jupyter notebooks have become a popular tool for data scientists who work in data science and machine learning projects.
+
+// Concepts
+To fully understand the Jupyter ecosystem, you must understand the following three concepts:
+
+Notebook file::
+A notebook file, also called _Jupyter notebook_, or just _notebook_, is a file that contains code and multimedia content, including text, images, and audio.
+This files typically use the `.ipynb` extension.
++
+A notebook contains cells.
+These cells can contain either Markdown or executable code.
+
+JupyterLab::
+JupyterLab is the execution environment that runs the notebook files.
+It exposes a web interface for you to visualize, edit and execute the notebooks on a web browser.
++
+[NOTE]
+====
+The JupyterLab predecessor was called _Jupyter Notebook_.
+It also provided a notebook execution environment and a web interface.
+
+Note that the naming of the classic Jupyter Notebook environment can lead to confusion, because the _Jupyter notebook_ term can also refer to a notebook file.
+====
++
+There are many ways to run an execution environment for notebooks.
+You can install JuypterLab with `pip` and run it on your computer.
+You can use the JuypterLab instances included in the RHODS workspaces.
+You can use online notebook execution environments, such as Binder, Kaggle, or Google Colab.
+
+Project Jupyter::
+This is the umbrella open source project that defines the notebook file format and develops and maintains the JuypterLab and the Jupyter Notebook environments.
+
+Most of the workbench images that RHODS provides include JuypterLab.
+
+// Describe Jupyter Notebooks and why is it useful?
+// What is a Jupyter notebook? Why is it popular?
+Jupyter notebooks are popular because they provide an interactive and flexible working environment for experimentation, training, documentation, and analysis.
+Notebooks integrate with many popular libraries of the data science ecosystem, which enable notebooks to combine rich text with executable code examples, and visualizations.
+
+The versatility of Juypter notebooks makes them ideal for a wide range of users.
+For data scientists and researchers, these features enable them to easily analyze data, and to produce reproducible and shareable work and experiments.
+For educators, Juypter notebooks are a powerful tool to create hands-on content, which can combine narrative with executable examples.
+
+== Cells
+
+A notebook is made of blocks, called _cells_.
+Cells can be of two types:
+
+Markdown cells::
+These cells contain Markdown content and are intended to add rich text to the notebook.
+
+Code cells::
+These cells contain executable code.
+JuypterLab includes support for cells that run Python code, but you can add other execution environments.
+These environments are called _kernels_.
+
+The exercise bellow covers cells in more detail.
+
+== Kernels
+
+In the context of JuypterLab (and Jupyter Notebook), a kernel is the process that runs the code cells in a notebook.
+A kernel determines the language that you can execute in a notebook, which by default is Python.
+
+[NOTE]
+====
+Kernels do not execute markdown cells.
+====
+
+JupyterLab includes a Python kernel, called https://docs.jupyter.org/en/latest/projects/kernels.html#term-ipykernel[ipykernel].
+This is the default kernel in JuypterLab, and depends on IPython, an interactive Python shell.
+
+If you wish to create notebooks that contain code cells in other languages, you can explore the https://github.com/jupyter/jupyter/wiki/Jupyter-kernels[Kernels List].
+Many of these kernels are actively maintained by the Juypter community.
+
+You can interact with kernels without JupyterLab to create your own notebook environments.
+For example, the Python extension of VSCodium supports Juypter notebooks without installing JuypterLab.
+Instead, VSCodium interacts with ipykernel.
+
+
+== Exercise: Exploring Juypter Notebooks
+
+To continue learning about notebooks, open RHODS.
+
+1. In a new or an existing data science project, create a `Minimal Python` workbench.
+
+2. Open the notebook and clone the https://github.com/RedHatQuickCourses/rhods-qc-apps repository.
+
+3. Open the `1.intro/chapter3/notebooks-intro.ipynb` notebook and follow the instructions.
+
+
+== Exercise: Opening Terminals
+
+You can also open terminals into the workbench container via JupyterLab.
+
+1. Open the workbench from the previous exercise.
+You can also create a new one.
+
+2. On the btn:[Launcher] tab, click the btn:[Terminal] card.
+If the launcher tab is not open, you can open a new launcher by clicking the btn:[+] tab.
++
+image::jupyter-terminal.png[]
+
+3. A new terminal opens:
++
+image::jupyter-terminal-open.png[]
+
+
+== Working with Git
+
+You have previously used JuypterLab to clone repositories in your workbench.
+You can also commit and push your changes to your remote repository.
+
+After you have cloned the repository, the Git tab in JuypterLab displays information about the current repository, including the branch, the current changes and the history.
+
+image::jupyter-git.png[]
+
+If you make any changes, the Git card displays them:
+
+image::jupyter-git-changes.png[]
+
+You can use the btn:[+] icon in this area to stage your changes.
+
+image::jupyter-git-stage.png[]
+
+You can enter the commit message and the description at the bottom, and click btn:[Commit].
+At this point, JupyterLab might prompt you to enter your name and email.
+
+To push (and pull) changes, use the cloud icons at the top.
+
+image::jupyter-git-push.png[]
+
+At this point, JupyterLab might prompt you to enter your Git credentials.
+You can select the btn:[Save my login temporarily] option to cache the credentials in the workbench.
+
+image::jupyter-git-credentials.png[]
+
+[NOTE]
+====
+You can also work with Git by opening a terminal in JuypterLab and using the `git` CLI.
+====
