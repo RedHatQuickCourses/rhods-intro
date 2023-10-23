@@ -91,10 +91,10 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="index.html">Chapter 3</a>
+    <a class="nav-link" href="index.html">Jupyter Notebooks</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="section1.html">Section 1</a>
+    <a class="nav-link" href="section1.html">Introduction</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="section2.html">Git</a>
@@ -139,7 +139,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></li>
-    <li><a href="index.html">Chapter 3</a></li>
+    <li><a href="index.html">Jupyter Notebooks</a></li>
     <li><a href="section2.html">Git</a></li>
   </ul>
 </nav>
@@ -154,6 +154,24 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>In this section, you will learn how to create, import, and share notebooks by using a Git repository.</p>
+</div>
+<div class="paragraph">
+<p>The RHODS workbench images add the  <a href="https://github.com/jupyterlab/jupyterlab-git">Git</a> extension to JupyterLab.
+This extension adds graphical controls to interact with Git repositories via the JuypterLab interface.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you prefer the command line, you can open a terminal and work directly with the <code>git</code> CLI.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -179,7 +197,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>JuypterLab creates a new <code>Untitiled.ipynb</code> notebook file.</p>
+<p>JuypterLab creates a new <code>Untitled.ipynb</code> notebook file.</p>
 </div>
 </li>
 <li>
@@ -201,7 +219,7 @@ Enter a name for the notebook and click <b class="button">Rename</b>.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Before creating a notebook, verify that your are at the directory where you wish to create the notebook.
+<p>Before creating a notebook, verify that your are at the directory where you wish to create the notebook file.
 Use the JupyterLab file browser to navigate to the right directory.</p>
 </div>
 </td>
@@ -249,7 +267,8 @@ Use the JupyterLab file browser to navigate to the right directory.</p>
 Refer to <a href="https://docs.github.com/en/get-started/quickstart/create-a-repo" class="bare">https://docs.github.com/en/get-started/quickstart/create-a-repo</a> if you need help with this step.</p>
 </li>
 <li>
-<p>In the same JupyterLab window, click the Git icon.</p>
+<p>Return to the JupyterLab window that you have used in the previous exercise.
+Click the Git icon.</p>
 </li>
 <li>
 <p>Click <b class="button">Clone a repository</b>.</p>
@@ -272,13 +291,13 @@ Refer to <a href="https://docs.github.com/en/get-started/quickstart/create-a-rep
 </li>
 <li>
 <p>In this directory, create a notebook file called <code>hello.ipynb</code>.
-You can follow the steps given in the first exercise.</p>
+You can follow the steps given in the first exercise of this page.</p>
 </li>
 <li>
 <p>Add the following code in the first cell:</p>
 <div class="listingblock">
 <div class="content">
-<pre>print("Hello world")</pre>
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">print("Hello world")</code></pre>
 </div>
 </div>
 </li>
@@ -401,7 +420,7 @@ In that case, JupyterLab opens the <em>diff view</em>, which allows you to view 
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="section1.html">Section 1</a></span>
+  <span class="prev"><a href="section1.html">Introduction</a></span>
   <span class="next"><a href="../appendix/appendix.html">Appendix A</a></span>
 </nav>
 </article>
