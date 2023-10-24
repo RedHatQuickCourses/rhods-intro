@@ -1,3 +1,187 @@
-= Section 2
+= Creating, Importing and Collaborating on Notebooks
+:navtitle: Collaborating
 
-This is _Section 2_ of _Chapter 3_ in the *hello* quick course....
+In this section, you will learn how to create, import, and share notebooks by using a Git repository.
+
+The RHODS workbench images add the  https://github.com/jupyterlab/jupyterlab-git[Git] extension to JupyterLab.
+This extension adds graphical controls to interact with Git repositories via the JuypterLab interface.
+
+[NOTE]
+====
+Alternatively, you can manage your repositories by using the `git` CLI, by opening a terminal in JuypterLab.
+Using the CLI can be useful for advanced Git commands or if you prefer a command-line interface.
+
+However, bear in mind that the Git extension integrates in the JuypterLab user interface, which can improve the efficiency of your workflow.
+The Git extension might be also suitable for users who are not familiar with the syntax of Git commands.
+
+After all, RHODS offers two Git interfaces at your disposal, and you do not need to choose one or the other.
+In most cases, it is beneficial to integrate both options into your workflow and use the one that better adjusts to your preferences at each moment.
+====
+
+== Collaborating with Git
+
+Version control systems, and in particular, Git, foster collaboration in the following ways:
+
+* Multiple users can work on the same code base at the same time.
+* Users can work in features or fixes by using branches, to reduce conflicts with the main development branch.
+* Users can propose, review, and discuss changes by using pull requests.
+
+The collaboration and collective experience of developers, companies, and open sources communities has resulted in sets of good practices and rules called _Git workflows_.
+These workflows define how teams should work together and coordinate by using Git features, such as branches and pull requests.
+Some of these workflows are:
+
+* https://docs.github.com/en/get-started/quickstart/github-flow[GitHub Flow]
+* https://nvie.com/posts/a-successful-git-branching-model/[Git Flow]
+* https://trunkbaseddevelopment.com/[Trunk-based Development]
+
+
+
+== Exercise: Creating a Notebook
+
+1. In a new or an existing RHODS data science project, create a `Minimal Python` workbench.
+
+2. Open the JupyterLab interface of the notebook.
+
+3. Press kbd:[Ctrl+Shift+L] to open a new launcher.
+
+4. In the btn:[Notebook] section, click btn:[Python 3.9].
++
+image::jupyter-notebook-create.png[]
++
+JuypterLab creates a new `Untitled.ipynb` notebook file.
+
+5. Press kbd:[Ctrl+S] to save the notebook.
+Enter a name for the notebook and click btn:[Rename].
++
+image::jupyter-notebook-rename.png[]
++
+You have now created your first notebook.
++
+[IMPORTANT]
+====
+Before creating a notebook, verify that your are at the directory where you wish to create the notebook file.
+Use the JupyterLab file browser to navigate to the right directory.
+====
+
+
+== Exercise: Importing a Notebook from Git
+
+1. In the same JupyterLab window, click the Git icon.
+
+2. Click btn:[Clone a repository].
++
+image::git-clone-menu.png[width=40%,align="center"]
+
+3. Enter https://github.com/RedHatQuickCourses/rhods-qc-apps as the repository, and click btn:[Clone].
+
+4. Navigate to any of the subdirectories of `rhods-qc-apps` and double click a notebook file to open it.
+
+
+== Exercise: Creating a Notebook in a Git Repository
+
+1. Create a public GitHub repository with your GitHub account.
+Refer to https://docs.github.com/en/get-started/quickstart/create-a-repo if you need help with this step.
+
+2. Return to the JupyterLab window that you have used in the previous exercise.
+Click the Git icon.
+
+3. Click btn:[Clone a repository].
++
+image::git-clone-menu.png[width=40%,align="center"]
+
+4. Enter the URL of your Git repository and click btn:[Clone].
++
+image::git-clone-modal.png[align="center"]
+
+5. In the file browser, navigate to the repository directory.
+
+6. In this directory, create a notebook file called `hello.ipynb`.
+You can follow the steps given in the first exercise of this page.
+
+7. Add the following code in the first cell:
++
+[source,python]
+----
+print("Hello world")
+----
+
+8. Press kbd:[Ctrl+Enter] to execute the cell.
+Your notebook should display as follows:
++
+image::hello-world-notebook.png[align="center"]
+
+9. Press btn:[Ctrl+S] to save the notebook.
+Alternatively, you can click menu:File[Save Notebook].
+
+10. Click the Git tab in the side bar.
+Git displays the newly added file:
++
+image::git-untracked-file.png[]
+
+11. Stage the `hello.ipynb` file.
+Right click the file and click btn:[Track].
++
+image::git-track-file.png[]
++
+The file is now staged.
++
+image::git-file-staged.png[]
+
+12. Enter the commit message and the description at the bottom, and click btn:[Commit].
++
+image::git-commit-changes.png[]
++
+At this point, JupyterLab prompts for the committer information.
+Enter your name and email.
++
+[NOTE]
+====
+You can also use a Git SSH key for authenticating, as explained in the https://docs.github.com/en/authentication/connecting-to-github-with-ssh[GitHub Docs].
+To inject the key into the workbench you have several options, which are out of the scope of this section:
+
+* Create a specific SSH key for your workbench and add to GitHub.
+* Upload your local SSH key into the workbench.
+* Create a kubernetes Secret with the SSH key, and mount the Secret in your workbench.
+You might require support from the cluster administrator for this option.
+====
+
+13. Push your changes to GitHub.
+Click the btn:[up arrow cloud] icon at the top.
++
+image::git-push-icon.png[]
++
+At this point, JupyterLab requires you to authenticate into GitHub.
+Enter your GitHub username and token.
++
+image::jupyter-git-credentials.png[]
+
+14. Return to GitHub and verify that your repository contains the `hello.ipynb` file.
+Notice that GitHub can render the notebook in view-only mode.
+
+
+== Pulling Changes
+
+To work with the latest version of the code, you should regularly pull changes from the remote repository.
+To pull changes from a remote repository, you can use the btn:[down arrow cloud] icon.
+
+If you have uncommitted changes in your workbench, then you might see a message indicating that your changes forbid pulling the changes, as follows:
+
+image::git-forbid-changes.png[]
+
+To solve this problem, commit your changes in the workbench before pulling.
+
+After you have committed your changes in the workbench, you might still find problems.
+For example, if the remote and the local branches have diverged, then you must configure the git strategy to reconcile the branches.
+Open a terminal and run the following command to configure Git to merge branches:
+
+[subs+=quotes]
+----
+git config pull.rebase false
+----
+
+Finally, you might occasionally find conflicts if multiple contributors are working on the same branch.
+In that case, JupyterLab opens the _diff view_, which allows you to view the differences and solve the conflicts.
+
+image::git-diff-view.png[]
+
+After you have solved the conflicts, click the btn:[Mark as resolved] button at the top right.
