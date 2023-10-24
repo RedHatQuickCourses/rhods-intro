@@ -26,23 +26,23 @@ Note that the naming of the classic Jupyter Notebook environment can lead to con
 ====
 +
 There are many ways to run an execution environment for notebooks.
-You can install JuypterLab with `pip` and run it on your computer.
-You can use the JuypterLab instances included in the RHODS workspaces.
+You can install JupyterLab with `pip` and run it on your computer.
+You can use the JupyterLab instances included in the RHODS workspaces.
 You can use online notebook execution environments, such as Binder, Kaggle, or Google Colab.
 
 Project Jupyter::
-This is the umbrella open source project that defines the notebook file format and develops and maintains the JuypterLab and the Jupyter Notebook environments.
+This is the umbrella open source project that defines the notebook file format and develops and maintains the JupyterLab and the Jupyter Notebook environments.
 
-Most of the workbench images that RHODS provides include JuypterLab.
+Most of the workbench images that RHODS provides include JupyterLab.
 
 // Describe Jupyter Notebooks and why is it useful?
 // What is a Jupyter notebook? Why is it popular?
 Jupyter notebooks are popular because they provide an interactive and flexible working environment for experimentation, training, documentation, and analysis.
 Notebooks integrate with many popular libraries of the data science ecosystem, which enable notebooks to combine rich text with executable code examples, and visualizations.
 
-The versatility of Juypter notebooks makes them ideal for a wide range of users.
+The versatility of Jupyter notebooks makes them ideal for a wide range of users.
 For data scientists and researchers, these features enable them to easily analyze data, and to produce reproducible and shareable work and experiments.
-For educators, Juypter notebooks are a powerful tool to create hands-on content, which can combine narrative with executable examples.
+For educators, Jupyter notebooks are a powerful tool to create hands-on content, which can combine narrative with executable examples.
 
 == Cells
 
@@ -54,14 +54,14 @@ These cells contain Markdown content and are intended to add rich text to the no
 
 Code cells::
 These cells contain executable code.
-JuypterLab includes support for cells that run Python code, but you can add other execution environments.
+JupyterLab includes support for cells that run Python code, but you can add other execution environments.
 These environments are called _kernels_.
 
 The exercise bellow covers cells in more detail.
 
 == Kernels
 
-In the context of JuypterLab (and Jupyter Notebook), a kernel is the process that runs the code cells in a notebook.
+In the context of JupyterLab (and Jupyter Notebook), a kernel is the process that runs the code cells in a notebook.
 A kernel determines the language that you can execute in a notebook, which by default is Python.
 
 [NOTE]
@@ -70,17 +70,17 @@ Kernels do not execute markdown cells.
 ====
 
 JupyterLab includes a Python kernel, called https://docs.jupyter.org/en/latest/projects/kernels.html#term-ipykernel[ipykernel].
-This is the default kernel in JuypterLab, and depends on IPython, an interactive Python shell.
+This is the default kernel in JupyterLab, and depends on IPython, an interactive Python shell.
 
 If you wish to create notebooks that contain code cells in other languages, you can explore the https://github.com/jupyter/jupyter/wiki/Jupyter-kernels[Kernels List].
-Many of these kernels are actively maintained by the Juypter community.
+Many of these kernels are actively maintained by the Jupyter community.
 
 You can interact with kernels without JupyterLab to create your own notebook environments.
-For example, the Python extension of VSCodium supports Juypter notebooks without installing JuypterLab.
+For example, the Python extension of VSCodium supports Jupyter notebooks without installing JupyterLab.
 Instead, VSCodium interacts with ipykernel.
 
 
-== Exercise: Exploring Juypter Notebooks
+== Exercise: Exploring Jupyter Notebooks
 
 To continue learning about notebooks, open RHODS.
 
@@ -110,10 +110,10 @@ image::jupyter-terminal-open.png[]
 
 == Working with Git
 
-You have previously used JuypterLab to clone repositories in your workbench.
+You have previously used JupyterLab to clone repositories in your workbench.
 You can also commit and push your changes to your remote repository.
 
-After you have cloned the repository, the Git tab in JuypterLab displays information about the current repository, including the branch, the current changes and the history.
+After you have cloned the repository, the Git tab in JupyterLab displays information about the current repository, including the branch, the current changes and the history.
 
 image::jupyter-git.png[]
 
@@ -139,5 +139,5 @@ image::jupyter-git-credentials.png[]
 
 [NOTE]
 ====
-You can also work with Git by opening a terminal in JuypterLab and using the `git` CLI.
+You can also work with Git by opening a terminal in JupyterLab and using the `git` CLI.
 ====

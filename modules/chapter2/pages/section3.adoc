@@ -2,7 +2,7 @@
 
 // What is a data connection? Why do you need it?
 In data science, AI, and ML environments, the availability of data is a key factor for the success of a project.
-For simple projects, where a relatively small amount of data is used, you can load data by uploading files to the workbench via JuypterLab, or by making database queries from your notebooks.
+For simple projects, where a relatively small amount of data is used, you can load data by uploading files to the workbench via JupyterLab, or by making database queries from your notebooks.
 
 More complex projects, however, involve larger datasets.
 Depending on the dataset size, uploading files or querying databases might not be a feasible solution.
@@ -158,7 +158,7 @@ After you have created the data connection and assigned it to your workbench, fo
 
 1. *Clone the demo code.*
 
-a. Open the workbench JuypterLab URL.
+a. Open the workbench JupyterLab URL.
 
 b. If prompted, log in with your Red{nbsp}Hat OpenShift credentials.
 
