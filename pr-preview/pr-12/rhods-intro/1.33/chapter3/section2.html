@@ -97,7 +97,7 @@
     <a class="nav-link" href="section1.html">Introduction</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="section2.html">Git</a>
+    <a class="nav-link" href="section2.html">Collaborating</a>
   </li>
 </ul>
   </li>
@@ -140,7 +140,7 @@
   <ul>
     <li><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></li>
     <li><a href="index.html">Jupyter Notebooks</a></li>
-    <li><a href="section2.html">Git</a></li>
+    <li><a href="section2.html">Collaborating</a></li>
   </ul>
 </nav>
 </div>
@@ -167,11 +167,59 @@ This extension adds graphical controls to interact with Git repositories via the
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you prefer the command line, you can open a terminal and work directly with the <code>git</code> CLI.</p>
+<p>Alternatively, you can manage your repositories by using the <code>git</code> CLI, by opening a terminal in JuypterLab.
+Using the CLI can be useful for advanced Git commands or if you prefer a command-line interface.</p>
+</div>
+<div class="paragraph">
+<p>However, bear in mind that the Git extension integrates in the JuypterLab user interface, which can improve the efficiency of your workflow.
+The Git extension might be also suitable for users who are not familiar with the syntax of Git commands.</p>
+</div>
+<div class="paragraph">
+<p>After all, RHODS offers two Git interfaces at your disposal, and you do not need to choose one or the other.
+In most cases, it is beneficial to integrate both options into your workflow and use the one that better adjusts to your preferences at each moment.</p>
 </div>
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_collaborating_with_git"><a class="anchor" href="#_collaborating_with_git"></a>Collaborating with Git</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Version control systems, and in particular, Git, foster collaboration in the following ways:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Multiple users can work on the same code base at the same time.</p>
+</li>
+<li>
+<p>Users can work in features or fixes by using branches, to reduce conflicts with the main development branch.</p>
+</li>
+<li>
+<p>Users can propose, review, and discuss changes by using pull requests.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The collaboration and collective experience of developers, companies, and open sources communities has resulted in sets of good practices and rules called <em>Git workflows</em>.
+These workflows define how teams should work together and coordinate by using Git features, such as branches and pull requests.
+Some of these workflows are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.github.com/en/get-started/quickstart/github-flow">GitHub Flow</a></p>
+</li>
+<li>
+<p><a href="https://nvie.com/posts/a-successful-git-branching-model/">Git Flow</a></p>
+</li>
+<li>
+<p><a href="https://trunkbaseddevelopment.com/">Trunk-based Development</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -351,6 +399,35 @@ Right click the file and click <b class="button">Track</b>.</p>
 <p>At this point, JupyterLab prompts for the committer information.
 Enter your name and email.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can also use a Git SSH key for authenticating, as explained in the <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">GitHub Docs</a>.
+To inject the key into the workbench you have several options, which are out of the scope of this section:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a specific SSH key for your workbench and add to GitHub.</p>
+</li>
+<li>
+<p>Upload your local SSH key into the workbench.</p>
+</li>
+<li>
+<p>Create a kubernetes Secret with the SSH key, and mount the Secret in your workbench.
+You might require support from the cluster administrator for this option.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p>Push your changes to GitHub.
@@ -382,7 +459,8 @@ Notice that GitHub can render the notebook in view-only mode.</p>
 <h2 id="_pulling_changes"><a class="anchor" href="#_pulling_changes"></a>Pulling Changes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To pull changes from a remote repository, you can use the <b class="button">down arrow cloud</b> icon.</p>
+<p>To work with the latest version of the code, you should regularly pull changes from the remote repository.
+To pull changes from a remote repository, you can use the <b class="button">down arrow cloud</b> icon.</p>
 </div>
 <div class="paragraph">
 <p>If you have uncommitted changes in your workbench, then you might see a message indicating that your changes forbid pulling the changes, as follows:</p>
