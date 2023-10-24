@@ -4,14 +4,14 @@
 In this section, you will learn how to create, import, and share notebooks by using a Git repository.
 
 The RHODS workbench images add the  https://github.com/jupyterlab/jupyterlab-git[Git] extension to JupyterLab.
-This extension adds graphical controls to interact with Git repositories via the JuypterLab interface.
+This extension adds graphical controls to interact with Git repositories via the JupyterLab interface.
 
 [NOTE]
 ====
-Alternatively, you can manage your repositories by using the `git` CLI, by opening a terminal in JuypterLab.
+Alternatively, you can manage your repositories by using the `git` CLI, by opening a terminal in JupyterLab.
 Using the CLI can be useful for advanced Git commands or if you prefer a command-line interface.
 
-However, bear in mind that the Git extension integrates in the JuypterLab user interface, which can improve the efficiency of your workflow.
+However, bear in mind that the Git extension integrates in the JupyterLab user interface, which can improve the efficiency of your workflow.
 The Git extension might be also suitable for users who are not familiar with the syntax of Git commands.
 
 After all, RHODS offers two Git interfaces at your disposal, and you do not need to choose one or the other.
@@ -48,7 +48,7 @@ Some of these workflows are:
 +
 image::jupyter-notebook-create.png[]
 +
-JuypterLab creates a new `Untitled.ipynb` notebook file.
+JupyterLab creates a new `Untitled.ipynb` notebook file.
 
 5. Press kbd:[Ctrl+S] to save the notebook.
 Enter a name for the notebook and click btn:[Rename].
