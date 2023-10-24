@@ -1,5 +1,5 @@
 = Creating, Importing and Collaborating on Notebooks
-:navtitle: Git
+:navtitle: Collaborating
 
 In this section, you will learn how to create, import, and share notebooks by using a Git repository.
 
@@ -8,8 +8,33 @@ This extension adds graphical controls to interact with Git repositories via the
 
 [NOTE]
 ====
-If you prefer the command line, you can open a terminal and work directly with the `git` CLI.
+Alternatively, you can manage your repositories by using the `git` CLI, by opening a terminal in JuypterLab.
+Using the CLI can be useful for advanced Git commands or if you prefer a command-line interface.
+
+However, bear in mind that the Git extension integrates in the JuypterLab user interface, which can improve the efficiency of your workflow.
+The Git extension might be also suitable for users who are not familiar with the syntax of Git commands.
+
+After all, RHODS offers two Git interfaces at your disposal, and you do not need to choose one or the other.
+In most cases, it is beneficial to integrate both options into your workflow and use the one that better adjusts to your preferences at each moment.
 ====
+
+== Collaborating with Git
+
+Version control systems, and in particular, Git, foster collaboration in the following ways:
+
+* Multiple users can work on the same code base at the same time.
+* Users can work in features or fixes by using branches, to reduce conflicts with the main development branch.
+* Users can propose, review, and discuss changes by using pull requests.
+
+The collaboration and collective experience of developers, companies, and open sources communities has resulted in sets of good practices and rules called _Git workflows_.
+These workflows define how teams should work together and coordinate by using Git features, such as branches and pull requests.
+Some of these workflows are:
+
+* https://docs.github.com/en/get-started/quickstart/github-flow[GitHub Flow]
+* https://nvie.com/posts/a-successful-git-branching-model/[Git Flow]
+* https://trunkbaseddevelopment.com/[Trunk-based Development]
+
+
 
 == Exercise: Creating a Notebook
 
@@ -108,6 +133,17 @@ image::git-commit-changes.png[]
 +
 At this point, JupyterLab prompts for the committer information.
 Enter your name and email.
++
+[NOTE]
+====
+You can also use a Git SSH key for authenticating, as explained in the https://docs.github.com/en/authentication/connecting-to-github-with-ssh[GitHub Docs].
+To inject the key into the workbench you have several options, which are out of the scope of this section:
+
+* Create a specific SSH key for your workbench and add to GitHub.
+* Upload your local SSH key into the workbench.
+* Create a kubernetes Secret with the SSH key, and mount the Secret in your workbench.
+You might require support from the cluster administrator for this option.
+====
 
 13. Push your changes to GitHub.
 Click the btn:[up arrow cloud] icon at the top.
@@ -125,6 +161,7 @@ Notice that GitHub can render the notebook in view-only mode.
 
 == Pulling Changes
 
+To work with the latest version of the code, you should regularly pull changes from the remote repository.
 To pull changes from a remote repository, you can use the btn:[down arrow cloud] icon.
 
 If you have uncommitted changes in your workbench, then you might see a message indicating that your changes forbid pulling the changes, as follows:
