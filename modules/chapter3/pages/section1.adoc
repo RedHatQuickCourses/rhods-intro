@@ -107,6 +107,11 @@ image::jupyter-terminal.png[]
 +
 image::jupyter-terminal-open.png[]
 
+== Demo Video
+
+If you cannot run the previous exercises, you can see the following demo:
+
+video::jupyter-intro.mkv[width=100%]
 
 == Working with Git
 
