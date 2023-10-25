@@ -1,5 +1,7 @@
 = Introduction
 
+video::jupyter-intro.mkv[width=100%]
+
 A Jupyter notebook is a web-based application that allows users to interactively create live documents that contain narrative text, executable code, and visualizations.
 Jupyter notebooks have become a popular tool for data scientists who work in data science and machine learning projects.
 
