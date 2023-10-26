@@ -59,7 +59,7 @@ tensorflow                          default-route-openshift-image-registry.apps.
 
 For more information about notebook images, refer to the https://access.redhat.com/documentation/en-us/red_hat_openshift_data_science/1/html-single/working_on_data_science_projects/index#notebook-images-for-data-scientists_notebooks[_Notebook images for data scientists_ section in the Red{nbsp}Hat OpenShift Data Science documentation].
 
-== Customizing Workbenches with JupyterLab
+== Exercise: Customizing Workbenches with JupyterLab
 
 To use JupyterLab for customizing a workbench, follow these steps:
 
