@@ -12,3 +12,9 @@ In this exercise, you will assess your understanding of how to effectively use J
 3. Open the workbench and clone the https://github.com/RedHatQuickCourses/rhods-qc-apps repository.
 
 4. Open the `rhods-qc-apps/1.intro/chapter3/lab/notebooks-lab.ipynb` file and follow the instructions.
+
+[NOTE]
+====
+The solution notebook is available in the `rhods-qc-apps/1.intro/chapter3/lab/solution` directory.
+====
+
