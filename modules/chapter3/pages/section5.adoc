@@ -17,4 +17,5 @@ This kernel called _ipykernel_.
 * You can share notebooks and collaborate with your team by using the JupyterLab Git extension.
 This extension comes preinstalled in RHODS workbenches.
 
-* You can customize your workbench and install additional packages by running Pip via JupyterLab.
+* You can customize your workbench and install additional packages by running Pip in notebooks via JupyterLab.
+You can also use the terminal included in JupyterLab.
