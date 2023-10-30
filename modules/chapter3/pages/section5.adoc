@@ -1,0 +1,20 @@
+= Summary
+
+In this chapter, you learned:
+
+* Jupyter notebooks are live documents that can contain rich text, executable code, and multimedia content.
+
+* To work with notebook files, the most popular application is JupyterLab.
+JupyterLab includes the web application that you interact with, as well as the running environment for notebooks.
+
+* JupyterLab executes code cells in a separate process called _kernel_.
+
+* By default, JupyterLab uses a kernel that runs IPython, which is a commonly used Python shell.
+This kernel called _ipykernel_.
+
+* RHODS includes a running instance of JupyterLab as the main entry point of its workbenches.
+
+* You can share notebooks and collaborate with your team by using the JupyterLab Git extension.
+This extension comes preinstalled in RHODS workbenches.
+
+* You can customize your workbench and install additional packages by running Pip via JupyterLab.
