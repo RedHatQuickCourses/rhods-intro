@@ -1,7 +1,7 @@
 = Introduction to Red Hat OpenShift Data Science
 :navtitle: Home
 
-Welcome to this quick course on the _Red Hat OpenShift Data Science_.
+Welcome to this quick course on the _Introduction to Red Hat OpenShift Data Science_.
 This course is the first in a series of 6 courses about Red Hat OpenShift Data Science:
 
 1. Introduction to Red Hat OpenShift Data Science (_This course_)
