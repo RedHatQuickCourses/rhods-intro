@@ -96,5 +96,5 @@ a. In the data science project dashboard, create a workbench with the default im
 
 b. In the new workbench, open JupyterLab and clone the https://github.com/RedHatQuickCourses/rhods-intro.git repository as you did in the previous step.
 
-c. Open the `rhods-intro/intro-text-generation/notebook.ipynb` notebook in JupyterLab and execute the steps.
+c. Open the `rhods-intro/notebooks/intro-text-generation/notebook.ipynb` notebook in JupyterLab and execute the steps.
 The instructions are embedded in the notebook.
