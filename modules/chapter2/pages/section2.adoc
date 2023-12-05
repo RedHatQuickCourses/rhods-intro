@@ -1,9 +1,9 @@
 = Workbenches
 
 
-In RHODS, a _workbench_ is a containerized working environment that runs as any other application in OpenShift, as a pod.
+In RHOAI, a _workbench_ is a containerized working environment that runs as any other application in OpenShift, as a pod.
 Workbenches typically include a collection of common AI/ML libraries and a JupyterLab server.
-RHODS exposes the JupyterLab URL through an OpenShift route so that you can use and interact with the workbench via the web browser.
+RHOAI exposes the JupyterLab URL through an OpenShift route so that you can use and interact with the workbench via the web browser.
 
 Workbenches are stateful, meaning that you can stop and restart them without losing your work.
 
@@ -40,7 +40,7 @@ image::workbench-size.png[]
 === Define Environment Variables
 
 Environment variables are the recommended way to inject configuration into software applications.
-In this way, the application, or in this case the RHODS workbench, is decoupled from the working environment.
+In this way, the application, or in this case the RHOAI workbench, is decoupled from the working environment.
 
 Scroll down to the btn:[Environment variables] section and click btn:[Add variable].
 Choose whether you want to create a ConfigMap or a Secret.
@@ -61,9 +61,9 @@ Alternatively, you can upload a file that includes multiple key/value pairs.
 Workbenches require persistent storage to ensure that your progress is not lost when you stop or remove the workbench.
 
 Scroll down to the btn:[Cluster storage] section.
-Verify that RHODS automatically selects the btn:[Create new persistent storage] option.
+Verify that RHOAI automatically selects the btn:[Create new persistent storage] option.
 This is the default behavior.
-RHODS creates a dedicated persistent storage for each workbench and mounts the storage in the root directory of the container.
+RHOAI creates a dedicated persistent storage for each workbench and mounts the storage in the root directory of the container.
 
 Alternatively, you can select an already existing storage.
 The existing storage must not be associated with any other workbench.
@@ -98,8 +98,8 @@ Leave this section unchanged.
 Data connections are covered later in the course.
 
 Click btn:[Create workbench].
-RHODS triggers the creation of the workbench and redirects you to the data science project page.
-While RHODS is provisioning the workbench, the workbench displays with the `Starting...` status.
+RHOAI triggers the creation of the workbench and redirects you to the data science project page.
+While RHOAI is provisioning the workbench, the workbench displays with the `Starting...` status.
 
 image::workbench-starting.png[]
 
@@ -151,7 +151,7 @@ You will use this file to verify that the state of the workbench is preserved af
 === Starting and stopping workbenches
 
 
-Return to the RHODS data science project page.
+Return to the RHOAI data science project page.
 Click the btn:[Status] switch of the workbench to stop it.
 The workbench status changes to `Stopping...`.
 
@@ -168,7 +168,7 @@ image::workbench-state.png[]
 
 === Edit the Workbench
 
-Return to the RHODS data science project page.
+Return to the RHOAI data science project page.
 Click the workbench btn:[⋮] button, then click btn:[Edit workbench].
 
 image::workbench-edit.png[]
@@ -180,7 +180,7 @@ Switch the image to `Standard Data Science` and click btn:[Update workbench].
 ====
 Make sure that you save your work at JupyterLab before updating a workbench.
 
-When you edit a workbench, RHODS restarts the workbench, so any unsaved work will be lost.
+When you edit a workbench, RHOAI restarts the workbench, so any unsaved work will be lost.
 ====
 
 [NOTE]
@@ -205,8 +205,8 @@ This means that you can create another workbench and restore the data that you w
 
 == Workbench Resources
 
-RHODS internally defines workbenches as stateful applications.
-When you create a workbench, RHODS creates a StatefulSet in the OpenShift namespace that corresponds to your data science project.
+RHOAI internally defines workbenches as stateful applications.
+When you create a workbench, RHOAI creates a StatefulSet in the OpenShift namespace that corresponds to your data science project.
 The StatefulSet manages a pod that includes two containers:
 
 * The workbench container, which contains JupyterLab and other packages.
@@ -214,7 +214,7 @@ You interact with this container when you use the JupyterLab web interface.
 
 * The `oauth-proxy` container, which provides authorization and authentication to access JupyterLab.
 
-RHODS also creates the required services and routes to enable HTTP and HTTPS traffic into the workbench container.
+RHOAI also creates the required services and routes to enable HTTP and HTTPS traffic into the workbench container.
 If you list the resources of the OpenShift namespace that corresponds to your data science project, you should see something similar to this:
 
 [subs=+quotes]
@@ -234,7 +234,7 @@ NAME                                         ...
 *route.route.openshift.io/my-first-workbench*  ...
 ----
 
-Creating a new persistent storage in RHODS results in the creation of a PersistentVolumeClaim (PVC) in the corresponding OpenShift project.
+Creating a new persistent storage in RHOAI results in the creation of a PersistentVolumeClaim (PVC) in the corresponding OpenShift project.
 The following diagram represents the OpenShift resources involved in a workbench:
 
 image::workbench-ocp-resources.svg[width="1000px"]
@@ -248,14 +248,14 @@ If you delete the PVC of a storage assigned to a running workbench, then the PVC
 
 == Permissions
 To enable workbench access to other users, you must grant permissions to those users at the data science project level.
-RHODS does not offer workbench-level permission management.
+RHOAI does not offer workbench-level permission management.
 
 
 == Limits
 
-If your memory and/or GPU requirements are high, then RHODS might not be able to allocate the requested resources in the workbench.
+If your memory and/or GPU requirements are high, then RHOAI might not be able to allocate the requested resources in the workbench.
 You might see a message similar to the following:
 
 image::workbench-insufficient-resources.png[]
 
-In this case, try to decrease your resource requirements by editing the workbench, or contact your RHODS administrator.
+In this case, try to decrease your resource requirements by editing the workbench, or contact your RHOAI administrator.

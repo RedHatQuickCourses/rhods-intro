@@ -1,11 +1,11 @@
 = Lab: Jupyter Notebooks
 :navtitle: Lab
 
-In this exercise, you will assess your understanding of how to effectively use Jupyter Notebooks in RHODS to execute Python code.
+In this exercise, you will assess your understanding of how to effectively use Jupyter Notebooks in RHOAI to execute Python code.
 
 == Specifications
 
-1. In RHODS, create a data science project or use an existing one.
+1. In RHOAI, create a data science project or use an existing one.
 
 2. Create a workbench that includes standard data science libraries.
 

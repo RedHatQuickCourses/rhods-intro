@@ -4,7 +4,7 @@
 // Description
 // Customize notebooks by installing third-party packages
 
-RHODS provides preconfigured notebook images to create workbenches.
+RHOAI provides preconfigured notebook images to create workbenches.
 Each of these images is designed to support your data science workflow in specific and popular technological stacks.
 For example, if you plan to work with PyTorch, then you might want to use the `PyTorch` image.
 
@@ -15,18 +15,18 @@ Or perhaps, you just need a different version of a specific library, or even a d
 In this case, you have two options:
 
 1. Create a workbench from the image that is closer to your needs and then install the required packages and versions in the workbench via JuypterLab.
-2. Prepare a custom notebook image and add it to RHODS.
+2. Prepare a custom notebook image and add it to RHOAI.
 
 This course covers the first option.
 The second option is covered in the https://redhatquickcourses.github.io/rhods-admin/rhods-admin/1.33/index.html[Red{nbsp}Hat OpenShift Data Science Administration] course.
 
 == Supported Notebook Images
 
-RHODS ships with a collection of notebooks images, which are optimized and supported by Red{nbsp}Hat and independent software vendors (ISVs).
+RHOAI ships with a collection of notebooks images, which are optimized and supported by Red{nbsp}Hat and independent software vendors (ISVs).
 These images are designed for data scientists, providing them with the necessary tools to start working quickly.
 Moreover, Red{nbsp}Hat provides support for these images for at least one year, and releases major versions of each image typically every six months.
 
-By default, RHODS includes these images:
+By default, RHOAI includes these images:
 
 [compact]
 * CUDA
@@ -36,14 +36,14 @@ By default, RHODS includes these images:
 * Minimal Python
 * TrustyAI
 
-// Explain what exactly is a notebook image that comes out of the box with RHODS. Provide links to the Containerfile/Dockerfile for the images shipped with RHODS
-// References to the list of base container images provided by RHODS - product docs links
+// Explain what exactly is a notebook image that comes out of the box with RHOAI. Provide links to the Containerfile/Dockerfile for the images shipped with RHOAI
+// References to the list of base container images provided by RHOAI - product docs links
 
 These images are regular container images.
 The source Dockerfiles for these images are available at the https://github.com/red-hat-data-services/notebooks/tree/main/jupyter[red-hat-data-services/notebooks] GitHub repository.
 
 These images are also available in the Quay.io registry at https://quay.io/organization/modh.
-RHODS tracks these images by using ImageStreams that point to the notebook images available in Quay.
+RHOAI tracks these images by using ImageStreams that point to the notebook images available in Quay.
 You can inspect the available images by running the following command:
 
 [subs=+quotes]

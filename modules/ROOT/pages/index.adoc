@@ -11,7 +11,7 @@ This course is the first in a series of 6 courses about Red Hat OpenShift Data S
 5. https://redhatquickcourses.github.io/rhods-deploy[Deploying Machine Learning Models with Red Hat OpenShift Data Science]
 6. https://redhatquickcourses.github.io/rhods-pipelines[Automation using Data Science Pipelines]
 
-NOTE: After you have completed all the courses in the learning path, you can attempt the https://github.com/RedHatQuickCourses/rhods-qc-apps/tree/main/7.hands-on-lab["Hit the RHODS"] exercise, that tests your understanding of the concepts taught in all the courses.
+NOTE: After you have completed all the courses in the learning path, you can attempt the https://github.com/RedHatQuickCourses/rhods-qc-apps/tree/main/7.hands-on-lab["Workshop final hands-on lab"], that tests your understanding of the concepts taught in all the courses.
 
 == Authors
 
@@ -23,7 +23,7 @@ The PTL team acknowledges the valuable contributions of the following Red Hat as
 
 == Classroom Environment
 
-This introductory course has a few, simple hands-on labs. You will use the https://demo.redhat.com/catalog?search=openshift+data+science&item=babylon-catalog-prod%2Fsandboxes-gpte.ocp4-workshop-rhods-base-aws.prod[Base RHODS on AWS] catalog item in the Red Hat Demo Platform (RHDP) to run the hands on exercises in this course.
+This introductory course has a few, simple hands-on labs. You will use the https://demo.redhat.com/catalog?search=openshift+data+science&item=babylon-catalog-prod%2Fsandboxes-gpte.ocp4-workshop-rhods-base-aws.prod[Base RHOAI on AWS] catalog item in the Red Hat Demo Platform (RHDP) to run the hands on exercises in this course.
 
 This classroom has a pre-installed version of Red Hat OpenShift Data Science on OpenShift. The other courses in the learning path use a different catalog item from RHDP. Inspect the prerequisites and classroom requirements in the respective individual courses.
 
