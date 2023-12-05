@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Data Connections :: Introduction to Red Hat OpenShift AI</title>
+    <link rel="prev" href="section2.html">
+    <link rel="next" href="section4.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenShift AI</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/rhods-intro/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header><div class="body">
+<div class="nav-container" data-component="rhods-intro" data-version="1.33">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenShift AI</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../chapter1/index.html">Introduction to Red&#160;Hat OpenShift AI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter1/section1.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter1/section2.html">Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter1/section3.html">Demo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter1/section4.html">Conclusion</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Working with Data Science Projects</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section1.html">Data Science Projects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section2.html">Workbenches</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="section3.html">Data Connections</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section4.html">Lab</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../chapter3/index.html">Jupyter Notebooks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter3/section1.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter3/section2.html">Collaborating</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter3/section3.html">Customizing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter3/section4.html">Lab</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../chapter3/section5.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Introduction to Red Hat OpenShift AI</span>
+    <span class="version">1.33</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Introduction to Red Hat OpenShift AI</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1.33</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Introduction to Red Hat OpenShift AI</a></li>
+    <li><a href="index.html">Working with Data Science Projects</a></li>
+    <li><a href="section3.html">Data Connections</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Data Connections</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In data science, AI, and ML environments, the availability of data is a key factor for the success of a project.
+For simple projects, where a relatively small amount of data is used, you can load data by uploading files to the workbench via JupyterLab, or by making database queries from your notebooks.</p>
+</div>
+<div class="paragraph">
+<p>More complex projects, however, involve larger datasets.
+Depending on the dataset size, uploading files or querying databases might not be a feasible solution.
+Storing the data directly in your code repository is not recommended either, due to the overload that this can cause in your repository.
+In fact, many source control systems include file size limits.</p>
+</div>
+<div class="paragraph">
+<p>A better approach is to store the data in a dedicated storage system, and download the data into your workbench when you need it.</p>
+</div>
+<div class="paragraph">
+<p>Similarly, a dedicated storage system is also required to store the artifacts that the training phase produces, i.e. the trained models.
+Trained models can result in large files when you export them, so the recommendation is to store them in a dedicated storage system.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_connections_are_secrets"><a class="anchor" href="#_data_connections_are_secrets"></a>Data Connections are Secrets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>RHOAI introduces the concept of <em>data connection</em> to define a set of configuration values that you can use to connect your workbench to storage systems.
+You can use the external storage to store your datasets and your trained models.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Do not confuse data connections with cluster storage.</p>
+</div>
+<div class="paragraph">
+<p>Cluster storage provides persistent storage for your workbench, by using PersistentVolumeClaim (PVC) objects in your cluster.
+Cluster storage is used to persist your progress in the workbench.</p>
+</div>
+<div class="paragraph">
+<p>Data connections are a set of configuration values that you can use to connect to storage systems.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>RHOAI creates data connections in OpenShift as Secret objects.
+RHOAI stores these secrets in the OpenShift namespace that corresponds to your data science project.
+The secret associated with each data connection includes these key/value pairs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>AWS_ACCESS_KEY_ID</code></p>
+</li>
+<li>
+<p><code>AWS_DEFAULT_REGION</code></p>
+</li>
+<li>
+<p><code>AWS_S3_BUCKET</code></p>
+</li>
+<li>
+<p><code>AWS_S3_ENDPOINT</code></p>
+</li>
+<li>
+<p><code>AWS_SECRET_ACCESS_KEY</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can set these values by using a web form in the RHOAI dashboard, as you will learn in the exercise.</p>
+</div>
+<div class="paragraph">
+<p>Although the naming of these variables suggests the use of AWS S3, these values are only environment variables, so you decide how you use them in your notebooks.
+You can use them to connect to systems such as OpenShift Data Foundation, IBM Cloud Object Storage, and AWS S3.</p>
+</div>
+<div class="paragraph">
+<p>If you inspect the Secret object associated with a data connection, then you should see something similar to this definition:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">apiVersion: v1
+kind: Secret
+data:
+  AWS_ACCESS_KEY_ID: ...
+  AWS_DEFAULT_REGION: ...
+  AWS_S3_BUCKET: ...
+  AWS_S3_ENDPOINT: ...
+  AWS_SECRET_ACCESS_KEY: ...
+metadata:
+  annotations:
+    opendatahub.io/connection-type: s3
+    openshift.io/display-name: my-first-data-connection
+  labels:
+    opendatahub.io/dashboard: "true"
+    opendatahub.io/managed: "true"
+  name: aws-connection-my-first-data-connection
+...</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Although the <code>opendatahub.io/connection-type</code> annotation indicates supports for different types of data connections, the RHOAI dashboard, for now, only allows the creation of S3 data connections.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_the_data_connection_environment_variables"><a class="anchor" href="#_using_the_data_connection_environment_variables"></a>Using the Data Connection Environment Variables</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you associate a data connection to a workbench, RHOAI injects the key/value pairs of the data connection as environment variables into the workbench container.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>RHOAI does not open a connection from the workbench to AWS S3.
+You are responsible for reading and using the environment variables of the data connection in the notebook.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Typically, you should read the data connection variables and then use them to configure the connection to the storage system.
+For S3 storage, this can be done with the <code>boto3</code> library, as you will learn in the following exercise.</p>
+</div>
+<div class="paragraph">
+<p>After you are connected to S3, then you can start downloading the files required for data exploration or model training.</p>
+</div>
+<div class="paragraph">
+<p>Similarly, you should store your trained models in the S3 bucket that corresponds to the data connection.
+In fact, storing your models in the data connection enables you to use Model Serving.
+Model Serving downloads the model files from S3 by using a data connection.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercise_getting_started_with_data_connections"><a class="anchor" href="#_exercise_getting_started_with_data_connections"></a>Exercise: Getting Started with Data Connections</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_create_a_workbench_with_a_data_connection"><a class="anchor" href="#_create_a_workbench_with_a_data_connection"></a>Create a Workbench with a Data connection</h3>
+<div class="paragraph">
+<p>From a data science project page, click <b class="button">Create Workbench</b>.</p>
+</div>
+<div class="paragraph">
+<p>Select the btn <code>Standard Data Science</code> notebook image for this workbench.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Make sure you use the <code>Standard Data Science</code> image.
+This image contains the <code>boto3</code> library, required for the second part of the exercise.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Alternatively, you can add a data connection to an existing workbench by editing the workbench.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Scroll down to the <b class="button">Data connections</b> section and select <b class="button">Create data connection</b>.
+This option creates the data connection and assigns it to the workbench that you are creating.
+Complete the form with your S3 connection parameters.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dataconnection-new.png" alt="dataconnection new">
+</div>
+</div>
+<div class="paragraph">
+<p>Save the workbench.
+In the data science project page, notice the newly created data connection, which is associated with the workbench.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dataconnection-list.png" alt="dataconnection list">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The association between data connections and workbenches follows a <code>1 to N</code> schema:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The same data connection can be used in multiple workbenches.</p>
+</li>
+<li>
+<p>A workbench can have only one data connection.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_edit_a_data_connection"><a class="anchor" href="#_edit_a_data_connection"></a>Edit a Data connection</h3>
+<div class="paragraph">
+<p>Next, click the <b class="button">⋮</b> button of the data connection, then click <b class="button">Edit data connection</b>.
+Note that you can assign more workbenches to the same data connection.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dataconnection-edit.png" alt="dataconnection edit">
+</div>
+</div>
+<div class="paragraph">
+<p>You do not need to make any changes.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can use the data science project page to create new data connections and assign them to existing workspaces.</p>
+</div>
+<div class="paragraph">
+<p>You can also use this page to delete data connections.
+Deleting a data connection that is assigned to a workbench results in a workbench restart.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_the_data_connection_in_a_workbench"><a class="anchor" href="#_using_the_data_connection_in_a_workbench"></a>Using the Data Connection in a Workbench</h3>
+<div class="paragraph">
+<p>After you have created the data connection and assigned it to your workbench, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Clone the demo code.</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Open the workbench JupyterLab URL.</p>
+</li>
+<li>
+<p>If prompted, log in with your Red&#160;Hat OpenShift credentials.</p>
+</li>
+<li>
+<p>Click <b class="button">Allow selected permissions</b> to grant the workbench access to your data science project.</p>
+</li>
+<li>
+<p>Click the <b class="button">Git</b> icon in the left sidebar of JupyterLab.</p>
+</li>
+<li>
+<p>Click <b class="button">Clone a repository</b>.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/git-clone-menu.png" alt="git clone menu" width="40%">
+</div>
+</div>
+</li>
+<li>
+<p>Enter <a href="https://github.com/RedHatQuickCourses/rhods-intro.git" class="bare">https://github.com/RedHatQuickCourses/rhods-intro.git</a> as the repository, and click <b class="button">Clone</b>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Open and run the notebook.</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the file explorer, navigate to the <code>rhods-intro/notebooks/data-connections</code> directory.</p>
+</li>
+<li>
+<p>Open the <code>exercise.ipynb</code> notebook.</p>
+</li>
+<li>
+<p>Follow the instructions in the notebook.
+Click the first cell, then press <b class="button">Shift+Enter</b> to execute the cell and move to the next one.
+Next, execute and review the rest of the cells.
+Keep pressing <b class="button">Shift+Enter</b> until you reach the bottom.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="section2.html">Workbenches</a></span>
+  <span class="next"><a href="section4.html">Lab</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
