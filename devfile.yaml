@@ -1,8 +1,8 @@
 schemaVersion: 2.1.0
 metadata:
   name: rhods-quick-course
-  displayName: RHODS Quick Course
-  description: RHODS Quick Course published using Antora
+  displayName: RHOAI Quick Course
+  description: RHOAI Quick Course published using Antora
   icon: https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg
   tags:
     - Node.js

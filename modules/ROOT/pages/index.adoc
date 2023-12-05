@@ -1,14 +1,14 @@
-= Introduction to Red Hat OpenShift Data Science
+= Introduction to Red Hat OpenShift AI
 :navtitle: Home
 
-Welcome to this quick course on the _Introduction to Red Hat OpenShift Data Science_.
-This course is the first in a series of 6 courses about Red Hat OpenShift Data Science:
+Welcome to this quick course on the _Introduction to Red Hat OpenShift AI_.
+This course is the first in a series of 6 courses about Red Hat OpenShift AI:
 
-1. Introduction to Red Hat OpenShift Data Science (_This course_)
-2. https://redhatquickcourses.github.io/rhods-admin[Red Hat OpenShift Data Science Administration]
-3. Data Analysis and Visualization with Red Hat OpenShift Data Science (Under Development)
-4. https://redhatquickcourses.github.io/rhods-model[Creating Machine Learning Models with Red Hat OpenShift Data Science]
-5. https://redhatquickcourses.github.io/rhods-deploy[Deploying Machine Learning Models with Red Hat OpenShift Data Science]
+1. Introduction to Red Hat OpenShift AI (_This course_)
+2. https://redhatquickcourses.github.io/rhods-admin[Red Hat OpenShift AI Administration]
+3. Data Analysis and Visualization with Red Hat OpenShift AI (Under Development)
+4. https://redhatquickcourses.github.io/rhods-model[Creating Machine Learning Models with Red Hat OpenShift AI]
+5. https://redhatquickcourses.github.io/rhods-deploy[Deploying Machine Learning Models with Red Hat OpenShift AI]
 6. https://redhatquickcourses.github.io/rhods-pipelines[Automation using Data Science Pipelines]
 
 NOTE: After you have completed all the courses in the learning path, you can attempt the https://github.com/RedHatQuickCourses/rhods-qc-apps/tree/main/7.hands-on-lab["Workshop final hands-on lab"], that tests your understanding of the concepts taught in all the courses.
@@ -25,7 +25,7 @@ The PTL team acknowledges the valuable contributions of the following Red Hat as
 
 This introductory course has a few, simple hands-on labs. You will use the https://demo.redhat.com/catalog?search=openshift+data+science&item=babylon-catalog-prod%2Fsandboxes-gpte.ocp4-workshop-rhods-base-aws.prod[Base RHOAI on AWS] catalog item in the Red Hat Demo Platform (RHDP) to run the hands on exercises in this course.
 
-This classroom has a pre-installed version of Red Hat OpenShift Data Science on OpenShift. The other courses in the learning path use a different catalog item from RHDP. Inspect the prerequisites and classroom requirements in the respective individual courses.
+This classroom has a pre-installed version of Red Hat OpenShift AI on OpenShift. The other courses in the learning path use a different catalog item from RHDP. Inspect the prerequisites and classroom requirements in the respective individual courses.
 
 == Prerequisites
 
@@ -35,8 +35,8 @@ For this introductory course, basic experience with Red{nbsp}Hat OpenShift is re
 
 The overall objectives of this introductory course include:
 
-* Become familiar with the general architecture and main features of Red{nbsp}Hat OpenShift Data Science
-* Accessing and logging in to the Red{nbsp}Hat OpenShift Data Science web console
+* Become familiar with the general architecture and main features of Red{nbsp}Hat OpenShift AI
+* Accessing and logging in to the Red{nbsp}Hat OpenShift AI web console
 * Creating, sharing and deleting data science projects
 * Creating a Workbench within a data science project
 * Creating and deleting data connections

@@ -1,5 +1,5 @@
 site:
-  title: Introduction to Red Hat OpenShift Data Science
+  title: Introduction to Red Hat OpenShift AI
   start_page: rhods-intro::index.adoc
 
 content:

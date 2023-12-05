@@ -1,5 +1,5 @@
 name: rhods-intro
-title: Introduction to Red Hat OpenShift Data Science
+title: Introduction to Red Hat OpenShift AI
 version: 1.33
 nav:
 - modules/ROOT/nav.adoc

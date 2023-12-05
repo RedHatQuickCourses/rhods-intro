@@ -1,8 +1,8 @@
-= Architecture of Red{nbsp}Hat OpenShift Data Science
+= Architecture of Red{nbsp}Hat OpenShift AI
 :navtitle: Architecture
 
 
-Red{nbsp}Hat OpenShift Data Science (RHOAI) is a unified platform for data scientists, developers, machine learning engineers, and IT ops.
+Red{nbsp}Hat OpenShift AI (RHOAI) is a unified platform for data scientists, developers, machine learning engineers, and IT ops.
 The platform is designed to manage the complete lifecycle of AI/ML projects in the hybrid cloud.
 
 As the following diagram shows, RHOAI is deployed as an operator, and includes several components to handle AI/ML development/training, automation pipelines, and model serving:
