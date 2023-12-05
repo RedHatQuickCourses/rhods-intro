@@ -32,8 +32,8 @@ For example, if you plan to use TensorFlow, then you might want to select the `T
 You can view more details about the selected image by clicking btn:[View package information].
 ====
 
-Next, select the workbench container size and the number of GPUs.
-Select `Tiny` and 0 GPUs in this case.
+Next, select the workbench container size.
+Select `Small` in this case.
 
 image::workbench-size.png[]
 

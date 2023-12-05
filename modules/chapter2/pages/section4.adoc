@@ -70,7 +70,7 @@ d. Repeat the same steps to create `intro-projects-b`.
 a. Navigate the `intro-projects-a` dashboard and click btn:[Create workbench].
 In the workbench creation page, enter the workbench name, select the workbench image, and the image version.
 
-b. Select btn:[Tiny] as the container size and 0 GPUs.
+b. Select btn:[Small] as the container size.
 
 c. In the btn:[Data connections] section, select btn:[Use a data connection].
 
@@ -98,7 +98,7 @@ image::lab-test-connection.png[]
 a. Navigate the `intro-projects-b` dashboard and click btn:[Create workbench].
 In the workbench creation page, enter the workbench name, select the workbench image, and the image version.
 
-b. Select btn:[Tiny] as the container size and 0 GPUs.
+b. Select btn:[Small] as the container size.
 
 c. In the btn:[Environment variables] section, click btn:[Add variable].
 

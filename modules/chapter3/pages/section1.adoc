@@ -84,11 +84,11 @@ Instead, VSCodium interacts with ipykernel.
 
 To continue learning about notebooks, open RHODS.
 
-1. In a new or an existing data science project, create a `Minimal Python` workbench.
+1. In a new or an existing data science project, create a `Standard Data Science` workbench.
 
 2. Open the notebook and clone the https://github.com/RedHatQuickCourses/rhods-qc-apps repository.
 
-3. Open the `1.intro/chapter3/notebooks-intro.ipynb` notebook and follow the instructions.
+3. Open the `1.intro/chapter3/intro/notebooks-intro.ipynb` notebook and follow the instructions.
 
 
 == Exercise: Opening Terminals
