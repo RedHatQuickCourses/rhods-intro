@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Architecture of Red&#160;Hat OpenShift Data Science :: Introduction to Red Hat OpenShift Data Science</title>
+    <title>Architecture of Red&#160;Hat OpenShift AI :: Introduction to Red Hat OpenShift AI</title>
     <link rel="prev" href="section1.html">
     <link rel="next" href="section3.html">
     <meta name="generator" content="Antora 3.1.3">
@@ -15,7 +15,7 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
-      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenShift Data Science</a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenShift AI</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -34,7 +34,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></h3>
+    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenShift AI</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -47,7 +47,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="index.html">Introduction to Red&#160;Hat OpenShift Data Science</a>
+    <a class="nav-link" href="index.html">Introduction to Red&#160;Hat OpenShift AI</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="section1.html">Introduction</a>
@@ -117,12 +117,12 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Introduction to Red Hat OpenShift Data Science</span>
+    <span class="title">Introduction to Red Hat OpenShift AI</span>
     <span class="version">1.33</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <a class="title" href="../index.html">Introduction to Red Hat OpenShift Data Science</a>
+      <a class="title" href="../index.html">Introduction to Red Hat OpenShift AI</a>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../index.html">1.33</a>
@@ -140,8 +140,8 @@
   <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></li>
-    <li><a href="index.html">Introduction to Red&#160;Hat OpenShift Data Science</a></li>
+    <li><a href="../index.html">Introduction to Red Hat OpenShift AI</a></li>
+    <li><a href="index.html">Introduction to Red&#160;Hat OpenShift AI</a></li>
     <li><a href="section2.html">Architecture</a></li>
   </ul>
 </nav>
@@ -151,15 +151,15 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Architecture of Red&#160;Hat OpenShift Data Science</h1>
+<h1 class="page">Architecture of Red&#160;Hat OpenShift AI</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Red&#160;Hat OpenShift Data Science (RHODS) is a unified platform for data scientists, developers, machine learning engineers, and IT ops.
+<p>Red&#160;Hat OpenShift AI (RHOAI) is a unified platform for data scientists, developers, machine learning engineers, and IT ops.
 The platform is designed to manage the complete lifecycle of AI/ML projects in the hybrid cloud.</p>
 </div>
 <div class="paragraph">
-<p>As the following diagram shows, RHODS is deployed as an operator, and includes several components to handle AI/ML development/training, automation pipelines, and model serving:</p>
+<p>As the following diagram shows, RHOAI is deployed as an operator, and includes several components to handle AI/ML development/training, automation pipelines, and model serving:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -167,7 +167,7 @@ The platform is designed to manage the complete lifecycle of AI/ML projects in t
 </div>
 </div>
 <div class="paragraph">
-<p>The following are the main concepts and terminology as it relates to RHODS:</p>
+<p>The following are the main concepts and terminology as it relates to RHOAI:</p>
 </div>
 <div class="dlist">
 <dl>
@@ -190,7 +190,7 @@ To run and serve notebooks, you must use a notebook execution environment, such 
 <dd>
 <p>A workbench is a containerized, cloud-native data science working environment that runs on OpenShift.
 Workbenches run as OpenShift pods and  contain commonly used data science tools such as JupyterLab, libraries such as Tensorflow, or ready-to-use GPU capabilities.
-RHODS provides several preconfigured container images for creating workbenches.</p>
+RHOAI provides several preconfigured container images for creating workbenches.</p>
 </dd>
 </dl>
 </div>
@@ -202,7 +202,7 @@ RHODS provides several preconfigured container images for creating workbenches.<
 </td>
 <td class="content">
 <div class="paragraph">
-<p>To use the RHODS GPU capabilities, the NVIDIA GPU operator must be installed.</p>
+<p>To use the RHOAI GPU capabilities, the NVIDIA GPU operator must be installed.</p>
 </div>
 </td>
 </tr>
@@ -213,7 +213,7 @@ RHODS provides several preconfigured container images for creating workbenches.<
 <dt class="hdlist1">Workbench Images</dt>
 <dd>
 <p>Container images to be used as workbench containers.
-RHODS includes a number of images ready to use for different common working environments.
+RHOAI includes a number of images ready to use for different common working environments.
 Each image contains a different set of libraries and versions.
 <code>Pytorch</code>, <code>TensorFlow</code>, <code>Minimal Python</code>, or <code>Standard Data Science</code> are examples of these images.</p>
 <div class="paragraph">
@@ -236,7 +236,7 @@ Data connections inject the configuration values as environment variables in the
 Pipelines are useful to standardize the <code>data gathering - data cleaning - model training - model evaluation - model upload</code> cycle.
 Typically, a pipeline ends after the trained model has been uploaded to an S3 bucket or similar cloud storage.</p>
 <div class="paragraph">
-<p>To use pipelines in RHODS, the Red&#160;Hat OpenShift Pipelines operator must be installed.</p>
+<p>To use pipelines in RHOAI, the Red&#160;Hat OpenShift Pipelines operator must be installed.</p>
 </div>
 </dd>
 <dt class="hdlist1">Model Servers</dt>
@@ -247,11 +247,11 @@ Model servers require a data connection to download the model files from the clo
 </dl>
 </div>
 <div class="paragraph">
-<p>RHODS is based on the <em>Open Data Hub</em> upstream project.
+<p>RHOAI is based on the <em>Open Data Hub</em> upstream project.
 <a href="https://opendatahub.io/">Open Data Hub</a> is an open source, community-driven AI platform, designed for the hybrid cloud, and built on popular AI open source tools.
-RHODS is a subset of Open Data Hub, delivered both as a cloud service or self-managed.
-RHODS can be optionally delivered with additional independent software vendor (ISV) features.
-Some major differences between RHODS and Open Data Hub are as follows:</p>
+RHOAI is a subset of Open Data Hub, delivered both as a cloud service or self-managed.
+RHOAI can be optionally delivered with additional independent software vendor (ISV) features.
+Some major differences between RHOAI and Open Data Hub are as follows:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -263,7 +263,7 @@ Some major differences between RHODS and Open Data Hub are as follows:</p>
 <tr>
 <th class="tableblock halign-left valign-top">&#160;</th>
 <th class="tableblock halign-left valign-top">Open Data Hub</th>
-<th class="tableblock halign-left valign-top">RHODS</th>
+<th class="tableblock halign-left valign-top">RHOAI</th>
 </tr>
 </thead>
 <tbody>
@@ -295,7 +295,7 @@ Some major differences between RHODS and Open Data Hub are as follows:</p>
 <h2 id="_data_science_project_workflow"><a class="anchor" href="#_data_science_project_workflow"></a>Data Science Project Workflow</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>RHODS provides data scientists, machine learning engineers, and application developers with a unified platform to manage the complete lifecycle of AI applications, as the following diagram shows:</p>
+<p>RHOAI provides data scientists, machine learning engineers, and application developers with a unified platform to manage the complete lifecycle of AI applications, as the following diagram shows:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -311,7 +311,7 @@ Some major differences between RHODS and Open Data Hub are as follows:</p>
 <dd>
 <p>In this phase, data scientists load data into the workbench.
 For example, the data scientist can upload files to the workbench, download the files from S3, query data from a database, or read a data stream.
-RHODS includes the Pandas library in many of the preexisting workbenches.
+RHOAI includes the Pandas library in many of the preexisting workbenches.
 Pandas offers functions to load data from different sources, such as CSV, JSON or SQL.</p>
 <div class="paragraph">
 <p>Users can also add specific data ingestion capabilities by using certified ISV ecosystem apps from the Red&#160;Hat Marketplace.
@@ -322,12 +322,12 @@ Starburst and Cloudera are examples of these integrations.</p>
 <dd>
 <p>In this phase, data scientists explore, analyze, and preprocess the data.
 In a Jupyter notebook, the data scientist uses libraries such as Matplotlib, Pandas, and Numpy to plot visualizations, normalize the data, or remove outliers.
-RHODS offers workbench images that include these libraries.</p>
+RHOAI offers workbench images that include these libraries.</p>
 </dd>
 <dt class="hdlist1">Train model</dt>
 <dd>
 <p>In this phase, data scientists use the preprocessed data to train the model.
-RHODS provides workbench images for training models with commonly used libraries, such as TensorFlow, PyTorch, and Scikit-learn.
+RHOAI provides workbench images for training models with commonly used libraries, such as TensorFlow, PyTorch, and Scikit-learn.
 Some of these images also include ready-to-use GPU support, to enable faster training.</p>
 </dd>
 <dt class="hdlist1">Evaluate model</dt>
@@ -346,7 +346,7 @@ This step also involves the conversion of the model into a suitable format for s
 <dt class="hdlist1">Pipeline execution</dt>
 <dd>
 <p>Machine Learning engineers can build data science pipelines to automatically run the previous series of steps, for example, when new data is available.
-RHODS provides data science pipelines as a combination of Tekton, Kubeflow Pipelines, and Elyra.
+RHOAI provides data science pipelines as a combination of Tekton, Kubeflow Pipelines, and Elyra.
 Engineers can choose whether they want to work at a high, visual level, by creating the pipelines with Elyra,
 or at a lower lever, by using deeper Tekton and Kubeflow knowledge.</p>
 </dd>

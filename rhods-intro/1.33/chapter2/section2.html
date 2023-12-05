@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Workbenches :: Introduction to Red Hat OpenShift Data Science</title>
+    <title>Workbenches :: Introduction to Red Hat OpenShift AI</title>
     <link rel="prev" href="section1.html">
     <link rel="next" href="section3.html">
     <meta name="generator" content="Antora 3.1.3">
@@ -15,7 +15,7 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
-      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenShift Data Science</a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenShift AI</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -34,7 +34,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></h3>
+    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenShift AI</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -47,7 +47,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../chapter1/index.html">Introduction to Red&#160;Hat OpenShift Data Science</a>
+    <a class="nav-link" href="../chapter1/index.html">Introduction to Red&#160;Hat OpenShift AI</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../chapter1/section1.html">Introduction</a>
@@ -117,12 +117,12 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Introduction to Red Hat OpenShift Data Science</span>
+    <span class="title">Introduction to Red Hat OpenShift AI</span>
     <span class="version">1.33</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <a class="title" href="../index.html">Introduction to Red Hat OpenShift Data Science</a>
+      <a class="title" href="../index.html">Introduction to Red Hat OpenShift AI</a>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../index.html">1.33</a>
@@ -140,7 +140,7 @@
   <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></li>
+    <li><a href="../index.html">Introduction to Red Hat OpenShift AI</a></li>
     <li><a href="index.html">Working with Data Science Projects</a></li>
     <li><a href="section2.html">Workbenches</a></li>
   </ul>
@@ -155,9 +155,9 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>In RHODS, a <em>workbench</em> is a containerized working environment that runs as any other application in OpenShift, as a pod.
+<p>In RHOAI, a <em>workbench</em> is a containerized working environment that runs as any other application in OpenShift, as a pod.
 Workbenches typically include a collection of common AI/ML libraries and a JupyterLab server.
-RHODS exposes the JupyterLab URL through an OpenShift route so that you can use and interact with the workbench via the web browser.</p>
+RHOAI exposes the JupyterLab URL through an OpenShift route so that you can use and interact with the workbench via the web browser.</p>
 </div>
 <div class="paragraph">
 <p>Workbenches are stateful, meaning that you can stop and restart them without losing your work.</p>
@@ -218,7 +218,7 @@ Select <code>Small</code> in this case.</p>
 <h3 id="_define_environment_variables"><a class="anchor" href="#_define_environment_variables"></a>Define Environment Variables</h3>
 <div class="paragraph">
 <p>Environment variables are the recommended way to inject configuration into software applications.
-In this way, the application, or in this case the RHODS workbench, is decoupled from the working environment.</p>
+In this way, the application, or in this case the RHOAI workbench, is decoupled from the working environment.</p>
 </div>
 <div class="paragraph">
 <p>Scroll down to the <b class="button">Environment variables</b> section and click <b class="button">Add variable</b>.
@@ -243,9 +243,9 @@ Alternatively, you can upload a file that includes multiple key/value pairs.</p>
 </div>
 <div class="paragraph">
 <p>Scroll down to the <b class="button">Cluster storage</b> section.
-Verify that RHODS automatically selects the <b class="button">Create new persistent storage</b> option.
+Verify that RHOAI automatically selects the <b class="button">Create new persistent storage</b> option.
 This is the default behavior.
-RHODS creates a dedicated persistent storage for each workbench and mounts the storage in the root directory of the container.</p>
+RHOAI creates a dedicated persistent storage for each workbench and mounts the storage in the root directory of the container.</p>
 </div>
 <div class="paragraph">
 <p>Alternatively, you can select an already existing storage.
@@ -316,8 +316,8 @@ Data connections are covered later in the course.</p>
 </div>
 <div class="paragraph">
 <p>Click <b class="button">Create workbench</b>.
-RHODS triggers the creation of the workbench and redirects you to the data science project page.
-While RHODS is provisioning the workbench, the workbench displays with the <code>Starting&#8230;&#8203;</code> status.</p>
+RHOAI triggers the creation of the workbench and redirects you to the data science project page.
+While RHOAI is provisioning the workbench, the workbench displays with the <code>Starting&#8230;&#8203;</code> status.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -392,7 +392,7 @@ You will use this file to verify that the state of the workbench is preserved af
 <div class="sect2">
 <h3 id="_starting_and_stopping_workbenches"><a class="anchor" href="#_starting_and_stopping_workbenches"></a>Starting and stopping workbenches</h3>
 <div class="paragraph">
-<p>Return to the RHODS data science project page.
+<p>Return to the RHOAI data science project page.
 Click the <b class="button">Status</b> switch of the workbench to stop it.
 The workbench status changes to <code>Stopping&#8230;&#8203;</code>.</p>
 </div>
@@ -417,7 +417,7 @@ Press <kbd>F5</kbd> to refresh the page.</p>
 <div class="sect2">
 <h3 id="_edit_the_workbench"><a class="anchor" href="#_edit_the_workbench"></a>Edit the Workbench</h3>
 <div class="paragraph">
-<p>Return to the RHODS data science project page.
+<p>Return to the RHOAI data science project page.
 Click the workbench <b class="button">⋮</b> button, then click <b class="button">Edit workbench</b>.</p>
 </div>
 <div class="imageblock">
@@ -439,7 +439,7 @@ Click the workbench <b class="button">⋮</b> button, then click <b class="butto
 <p>Make sure that you save your work at JupyterLab before updating a workbench.</p>
 </div>
 <div class="paragraph">
-<p>When you edit a workbench, RHODS restarts the workbench, so any unsaved work will be lost.</p>
+<p>When you edit a workbench, RHOAI restarts the workbench, so any unsaved work will be lost.</p>
 </div>
 </td>
 </tr>
@@ -493,8 +493,8 @@ This means that you can create another workbench and restore the data that you w
 <h2 id="_workbench_resources"><a class="anchor" href="#_workbench_resources"></a>Workbench Resources</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>RHODS internally defines workbenches as stateful applications.
-When you create a workbench, RHODS creates a StatefulSet in the OpenShift namespace that corresponds to your data science project.
+<p>RHOAI internally defines workbenches as stateful applications.
+When you create a workbench, RHOAI creates a StatefulSet in the OpenShift namespace that corresponds to your data science project.
 The StatefulSet manages a pod that includes two containers:</p>
 </div>
 <div class="ulist">
@@ -509,7 +509,7 @@ You interact with this container when you use the JupyterLab web interface.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>RHODS also creates the required services and routes to enable HTTP and HTTPS traffic into the workbench container.
+<p>RHOAI also creates the required services and routes to enable HTTP and HTTPS traffic into the workbench container.
 If you list the resources of the OpenShift namespace that corresponds to your data science project, you should see something similar to this:</p>
 </div>
 <div class="listingblock">
@@ -530,7 +530,7 @@ NAME                                         ...
 </div>
 </div>
 <div class="paragraph">
-<p>Creating a new persistent storage in RHODS results in the creation of a PersistentVolumeClaim (PVC) in the corresponding OpenShift project.
+<p>Creating a new persistent storage in RHOAI results in the creation of a PersistentVolumeClaim (PVC) in the corresponding OpenShift project.
 The following diagram represents the OpenShift resources involved in a workbench:</p>
 </div>
 <div class="imageblock">
@@ -559,7 +559,7 @@ The following diagram represents the OpenShift resources involved in a workbench
 <div class="sectionbody">
 <div class="paragraph">
 <p>To enable workbench access to other users, you must grant permissions to those users at the data science project level.
-RHODS does not offer workbench-level permission management.</p>
+RHOAI does not offer workbench-level permission management.</p>
 </div>
 </div>
 </div>
@@ -567,7 +567,7 @@ RHODS does not offer workbench-level permission management.</p>
 <h2 id="_limits"><a class="anchor" href="#_limits"></a>Limits</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If your memory and/or GPU requirements are high, then RHODS might not be able to allocate the requested resources in the workbench.
+<p>If your memory and/or GPU requirements are high, then RHOAI might not be able to allocate the requested resources in the workbench.
 You might see a message similar to the following:</p>
 </div>
 <div class="imageblock">
@@ -576,7 +576,7 @@ You might see a message similar to the following:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>In this case, try to decrease your resource requirements by editing the workbench, or contact your RHODS administrator.</p>
+<p>In this case, try to decrease your resource requirements by editing the workbench, or contact your RHOAI administrator.</p>
 </div>
 </div>
 </div>

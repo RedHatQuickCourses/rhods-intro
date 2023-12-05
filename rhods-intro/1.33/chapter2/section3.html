@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Data Connections :: Introduction to Red Hat OpenShift Data Science</title>
+    <title>Data Connections :: Introduction to Red Hat OpenShift AI</title>
     <link rel="prev" href="section2.html">
     <link rel="next" href="section4.html">
     <meta name="generator" content="Antora 3.1.3">
@@ -15,7 +15,7 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
-      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenShift Data Science</a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Introduction to Red Hat OpenShift AI</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -34,7 +34,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></h3>
+    <h3 class="title"><a href="../index.html">Introduction to Red Hat OpenShift AI</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -47,7 +47,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../chapter1/index.html">Introduction to Red&#160;Hat OpenShift Data Science</a>
+    <a class="nav-link" href="../chapter1/index.html">Introduction to Red&#160;Hat OpenShift AI</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../chapter1/section1.html">Introduction</a>
@@ -117,12 +117,12 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Introduction to Red Hat OpenShift Data Science</span>
+    <span class="title">Introduction to Red Hat OpenShift AI</span>
     <span class="version">1.33</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <a class="title" href="../index.html">Introduction to Red Hat OpenShift Data Science</a>
+      <a class="title" href="../index.html">Introduction to Red Hat OpenShift AI</a>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../index.html">1.33</a>
@@ -140,7 +140,7 @@
   <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">Introduction to Red Hat OpenShift Data Science</a></li>
+    <li><a href="../index.html">Introduction to Red Hat OpenShift AI</a></li>
     <li><a href="index.html">Working with Data Science Projects</a></li>
     <li><a href="section3.html">Data Connections</a></li>
   </ul>
@@ -177,7 +177,7 @@ Trained models can result in large files when you export them, so the recommenda
 <h2 id="_data_connections_are_secrets"><a class="anchor" href="#_data_connections_are_secrets"></a>Data Connections are Secrets</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>RHODS introduces the concept of <em>data connection</em> to define a set of configuration values that you can use to connect your workbench to storage systems.
+<p>RHOAI introduces the concept of <em>data connection</em> to define a set of configuration values that you can use to connect your workbench to storage systems.
 You can use the external storage to store your datasets and your trained models.</p>
 </div>
 <div class="admonitionblock important">
@@ -202,8 +202,8 @@ Cluster storage is used to persist your progress in the workbench.</p>
 </table>
 </div>
 <div class="paragraph">
-<p>RHODS creates data connections in OpenShift as Secret objects.
-RHODS stores these secrets in the OpenShift namespace that corresponds to your data science project.
+<p>RHOAI creates data connections in OpenShift as Secret objects.
+RHOAI stores these secrets in the OpenShift namespace that corresponds to your data science project.
 The secret associated with each data connection includes these key/value pairs:</p>
 </div>
 <div class="ulist">
@@ -226,7 +226,7 @@ The secret associated with each data connection includes these key/value pairs:<
 </ul>
 </div>
 <div class="paragraph">
-<p>You can set these values by using a web form in the RHODS dashboard, as you will learn in the exercise.</p>
+<p>You can set these values by using a web form in the RHOAI dashboard, as you will learn in the exercise.</p>
 </div>
 <div class="paragraph">
 <p>Although the naming of these variables suggests the use of AWS S3, these values are only environment variables, so you decide how you use them in your notebooks.
@@ -264,7 +264,7 @@ metadata:
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Although the <code>opendatahub.io/connection-type</code> annotation indicates supports for different types of data connections, the RHODS dashboard, for now, only allows the creation of S3 data connections.</p>
+<p>Although the <code>opendatahub.io/connection-type</code> annotation indicates supports for different types of data connections, the RHOAI dashboard, for now, only allows the creation of S3 data connections.</p>
 </div>
 </td>
 </tr>
@@ -276,7 +276,7 @@ metadata:
 <h2 id="_using_the_data_connection_environment_variables"><a class="anchor" href="#_using_the_data_connection_environment_variables"></a>Using the Data Connection Environment Variables</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When you associate a data connection to a workbench, RHODS injects the key/value pairs of the data connection as environment variables into the workbench container.</p>
+<p>When you associate a data connection to a workbench, RHOAI injects the key/value pairs of the data connection as environment variables into the workbench container.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -286,7 +286,7 @@ metadata:
 </td>
 <td class="content">
 <div class="paragraph">
-<p>RHODS does not open a connection from the workbench to AWS S3.
+<p>RHOAI does not open a connection from the workbench to AWS S3.
 You are responsible for reading and using the environment variables of the data connection in the notebook.</p>
 </div>
 </td>
