@@ -1,11 +1,11 @@
 = Data Science Projects
 
-In RHODS, a _data science project_ is the preferred way to organize resources when working on an AI/ML application.
+In RHOAI, a _data science project_ is the preferred way to organize resources when working on an AI/ML application.
 Similarly to how you use projects in OpenShift for other workloads, you can use and should use data science projects to organize the different elements that you need for your AI applications, such as workbenches, model servers, or persistent storage.
 
-You can create and manage data science projects by using the RHODS dashboard.
+You can create and manage data science projects by using the RHOAI dashboard.
 
-Internally, a data science project is an OpenShift project that contains specific labels to identify the project as a RHODS-specific project,
+Internally, a data science project is an OpenShift project that contains specific labels to identify the project as a RHOAI-specific project,
 for example:
 
 [source,yaml,subs="+quotes"]
@@ -23,9 +23,9 @@ metadata:
 
 [IMPORTANT]
 ====
-Regular OpenShift projects are not shown in the RHODS dashboard.
+Regular OpenShift projects are not shown in the RHOAI dashboard.
 
-If you cannot use the RHODS dashboard, for example because you are automating the creation of your projects, then make sure that the `opendatahub.io/dashboard: 'true'` label is included in the project definition.
+If you cannot use the RHOAI dashboard, for example because you are automating the creation of your projects, then make sure that the `opendatahub.io/dashboard: 'true'` label is included in the project definition.
 This label identifies the project as a data science project.
 
 Additionally, if you wish to use model serving in your project, then you must add the `modelmesh-enabled: 'true'` label.
@@ -37,7 +37,7 @@ Additionally, if you wish to use model serving in your project, then you must ad
 
 === Creating Data Science Projects
 
-First, open the RHODS dashboard.
+First, open the RHOAI dashboard.
 You might need to enter your credentials to access the dashboard.
 
 To create a data science project, click btn:[Data Science Projects] in the left navigation pane.
@@ -51,7 +51,7 @@ You can optionally add a description and modify the OpenShift resource name for 
 
 image::create-ds-project.png[]
 
-After you create the project, RHODS opens the project dashboard page.
+After you create the project, RHOAI opens the project dashboard page.
 
 image::ds-project-dashboard.png[]
 
@@ -60,7 +60,7 @@ From this page you can manage the project components and the permissions.
 
 === Configure Access
 
-By default, only the project owner and privileged users can access your projects in RHODS.
+By default, only the project owner and privileged users can access your projects in RHOAI.
 However, you can add permissions for specific users and groups.
 
 To configure permissions, from a project dashboard page, click the btn:[Permissions] tab.

@@ -27,13 +27,13 @@ Note that the naming of the classic Jupyter Notebook environment can lead to con
 +
 There are many ways to run an execution environment for notebooks.
 You can install JupyterLab with `pip` and run it on your computer.
-You can use the JupyterLab instances included in the RHODS workspaces.
+You can use the JupyterLab instances included in the RHOAI workspaces.
 You can use online notebook execution environments, such as Binder, Kaggle, or Google Colab.
 
 Project Jupyter::
 This is the umbrella open source project that defines the notebook file format and develops and maintains the JupyterLab and the Jupyter Notebook environments.
 
-Most of the workbench images that RHODS provides include JupyterLab.
+Most of the workbench images that RHOAI provides include JupyterLab.
 
 // Describe Jupyter Notebooks and why is it useful?
 // What is a Jupyter notebook? Why is it popular?
@@ -82,7 +82,7 @@ Instead, VSCodium interacts with ipykernel.
 
 == Exercise: Exploring Jupyter Notebooks
 
-To continue learning about notebooks, open RHODS.
+To continue learning about notebooks, open RHOAI.
 
 1. In a new or an existing data science project, create a `Standard Data Science` workbench.
 

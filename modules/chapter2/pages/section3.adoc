@@ -16,7 +16,7 @@ Trained models can result in large files when you export them, so the recommenda
 
 == Data Connections are Secrets
 
-RHODS introduces the concept of _data connection_ to define a set of configuration values that you can use to connect your workbench to storage systems.
+RHOAI introduces the concept of _data connection_ to define a set of configuration values that you can use to connect your workbench to storage systems.
 You can use the external storage to store your datasets and your trained models.
 
 
@@ -30,8 +30,8 @@ Cluster storage is used to persist your progress in the workbench.
 Data connections are a set of configuration values that you can use to connect to storage systems.
 ====
 
-RHODS creates data connections in OpenShift as Secret objects.
-RHODS stores these secrets in the OpenShift namespace that corresponds to your data science project.
+RHOAI creates data connections in OpenShift as Secret objects.
+RHOAI stores these secrets in the OpenShift namespace that corresponds to your data science project.
 The secret associated with each data connection includes these key/value pairs:
 
 * `AWS_ACCESS_KEY_ID`
@@ -40,7 +40,7 @@ The secret associated with each data connection includes these key/value pairs:
 * `AWS_S3_ENDPOINT`
 * `AWS_SECRET_ACCESS_KEY`
 
-You can set these values by using a web form in the RHODS dashboard, as you will learn in the exercise.
+You can set these values by using a web form in the RHOAI dashboard, as you will learn in the exercise.
 
 Although the naming of these variables suggests the use of AWS S3, these values are only environment variables, so you decide how you use them in your notebooks.
 You can use them to connect to systems such as OpenShift Data Foundation, IBM Cloud Object Storage, and AWS S3.
@@ -70,16 +70,16 @@ metadata:
 
 [NOTE]
 ====
-Although the `opendatahub.io/connection-type` annotation indicates supports for different types of data connections, the RHODS dashboard, for now, only allows the creation of S3 data connections.
+Although the `opendatahub.io/connection-type` annotation indicates supports for different types of data connections, the RHOAI dashboard, for now, only allows the creation of S3 data connections.
 ====
 
 
 == Using the Data Connection Environment Variables
-When you associate a data connection to a workbench, RHODS injects the key/value pairs of the data connection as environment variables into the workbench container.
+When you associate a data connection to a workbench, RHOAI injects the key/value pairs of the data connection as environment variables into the workbench container.
 
 [IMPORTANT]
 ====
-RHODS does not open a connection from the workbench to AWS S3.
+RHOAI does not open a connection from the workbench to AWS S3.
 You are responsible for reading and using the environment variables of the data connection in the notebook.
 ====
 

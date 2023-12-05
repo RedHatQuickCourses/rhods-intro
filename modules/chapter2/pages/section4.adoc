@@ -56,7 +56,7 @@ https://raw.githubusercontent.com/RedHatQuickCourses/rhods-qc-apps/main/1.intro/
 
 1. Create the projects.
 
-a. From your RHODS dashboard, click btn:[Data Science Projects] in the left navigation pane.
+a. From your RHOAI dashboard, click btn:[Data Science Projects] in the left navigation pane.
 
 b. In the btn:[Data science projects] page, click btn:[Create data science project].
 

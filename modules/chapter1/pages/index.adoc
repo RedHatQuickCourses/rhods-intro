@@ -1,10 +1,10 @@
-= Introduction to Red{nbsp}Hat OpenShift Data Science
+= Introduction to Red{nbsp}Hat OpenShift AI
 
-This chapter covers the foundational concepts of Red{nbsp}Hat OpenShift Data Science (RHODS).
-You will learn how you can use RHODS to overcome the inherent and common obstacles of AI projects.
-This chapter also provides a high-level description of the RHODS architectural components, and introduces some important terminology required in the rest of the course.
+This chapter covers the foundational concepts of Red{nbsp}Hat OpenShift AI (RHOAI).
+You will learn how you can use RHOAI to overcome the inherent and common obstacles of AI projects.
+This chapter also provides a high-level description of the RHOAI architectural components, and introduces some important terminology required in the rest of the course.
 
 Chapter goals:
 
-* Identify the main features of Red{nbsp}Hat OpenShift Data Science
-* Describe the architecture and components of Red{nbsp}Hat OpenShift Data Science
+* Identify the main features of Red{nbsp}Hat OpenShift AI
+* Describe the architecture and components of Red{nbsp}Hat OpenShift AI

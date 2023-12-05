@@ -1,10 +1,10 @@
 :experimental:
 = Demo
 
-In this exercise, you will use RHODS to train and evaluate a simple machine learning model, by using JupyterLab and other common ML libraries.
+In this exercise, you will use RHOAI to train and evaluate a simple machine learning model, by using JupyterLab and other common ML libraries.
 
 
-1. *Open the RHODS dashboard.*
+1. *Open the RHOAI dashboard.*
 
 a. In a web browser, navigate to the Web Console of your Red{nbsp}Hat OpenShift cluster, and log in.
 
@@ -18,8 +18,8 @@ c. If prompted, log in with your Red{nbsp}Hat OpenShift credentials.
 
 2. *Configure the workbench of your data science project.*
 +
-A RHODS workbench is a containerized application that includes commonly used data science tools and libraries, such as JupyterLab, TensorFlow, and PyTorch.
-RHODS provides you with a collection of workbench container images, each one preconfigured and tailored to a specific data science use case.
+A RHOAI workbench is a containerized application that includes commonly used data science tools and libraries, such as JupyterLab, TensorFlow, and PyTorch.
+RHOAI provides you with a collection of workbench container images, each one preconfigured and tailored to a specific data science use case.
 
 a. Click btn:[Data Science Projects] in the left sidebar.
 +
@@ -54,7 +54,7 @@ Do not modify the default values of the rest of the fields.
 
 
 e. Click btn:[Create workbench].
-RHODS creates the workbench and the associated persistent storage.
+RHOAI creates the workbench and the associated persistent storage.
 +
 image::created-workbench.png[width=90%,align="center"]
 
