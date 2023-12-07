@@ -99,6 +99,14 @@ Model Serving downloads the model files from S3 by using a data connection.
 
 == Exercise: Getting Started with Data Connections
 
+=== Setup
+
+Before you start with this exercise, you must configure an S3 bucket.
+
+If you do not have an S3 object store available, follow the https://ai-on-openshift.io/tools-and-applications/minio/minio/[guide to create an S3 bucket by using _Minio_].
+Note that you do not necessarily have to create a Data Science project to deploy Minio, as suggested in the guide.
+For the purposes of these courses, you can create you own dedicated OpenShift project to deploy the Minio instance.
+
 === Create a Workbench with a Data connection
 
 From a data science project page, click btn:[Create Workbench].
