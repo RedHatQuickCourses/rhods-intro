@@ -2,7 +2,7 @@
 
 Red{nbsp}Hat OpenShift AI (RHOAI) is a platform for data scientists, machine learning engineers, and operation teams to implement the full lifecycle of AI-based applications.
 
-With RHOAI, uses can gather data, use the data to train and evaluate their AI models, and serve and monitor those models.
+With RHOAI, users can gather data, use the data to train and evaluate their AI models, and serve and monitor those models.
 
 Users can also create _Data Science Pipelines_ to implement and automate model workflows.
 
