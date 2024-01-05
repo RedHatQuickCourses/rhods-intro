@@ -22,7 +22,7 @@ The PTL team acknowledges the valuable contributions of the following Red Hat as
 
 == Classroom Environment
 
-This introductory course has a few, simple hands-on labs. Provision your own Red Hat OpenShift AI cluster using the Red Hat Hybrid Cloud Console at https://console.redhat.com/application-services/data-science. For a simple, no-cost access to an Red Hat OpenShift AI instance useful for experimentation, click on the "Try it in the sandbox" link and follow the on-screen instructions.
+If you don't already have access to Red Hat OpenShift AI, provision an environment using the https://console.redhat.com/application-services/data-science[Red Hat Hybrid Cloud Console^]. The *Try it in the sandbox* option provides free access to a Red Hat OpenShift AI instance useful for experimentation.
 
 The other courses in the learning path use a different classroom. Inspect the prerequisites and classroom requirements in the respective individual courses.
 
