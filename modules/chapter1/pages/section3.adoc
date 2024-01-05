@@ -75,11 +75,11 @@ f. Click btn:[Clone a repository].
 +
 image::git-clone-menu.png[width=40%,align="center"]
 
-g. Enter https://github.com/RedHatQuickCourses/rhods-intro.git as the repository, and click btn:[Clone].
+g. Enter https://github.com/RedHatQuickCourses/rhods-qc-apps.git as the repository, and click btn:[Clone].
 
 4. *Open and run the notebook.*
 
-a. In the file explorer, navigate to the `rhods-intro/notebooks/intro-demo` directory.
+a. In the file explorer, navigate to the `rhods-qc-apps/1.intro/chapter1/intro-demo` directory.
 
 b. To open the notebook, double `notebook.ipynb`.
 The notebook include instructions and code.
@@ -94,7 +94,7 @@ Keep pressing btn:[Shift+Enter] until you reach the bottom.
 
 a. In the data science project dashboard, create a workbench with the default image for PyTorch.
 
-b. In the new workbench, open JupyterLab and clone the https://github.com/RedHatQuickCourses/rhods-intro.git repository as you did in the previous step.
+b. In the new workbench, open JupyterLab and clone the https://github.com/RedHatQuickCourses/rhods-qc-apps.git repository as you did in the previous step.
 
-c. Open the `rhods-intro/notebooks/intro-text-generation/notebook.ipynb` notebook in JupyterLab and execute the steps.
+c. Open the `rhods-qc-apps/1.intro/chapter1/intro-text-generation/notebook.ipynb` notebook in JupyterLab and execute the steps.
 The instructions are embedded in the notebook.
