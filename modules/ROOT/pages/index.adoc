@@ -24,7 +24,7 @@ The PTL team acknowledges the valuable contributions of the following Red Hat as
 
 This introductory course has a few, simple hands-on labs. You will use the https://demo.redhat.com/catalog?search=openshift+data+science&item=babylon-catalog-prod%2Fsandboxes-gpte.ocp4-workshop-rhods-base-aws.prod[Base RHODS on AWS] catalog item in the Red Hat Demo Platform (RHDP) to run the hands on exercises in this course.
 
-For Red Hat partners who do not have access to RHDP, provision an environment using the https://console.redhat.com/application-services/data-science[Red Hat Hybrid Cloud Console^].
+For Red Hat partners who do not have access to RHDP, provision an environment using the https://console.redhat.com/application-services/data-science[Red Hat Hybrid Cloud Console^]. Unfortunately, the labs will NOT work on the trial sandbox environment. You need to provision an OpenShift AI cluster on-premises, or in the supported cloud environments by following the product documentation at https://access.redhat.com/documentation/en-us/red_hat_openshift_ai/2024.
 
 The other courses in the learning path use a different classroom. Inspect the prerequisites and classroom requirements in the respective individual courses.
 
