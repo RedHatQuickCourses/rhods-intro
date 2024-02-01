@@ -214,7 +214,7 @@ You interact with this container when you use the JupyterLab web interface.
 
 * The `oauth-proxy` container, which provides authorization and authentication to access JupyterLab.
 
-RHOAI also creates the required services and routes to enable HTTP and HTTPS traffic into the workbench container.
+RHOAI also creates the required services and route to allow external traffic into the workbench container.
 If you list the resources of the OpenShift namespace that corresponds to your data science project, you should see something similar to this:
 
 [subs=+quotes]
@@ -233,6 +233,11 @@ NAME                                  READY  ...
 NAME                                         ...
 *route.route.openshift.io/my-first-workbench*  ...
 ----
+
+[NOTE]
+====
+A single HTTPS route is created with non-secure traffic (HTTP port 80) configured to be redirected to the HTTPS port 443 (`insecureEdgeTerminationPolicy: Redirect`).
+====
 
 Creating a new persistent storage in RHOAI results in the creation of a PersistentVolumeClaim (PVC) in the corresponding OpenShift project.
 The following diagram represents the OpenShift resources involved in a workbench:
