@@ -509,7 +509,7 @@ You interact with this container when you use the JupyterLab web interface.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>RHOAI also creates the required services and routes to enable HTTP and HTTPS traffic into the workbench container.
+<p>RHOAI also creates the required services and route to allow external traffic into the workbench container.
 If you list the resources of the OpenShift namespace that corresponds to your data science project, you should see something similar to this:</p>
 </div>
 <div class="listingblock">
@@ -528,6 +528,20 @@ NAME                                  READY  ...
 NAME                                         ...
 <strong>route.route.openshift.io/my-first-workbench</strong>  ...</pre>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A single HTTPS route is created with non-secure traffic (HTTP port 80) configured to be redirected to the HTTPS port 443 (<code>insecureEdgeTerminationPolicy: Redirect</code>).</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Creating a new persistent storage in RHOAI results in the creation of a PersistentVolumeClaim (PVC) in the corresponding OpenShift project.
