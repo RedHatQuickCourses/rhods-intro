@@ -12,6 +12,8 @@ This course is the *first* in a series of *five* courses about Red Hat OpenShift
 
 NOTE: After you have completed all the courses in the learning path, you can attempt the https://github.com/RedHatQuickCourses/rhods-qc-apps/tree/main/7.hands-on-lab["Workshop final hands-on lab"], that tests your understanding of the concepts taught in all the courses.
 
+IMPORTANT: The hands-on labs in this course were created and tested with RHOAI v2.4. Labs should mostly work without any changes in minor dot release upgrades of the product. Please open issues in this repository if you run into any issues.
+
 == Authors
 
 The PTL team acknowledges the valuable contributions of the following Red Hat associates:
