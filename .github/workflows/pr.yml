@@ -15,8 +15,6 @@ concurrency: pr-preview-${{ github.ref }}
 
 jobs:
   build:
-    # Do not run if PR is from fork
-    if: ${{ ! github.event.pull_request.head.repo.fork }}
     permissions:
       actions: write
       checks: write
@@ -47,6 +45,8 @@ jobs:
         run: npm run build
 
       - name: Publish PR preview to GitHub Pages
+        # Do not run if PR is from fork
+        if: ${{ ! github.event.pull_request.head.repo.fork }}
         uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: ./build/site
