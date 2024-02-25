@@ -81,8 +81,8 @@ g. Enter https://github.com/RedHatQuickCourses/rhods-qc-apps.git as the reposito
 
 a. In the file explorer, navigate to the `rhods-qc-apps/1.intro/chapter1/intro-demo` directory.
 
-b. To open the notebook, double `notebook.ipynb`.
-The notebook include instructions and code.
+b. To open the notebook, double click `notebook.ipynb`.
+The notebook includes instructions and code.
 
 c. Click the first cell, then press btn:[Shift+Enter] to execute the cell and move to the next one.
 
