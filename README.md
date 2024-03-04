@@ -34,7 +34,7 @@ To add a new section under a chapter create an entry in the *modules/CHAPTER/nav
 
 ### Steps
 
-1. Clone the course repository.
+1. Clone or fork the course repository.
 ```
     $ git clone git@github.com:RedHatQuickCourses/rhods-intro.git
 ```
@@ -66,7 +66,7 @@ To add a new section under a chapter create an entry in the *modules/CHAPTER/nav
     $ git push -u origin rsriniva/ch01s01
 ```
 
-7. Create a GitHub pull request (PR) for your changes using the GitHub web UI.
+7. Create a GitHub pull request (PR) for your changes using the GitHub web UI. For forks, create a PR that merges your forked changes into the `main` branch of this repository.
 
 8. Request a review of the PR from your technical peers and/or a member of the PTL team.
 
