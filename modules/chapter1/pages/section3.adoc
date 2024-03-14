@@ -3,17 +3,18 @@
 
 In this exercise, you will use RHOAI to train and evaluate a simple machine learning model, by using JupyterLab and other common ML libraries.
 
+// Not understood the demo.
 
 1. *Open the RHOAI dashboard.*
 
-a. In a web browser, navigate to the Web Console of your Red{nbsp}Hat OpenShift cluster, and log in.
+a. In a web browser, navigate to the Web Console of your Red{nbsp}Hat OpenShift cluster, and log in with cluster admin credentials.
 
 b. Click the applications menu in the top navigation bar of OpenShift,
-then click btn:[Red{nbsp}Hat OpenShift Data Science].
+then click btn:[Red{nbsp}Hat OpenShift AI].
 +
 image::ocp-top-bar.png[width=35%,align="center"]
 
-c. If prompted, log in with your Red{nbsp}Hat OpenShift credentials.
+c. If prompted, log in with your Red{nbsp}Hat OpenShift cluster admin credentials.
 
 
 2. *Configure the workbench of your data science project.*
@@ -26,8 +27,12 @@ a. Click btn:[Data Science Projects] in the left sidebar.
 image::rhods-side-menu.png[width=35%,align="center"]
 
 b. Create a data science project.
++
 Click btn:[Create data science project].
++
 In the modal window that opens, enter a name and click btn:[Create].
++
+image::rhoai-create-project.png[width=50%,align="center"]
 +
 [NOTE]
 ====
@@ -50,18 +55,22 @@ d. In the project page, click btn:[Create workbench] and complete the form with 
 |Select the recommended option
 |===
 +
-Do not modify the default values of the rest of the fields.
+Do not modify the default values of the rest of the fields. For example,
++
+image::rhoai-create-workbench.png[width=50%,align="center"]
 
 
 e. Click btn:[Create workbench].
++
 RHOAI creates the workbench and the associated persistent storage.
 +
 image::created-workbench.png[width=90%,align="center"]
 
-
 3. *Open the workbench and clone the demo code.*
 
 a. Make sure that the `intro` workbench is running and click btn:[Open].
++
+image::rhoai-intro-workbench.png[width=90%,align="center"]
 
 b. If prompted, log in with your Red{nbsp}Hat OpenShift credentials.
 
@@ -93,6 +102,7 @@ Keep pressing btn:[Shift+Enter] until you reach the bottom.
 5. *Run the `intro-text-generation` notebook*
 
 a. In the data science project dashboard, create a workbench with the default image for PyTorch.
+// Need to add details such as name other settings.
 
 b. In the new workbench, open JupyterLab and clone the https://github.com/RedHatQuickCourses/rhods-qc-apps.git repository as you did in the previous step.
 
