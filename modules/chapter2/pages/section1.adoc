@@ -46,7 +46,8 @@ image::rhods-side-menu.png[width=50%]
 
 In the btn:[Data science projects] page, click btn:[Create data science project].
 
-In the modal window that opens, enter the name of the project and click btn:[Create].
+In the modal window that opens, enter the name of the project as `cat-detection` and click btn:[Create].
+
 You can optionally add a description and modify the OpenShift resource name for the project.
 
 image::create-ds-project.png[]
@@ -63,8 +64,9 @@ From this page you can manage the project components and the permissions.
 By default, only the project owner and privileged users can access your projects in RHOAI.
 However, you can add permissions for specific users and groups.
 
-To configure permissions, from a project dashboard page, click the btn:[Permissions] tab.
-Then, add users and groups, and specify their permissions.
+To configure permissions from a project dashboard page, click the btn:[Permissions] tab.
+
+Here you can add users and groups, and specify their permissions.
 
 image::ds-project-permissions.png[]
 
@@ -73,7 +75,11 @@ image::ds-project-permissions.png[]
 === Deleting Data Science Projects
 
 To delete a data science project, navigate to the btn:[Data science projects] page.
-Then, locate the project to be deleted and click its btn:[⋮] button, then click btn:[Delete project].
+
+Locate the project to be deleted and click its btn:[⋮] button
+
+Click btn:[Delete project].
+
 Finally, type the project name to confirm the deletion.
 
 image::ds-project-delete.png[]
