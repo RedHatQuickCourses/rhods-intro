@@ -149,6 +149,7 @@ The association between data connections and workbenches follows a `1 to N` sche
 === Edit a Data connection
 
 Next, click the btn:[⋮] button of the data connection, then click btn:[Edit data connection].
+
 Note that you can assign more workbenches to the same data connection.
 
 image::dataconnection-edit.png[]
@@ -193,3 +194,4 @@ c. Follow the instructions in the notebook.
 Click the first cell, then press btn:[Shift+Enter] to execute the cell and move to the next one.
 Next, execute and review the rest of the cells.
 Keep pressing btn:[Shift+Enter] until you reach the bottom.
+// Exercise has not end objective or goal that we have achieved.

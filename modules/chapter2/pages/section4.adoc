@@ -2,6 +2,7 @@
 :navtitle: Lab
 
 In this exercise, you will practice the use of data science projects, permissions, workbenches, environment variables, and data connections.
+//Need more information on the objectives and goals of the lab.
 
 [INFO]
 ====
@@ -55,6 +56,8 @@ https://raw.githubusercontent.com/RedHatQuickCourses/rhods-qc-apps/main/1.intro/
 == Solution
 
 1. Create the projects.
+// Login as user1 is missing in the instruction.
+// When to run the command is missing -  "$ oc create -f https://raw.githubusercontent.com/RedHatQuickCourses/rhods-qc-apps/main/1.intro/chapter2/lab/group.yaml"
 
 a. From your RHOAI dashboard, click btn:[Data Science Projects] in the left navigation pane.
 

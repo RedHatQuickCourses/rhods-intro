@@ -3,7 +3,7 @@
 
 In this exercise, you will use RHOAI to train and evaluate a simple machine learning model, by using JupyterLab and other common ML libraries.
 
-// Not understood the demo.
+// Not understood the demo. Can be moved in next chapter before Lab.
 
 1. *Open the RHOAI dashboard.*
 
