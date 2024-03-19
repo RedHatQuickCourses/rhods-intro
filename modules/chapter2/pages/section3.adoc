@@ -124,7 +124,7 @@ This image contains the `boto3` library, required for the second part of the exe
 Alternatively, you can add a data connection to an existing workbench by editing the workbench.
 ====
 
-Scroll down to the btn:[Data connections] section and select btn:[Create data connection].
+Scroll down to the btn:[Data connections] section, check btn:[Use a data connection] box and select btn:[Create data connection].
 This option creates the data connection and assigns it to the workbench that you are creating.
 Complete the form with your S3 connection parameters.
 
