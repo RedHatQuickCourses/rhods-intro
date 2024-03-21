@@ -368,6 +368,22 @@ Complete the form with your S3 connection parameters.</p>
 <img src="_images/dataconnection-new.png" alt="dataconnection new">
 </div>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For S3 buckets where the region is not relevant, such as Minio, you still have to enter a placeholder value in the <b class="button">Region</b> field.
+A non-empty region is required to pass <code>boto3</code> validations.
+Otherwise, you might get an <code>Invalid region</code> error.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Save the workbench.
 In the data science project page, notice the newly created data connection, which is associated with the workbench.</p>
