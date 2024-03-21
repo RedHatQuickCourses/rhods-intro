@@ -13,6 +13,7 @@ This course is the *first* in a series of *five* courses about Red Hat OpenShift
 NOTE: After you have completed all the courses in the learning path, you can attempt the https://github.com/RedHatQuickCourses/rhods-qc-apps/tree/main/7.hands-on-lab["Workshop final hands-on lab"], that tests your understanding of the concepts taught in all the courses.
 
 IMPORTANT: The hands-on labs in this course were created and tested with RHOAI v2.4. Labs should mostly work without any changes in minor dot release upgrades of the product. Please open issues in this repository if you run into any issues.
+// I see Operator version as 2.8.0, can we change from 2.4 to 2.8.0?
 
 == Authors
 
@@ -38,10 +39,10 @@ For this introductory course, basic experience with Red{nbsp}Hat OpenShift is re
 
 The overall objectives of this introductory course include:
 
-* Become familiar with the general architecture and main features of Red{nbsp}Hat OpenShift AI
-* Accessing and logging in to the Red{nbsp}Hat OpenShift AI web console
-* Creating, sharing and deleting data science projects
-* Creating a Workbench within a data science project
-* Creating and deleting data connections
-* Creating, importing (from Git repositories) and sharing Jupyter notebooks
-* Install Python packages in your Jupyter notebooks
+* Familiarize with the general architecture and main features of Red{nbsp}Hat OpenShift AI
+* Access and log in to the Red{nbsp}Hat OpenShift AI web console
+* Create, share and delete data science projects
+* Create a workbench within a data science project
+* Create and delete data connections
+* Create, import (from Git repositories) and share Jupyter Notebook
+* Install Python packages in your Jupyter Notebook

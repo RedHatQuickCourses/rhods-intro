@@ -93,10 +93,6 @@ In fact, storing your models in the data connection enables you to use Model Ser
 Model Serving downloads the model files from S3 by using a data connection.
 
 
-
-
-
-
 == Exercise: Getting Started with Data Connections
 
 === Setup
@@ -104,7 +100,7 @@ Model Serving downloads the model files from S3 by using a data connection.
 Before you start with this exercise, you must configure an S3 bucket.
 
 If you do not have an S3 object store available, follow the https://ai-on-openshift.io/tools-and-applications/minio/minio/[guide to create an S3 bucket by using _Minio_].
-// Can we add separate page on deploy Minio?
+
 Note that you do not necessarily have to create a Data Science project to deploy Minio, as suggested in the guide.
 For the purposes of these courses, you can create you own dedicated OpenShift project to deploy the Minio instance.
 
@@ -120,20 +116,21 @@ Make sure you use the `Standard Data Science` image.
 This image contains the `boto3` library, required for the second part of the exercise.
 ====
 
-[NOTE]
-====
-Alternatively, you can add a data connection to an existing workbench by editing the workbench.
-====
-
-Scroll down to the btn:[Data connections] section and click btn:[Add data connection].
-
-This option creates the data connection and assigns it to the workbench that you are creating.
+Scroll down to the btn:[Data connections] section and select `Use a data connection`.
 
 Complete the form with your S3 connection parameters.
 
 image::dataconnection-new.png[]
 
-Save the workbench.
+To create a workbench, click btn:[Create workbench].
+
+This option creates the data connection and assigns it to the workbench that you are creating.
+
+[NOTE]
+====
+Alternatively, you can add a data connection to an existing workbench by editing the workbench. Save the workbench.
+====
+
 In the data science project page, notice the newly created data connection, which is associated with the workbench.
 
 image::dataconnection-list.png[]
@@ -148,9 +145,11 @@ The association between data connections and workbenches follows a `1 to N` sche
 
 === Edit a Data connection
 
-Next, click the btn:[⋮] button of the data connection, then click btn:[Edit data connection].
-
 Note that you can assign more workbenches to the same data connection.
+
+Create new workbench.
+
+Next, click the btn:[⋮] button of the data connection, then click btn:[Edit data connection].
 
 image::dataconnection-edit.png[]
 
@@ -189,9 +188,11 @@ f. Enter https://github.com/RedHatQuickCourses/rhods-intro.git as the repository
 a. In the file explorer, navigate to the `rhods-intro/notebooks/data-connections` directory.
 
 b. Open the `exercise.ipynb` notebook.
+This exercise covers the basic use of the `boto3` library, which is the AWS SDK for Python.
+This library is included in some workbench images included in RHOAI, such as `Standard Data Science`.
 
 c. Follow the instructions in the notebook.
 Click the first cell, then press btn:[Shift+Enter] to execute the cell and move to the next one.
-Next, execute and review the rest of the cells.
+
+d. Next, execute and review the rest of the cells.
 Keep pressing btn:[Shift+Enter] until you reach the bottom.
-// Exercise has not end objective or goal that we have achieved.

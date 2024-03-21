@@ -1,0 +1,160 @@
+= Assessment Lab: Working with Data Science Projects
+:navtitle: Lab
+
+In this lab, you will practice the use of data science projects, permissions, workbenches, environment variables, and data connections.
+
+[INFO]
+====
+*Prerequisites*
+
+To perform this lab, ensure that your platform meets the following conditions:
+
+* An S3 bucket. If you do not have an S3 object store available, follow the https://ai-on-openshift.io/tools-and-applications/minio/minio/[guide to create an S3 bucket by using _Minio_].
+* The `data-scientists` user group exists in OpenShift.
++
+To create the `data-scientists` group, log in as a user with administrator privilege in OpenShift and then apply the https://raw.githubusercontent.com/RedHatQuickCourses/rhods-qc-apps/main/1.intro/chapter2/lab/group.yaml file:
++
+[subs=+quotes]
+----
+apiVersion: user.openshift.io/v1
+kind: Group
+metadata:
+  name: data-scientists
+users:
+  - user4
+  - user5
+----
++
+If you use the `oc` CLI in your computer or terminal from OpenShift web console, then you can run:
++
+[subs=+quotes]
+----
+$ *oc create -f \
+https://raw.githubusercontent.com/RedHatQuickCourses/rhods-qc-apps/main/1.intro/chapter2/lab/group.yaml*
+----
+* The `user4` and `user5` users exist in OpenShift and are assigned to the `data-scientists` group.
+* The `oc` CLI installed on your computer.
+Alternatively, you can use the OpenShift web console.
+
+The identity provided of your demo platform already includes these users (`user4` and `user5`).
+
+
+// TODO adjust yaml URL after merging to main
+====
+
+== Specifications
+
+* Create two data science projects as `user1`: `intro-projects-a` and `intro-projects-b`.
+
+* Create a workbench in `intro-projects-a`.
+  - Use the `Standard Data Science` image.
+  - This workbench must be connected to the S3 bucket that is available in your demo platform.
+  - Clone the https://github.com/RedHatQuickCourses/rhods-qc-apps repository in this workbench.
+  - Execute the `rhods-qc-apps/1.intro/chapter2/lab/test_connection.ipynb` notebook in this workbench.
+  This notebook contains code to verify that the connection to S3.
+
+* Create a workbench in `intro-projects-b`.
+  - Select any image for this workbench.
+  - Pass your name in the `STUDENT_NAME` environment variable.
+  - Clone the https://github.com/RedHatQuickCourses/rhods-qc-apps repository in this workbench.
+  - Execute the `rhods-qc-apps/1.intro/chapter2/lab/test_env_vars.ipynb` notebook in this workbench.
+  This notebook contains code to read the environment variable.
+
+* The `data-scientists` group must have edit permissions in `intro-projects-a`.
+
+* Only the `user4` user must have edit permissions in `intro-projects-b`.
+
+== Solution
+
+1. Create the projects.
+
+a. Login as the `user1` to Red{nbsp}Hat OpenShift AI console.
+
+b. From your RHOAI dashboard, click btn:[Data Science Projects] in the left navigation pane.
+
+c. In the btn:[Data science projects] page, click btn:[Create data science project].
+
+d. Enter `intro-projects-a` as the project name and click btn:[Create].
+
+e. Repeat the same steps to create `intro-projects-b`.
+
+2. Create a workbench connected to S3 in `intro-projects-a`.
+
+a. Navigate the `intro-projects-a` dashboard and click btn:[Create workbench].
+In the workbench creation page, enter the workbench name, select the workbench image as `Standard Data Science` image, and the image version.
+
+b. Select btn:[Small] as the container size.
+
+c. In the btn:[Data connections] section, select btn:[Use a data connection].
+
+d. Enter the configuration values of your S3 connection.
+
+e. Click btn:[Create workbench] to finish the creation of the workbench and the data connection.
+
+3. Verify the connection of the workbench in `intro-projects-a`.
+
+a. Open the workbench of the `intro-projects-a` project.
+
+b. Log in as `user1` to JupyterLab and accept the access form.
+
+c. Clone the https://github.com/RedHatQuickCourses/rhods-qc-apps repository.
+
+d. Navigate to `rhods-qc-apps/1.intro/chapter2/lab` and run the `test_connection.ipynb` notebook.
+You should see the buckets available in S3.
++
+image::lab-test-connection.png[]
+
+4. Create a workbench that receives the `STUDENT_NAME` environment variable in `intro-projects-b`.
+
+a. Navigate the `intro-projects-b` dashboard and click btn:[Create workbench].
+In the workbench creation page, enter the workbench name, select the workbench image as `Standard Data Science` image, and the image version.
+
+b. Select btn:[Small] as the container size.
+
+c. In the btn:[Environment variables] section, click btn:[Add variable].
+
+d. Select btn:[Config Map] as the environment variable type.
+Then select btn:[Key/value].
+
+e. Enter `STUDENT_NAME` as the key, and your name as the value.
++
+image::lab-env-vars.png[]
+
+f. Click btn:[Create workbench] to finish the creation of the workbench and the data connection.
+
+5. Verify the variable injected in the workbench in `intro-projects-b`.
+
+a. Open the workbench of the `intro-projects-b` project.
+
+b. Log in as `user1` to JupyterLab and accept the access form.
+
+c. Clone the https://github.com/RedHatQuickCourses/rhods-qc-apps repository.
+
+d. Navigate to `rhods-qc-apps/1.intro/chapter2/lab` and run the `test_env_vars.ipynb` notebook.
+You should see a hello message that includes your name.
++
+image::lab-test-env-vars.png[]
+
+6. Set the project permissions of `intro-projects-a`.
+
+a. Navigate the `intro-projects-a` dashboard and click btn:[Permissions].
+
+b. Click btn:[Add group] and enter `data-scientists` as the group name.
+Verify that the btn:[Permission selector] is set to btn:[Edit] and click the btn:[✓] button.
+
+c. Log out and log back in with both `user4` and `user5` users.
+Verify that both users have access to the `intro-projects-a` project.
+
+7. Set the project permissions of `intro-projects-b`.
+
+a. Log out and log back in as `user1`.
+
+b. Navigate the `intro-projects-b` dashboard and click btn:[Permissions].
+
+c. Click btn:[Add user] and enter `user4` as the username.
+Verify that the btn:[Permission selector] is set to btn:[Edit] and click the btn:[✓] button.
+
+d. Log out and log back in with both `user4` and `user5` users.
+Verify that `user4` can access the `intro-projects-b` project.
+Next, verify that `user5` cannot access the `intro-projects-b` project.
+

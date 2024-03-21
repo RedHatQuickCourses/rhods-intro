@@ -31,14 +31,19 @@ This label identifies the project as a data science project.
 Additionally, if you wish to use model serving in your project, then you must add the `modelmesh-enabled: 'true'` label.
 ====
 
-
-
 == Exercise
 
 === Creating Data Science Projects
 
 First, open the RHOAI dashboard.
+
+In a web browser, navigate to the web console of your Red{nbsp}Hat OpenShift cluster.
 You might need to enter your credentials to access the dashboard.
+
+Click the applications menu in the top navigation bar of OpenShift,
+then click btn:[Red{nbsp}Hat OpenShift AI].
+
+image::ocp-top-bar.png[width=50%]
 
 To create a data science project, click btn:[Data Science Projects] in the left navigation pane.
 
@@ -57,7 +62,6 @@ After you create the project, RHOAI opens the project dashboard page.
 image::ds-project-dashboard.png[]
 
 From this page you can manage the project components and the permissions.
-
 
 === Configure Access
 
