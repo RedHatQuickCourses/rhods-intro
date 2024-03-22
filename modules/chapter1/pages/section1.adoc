@@ -13,7 +13,7 @@ Users can also create _Data Science Pipelines_ to implement and automate model w
 
 > **Obstacle 1**: Many AI models do not go beyond the training stages because the teams that train these models lack the tools to deploy, deliver, and maintain AI-based systems in production.
 
-To solve this problem,  RHOAI  helps data scientists, developers and administrators to operationalize the lifecycle of AI models and bring those models to production.
+To solve this problem, RHOAI helps data scientists, developers and administrators to operationalize the lifecycle of AI models and bring those models to production.
 
 > **Obstacle 2**: AI practitioners often struggle with the myriad tools, libraries and versions to maintain during the development and maintenance of AI-based applications, not to mention the significant effort required to configure GPU support and drivers.
 

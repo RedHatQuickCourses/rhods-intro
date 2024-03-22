@@ -9,7 +9,7 @@ Workbenches are stateful, meaning that you can stop and restart them without los
 
 Data science projects can include more than one workbench.
 This is useful when you need to run different experiments that belong to the same project, but with different tooling.
-For example, you might want to train a simple model with Scikit-learn and another model with PyTorch.
+For example, you might want to train a simple model with _scikit-learn_ and another model with _PyTorch_.
 Or you might have a workbench only for data exploration and another workbench for model training.
 
 
@@ -20,7 +20,9 @@ Or you might have a workbench only for data exploration and another workbench fo
 Create a data science project (or use an existing one) and navigate to the project dashboard page.
 
 From this page, click btn:[Create workbench].
+
 In the workbench creation page, enter the workbench name, select the workbench image, and the image version.
+
 For this particular example, use the recommended version of the `Minimal Python` image.
 
 image::workbench-create.png[]
@@ -43,14 +45,17 @@ Environment variables are the recommended way to inject configuration into softw
 In this way, the application, or in this case the RHOAI workbench, is decoupled from the working environment.
 
 Scroll down to the btn:[Environment variables] section and click btn:[Add variable].
-Choose whether you want to create a ConfigMap or a Secret.
+
+Choose whether you want to create a `ConfigMap` or a `Secret`.
+
 You can define multiple key/value pairs or upload a file.
 
 image::workbench-variables.png[]
 
+Each `ConfigMap` or `Secret` can contain multiple key/value items.
 
-Each ConfigMap or Secret can contain multiple key/value items.
-To add more items to a ConfigMap or a Secret, click btn:[Add another key / value pair].
+To add more items to a `ConfigMap` or a `Secret`, click btn:[Add another key / value pair].
+
 Alternatively, you can upload a file that includes multiple key/value pairs.
 
 
@@ -61,7 +66,9 @@ Alternatively, you can upload a file that includes multiple key/value pairs.
 Workbenches require persistent storage to ensure that your progress is not lost when you stop or remove the workbench.
 
 Scroll down to the btn:[Cluster storage] section.
+
 Verify that RHOAI automatically selects the btn:[Create new persistent storage] option.
+
 This is the default behavior.
 RHOAI creates a dedicated persistent storage for each workbench and mounts the storage in the root directory of the container.
 
@@ -111,7 +118,9 @@ image::workbench-started.png[]
 === Inspect the Workbench
 
 In the data science project page, click the btn:[>] icon to view more details about the workbench.
+
 The card that slides down displays the workbench details, including storage usage.
+
 You can use the btn:[Add storage] button to add more storage mount points to the workbench.
 
 image::workbench-view.png[]
@@ -120,7 +129,9 @@ image::workbench-view.png[]
 
 Click btn:[Open].
 On the browser tab that opens, enter your credentials to authenticate to the workbench's JupyterLab.
+
 Next, allow the selected permissions to access JupyterLab.
+
 Click btn:[Allow selected permissions].
 
 image::workbench-auth.png[]
@@ -130,6 +141,7 @@ Verify that you see the JupyterLab application:
 image::jupyterlab-home.png[]
 
 In the right pane, click the btn:[Terminal] item to open a new terminal.
+
 In the terminal, verify that the `DATA_FILE` environment variable has been injected into the workbench:
 
 [subs=+quotes]
@@ -169,6 +181,7 @@ image::workbench-state.png[]
 === Edit the Workbench
 
 Return to the RHOAI data science project page.
+
 Click the workbench btn:[⋮] button, then click btn:[Edit workbench].
 
 image::workbench-edit.png[]
@@ -191,7 +204,10 @@ You cannot edit a workbench while the workbench is starting or stopping.
 
 === Delete the Workbench
 
-From the project dashboard, click the workbench btn:[⋮] button, then click btn:[Delete workbench].
+From the project dashboard, click the workbench btn:[⋮] button
+
+Click btn:[Delete workbench].
+
 In the delete window, type the workbench name to confirm the operation:
 
 image::workbench-delete.png[]

@@ -1,151 +1,110 @@
-= Assessment Lab: Working with Data Science Projects
-:navtitle: Lab
+:experimental:
+= Demo
 
-In this exercise, you will practice the use of data science projects, permissions, workbenches, environment variables, and data connections.
+In this exercise, you will use RHOAI to train and evaluate a simple machine learning model, by using JupyterLab and other common ML libraries.
 
-[INFO]
+
+1. *Open the RHOAI dashboard.*
+
+a. In a web browser, navigate to the web console of your Red{nbsp}Hat OpenShift cluster.
+You might need to enter your credentials to access the dashboard.
+
+b. Click the applications menu in the top navigation bar of OpenShift,
+then click btn:[Red{nbsp}Hat OpenShift AI].
++
+image::ocp-top-bar.png[width=35%,align="center"]
+
+c. If prompted, log in with your Red{nbsp}Hat OpenShift cluster credentials.
+
+2. *Configure the workbench of your data science project.*
++
+A RHOAI workbench is a containerized application that includes commonly used data science tools and libraries, such as JupyterLab, TensorFlow, and PyTorch.
+RHOAI provides you with a collection of workbench container images, each one preconfigured and tailored to a specific data science use case.
+
+a. Click btn:[Data Science Projects] in the left sidebar.
++
+image::rhods-side-menu.png[width=35%,align="center"]
+
+b. Create a data science project.
++
+Click btn:[Create data science project].
++
+In the modal window that opens, enter a name and click btn:[Create].
++
+image::rhoai-create-project.png[width=50%,align="center"]
++
+[NOTE]
 ====
-*Prerequisites*
-
-To perform this exercise, ensure that your platform meets the following conditions:
-
-* An S3 bucket.
-* The `data-scientists` user group exists in OpenShift.
-* The `user4` and `user5` users exist in OpenShift and are assigned to the `data-scientists` group.
-* The `oc` CLI installed on your computer.
-Alternatively, you can use the OpenShift web console.
-
-The identity provided of your demo platform already includes these users.
-To create the group, log in as an administrator user in OpenShift and then apply the https://raw.githubusercontent.com/RedHatQuickCourses/rhods-qc-apps/main/1.intro/chapter2/lab/group.yaml file.
-
-If you use the `oc` CLI in your computer, then you can run:
-
-[subs=+quotes]
-----
-$ *oc create -f \
-https://raw.githubusercontent.com/RedHatQuickCourses/rhods-qc-apps/main/1.intro/chapter2/lab/group.yaml*
-----
-
-// TODO adjust yaml URL after merging to main
+If you are using Red{nbsp}Hat OpenShift from the developer sandbox, then a project is already created for you.
 ====
 
-== Specifications
+c. Click the newly created project.
 
-* Create two data science projects as `user1`: `intro-projects-a` and `intro-projects-b`.
-
-* Create a workbench in `intro-projects-a`.
-  - Use the `Standard Data Science` image.
-  - This workbench must be connected to the S3 bucket that is available in your demo platform.
-  - Clone the https://github.com/RedHatQuickCourses/rhods-qc-apps repository in this workbench.
-  - Execute the `rhods-qc-apps/1.intro/chapter2/lab/test_connection.ipynb` notebook in this workbench.
-  This notebook contains code to verify that the connection to S3.
-
-* Create a workbench in `intro-projects-b`.
-  - Select any image for this workbench.
-  - Pass your name in the `STUDENT_NAME` environment variable.
-  - Clone the https://github.com/RedHatQuickCourses/rhods-qc-apps repository in this workbench.
-  - Execute the `rhods-qc-apps/1.intro/chapter2/lab/test_env_vars.ipynb` notebook in this workbench.
-  This notebook contains code to read the environment variable.
-
-* The `data-scientists` group must have edit permissions in `intro-projects-a`.
-
-* Only the `user4` user must have edit permissions in `intro-projects-b`.
-
-
-== Solution
-
-1. Create the projects.
-
-a. From your RHOAI dashboard, click btn:[Data Science Projects] in the left navigation pane.
-
-b. In the btn:[Data science projects] page, click btn:[Create data science project].
-
-c. Enter `intro-projects-a` as the project name and click btn:[Create].
-
-d. Repeat the same steps to create `intro-projects-b`.
-
-
-2. Create a workbench connected to S3 in `intro-projects-a`.
-
-a. Navigate the `intro-projects-a` dashboard and click btn:[Create workbench].
-In the workbench creation page, enter the workbench name, select the workbench image, and the image version.
-
-b. Select btn:[Small] as the container size.
-
-c. In the btn:[Data connections] section, select btn:[Use a data connection].
-
-d. Enter the configuration values of your S3 connection.
-
-e. Click btn:[Create workbench] to finish the creation of the workbench and the data connection.
-
-
-3. Verify the connection of the workbench in `intro-projects-a`.
-
-a. Open the workbench of the `intro-projects-a` project.
-
-b. Log in to JupyterLab and accept the access form.
-
-c. Clone the https://github.com/RedHatQuickCourses/rhods-qc-apps repository.
-
-d. Navigate to `rhods-qc-apps/1.intro/chapter2/lab` and run the `test_connection.ipynb` notebook.
-You should see the buckets available in S3.
+d. In the project page, click btn:[Create workbench] and complete the form with the following values.
 +
-image::lab-test-connection.png[]
+[cols="1,1"]
+|===
+|*Name*
+|`intro`
 
+|*Notebook image* - Image selection
+|`TensorFlow`
 
-4. Create a workbench that receives the `STUDENT_NAME` environment variable in `intro-projects-b`.
-
-a. Navigate the `intro-projects-b` dashboard and click btn:[Create workbench].
-In the workbench creation page, enter the workbench name, select the workbench image, and the image version.
-
-b. Select btn:[Small] as the container size.
-
-c. In the btn:[Environment variables] section, click btn:[Add variable].
-
-d. Select btn:[Config Map] as the environment variable type.
-Then select btn:[Key/value].
-
-e. Enter `STUDENT_NAME` as the key, and your name as the value.
+|*Notebook image* - Version selection
+|Select the recommended option
+|===
 +
-image::lab-env-vars.png[]
-
-f. Click btn:[Create workbench] to finish the creation of the workbench and the data connection.
-
-
-5. Verify the variable injected in the workbench in `intro-projects-b`.
-
-a. Open the workbench of the `intro-projects-b` project.
-
-b. Log in to JupyterLab and accept the access form.
-
-c. Clone the https://github.com/RedHatQuickCourses/rhods-qc-apps repository.
-
-d. Navigate to `rhods-qc-apps/1.intro/chapter2/lab` and run the `test_env_vars.ipynb` notebook.
-You should see a hello message that includes your name.
+Do not modify the default values of the rest of the fields. For example,
 +
-image::lab-test-env-vars.png[]
+image::rhoai-create-workbench.png[width=50%,align="center"]
 
 
-6. Set the project permissions of `intro-projects-a`.
+e. Click btn:[Create workbench].
++
+RHOAI creates the workbench and the associated persistent storage.
++
+image::created-workbench.png[width=90%,align="center"]
 
-a. Navigate the `intro-projects-a` dashboard and click btn:[Permissions].
+3. *Open the workbench and clone the demo code.*
 
-b. Click btn:[Add group] and enter `data-scientists` as the group name.
-Verify that the btn:[Permission selector] is set to btn:[Edit] and click the btn:[✓] button.
+a. Make sure that the `intro` workbench is running and click btn:[Open].
++
+image::rhoai-intro-workbench.png[width=90%,align="center"]
 
-c. Log out and log back in with both `user4` and `user5` users.
-Verify that both users have access to the `intro-projects-a` project.
+b. If prompted, log in with your Red{nbsp}Hat OpenShift credentials.
 
-7. Set the project permissions of `intro-projects-b`.
+c. Click btn:[Allow selected permissions] to grant the workbench access to your data science project.
 
-a. Log out and log back in as `user1`.
+d. Verify that the JupyterLab interface opens in a new browser tab.
 
-b. Navigate the `intro-projects-b` dashboard and click btn:[Permissions].
+e. Click the btn:[Git] icon in the left sidebar.
 
-c. Click btn:[Add user] and enter `user4` as the username.
-Verify that the btn:[Permission selector] is set to btn:[Edit] and click the btn:[✓] button.
+f. Click btn:[Clone a repository].
++
+image::git-clone-menu.png[width=40%,align="center"]
 
-d. Log out and log back in with both `user4` and `user5` users.
-Verify that `user4` can access the `intro-projects-b` project.
-Next, verify that `user5` cannot access the `intro-projects-b` project.
+g. Enter https://github.com/RedHatQuickCourses/rhods-qc-apps.git as the repository, and click btn:[Clone].
 
+4. *Open and run the notebook.*
+
+a. In the file explorer, navigate to the `rhods-qc-apps/1.intro/chapter1/intro-demo` directory.
+
+b. To open the notebook, double click `notebook.ipynb`.
+The notebook includes instructions and code.
+This is a minimal example about how you can use common data science libraries in RHOAI to train an AI model.
+
+c. Click the first cell, then press btn:[Shift+Enter] to execute the cell and move to the next one.
+
+d. Execute and review the rest of the cells.
+Keep pressing btn:[Shift+Enter] until you reach the bottom.
+
+5. *Run the `intro-text-generation` notebook*
+
+a. In the data science project dashboard, create a new workbench with the default image for `PyTorch`.
+
+b. In the new workbench, open JupyterLab and clone the https://github.com/RedHatQuickCourses/rhods-qc-apps.git repository as you did in the previous step.
+This demo shows you how to fine-tune a pretrained language model for text generation by using _Causal language modeling_.
+
+c. Open the `rhods-qc-apps/1.intro/chapter1/intro-text-generation/notebook.ipynb` notebook in JupyterLab and execute the steps.
+The instructions are embedded in the notebook.
+// This is not working as expected. I get this error - "ls: cannot access 'my_model/pytorch_model.bin': No such file or directory"
