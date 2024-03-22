@@ -56,10 +56,7 @@
     <a class="nav-link" href="../chapter1/section2.html">Architecture</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../chapter1/section3.html">Demo</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../chapter1/section4.html">Conclusion</a>
+    <a class="nav-link" href="../chapter1/section3.html">Conclusion</a>
   </li>
 </ul>
   </li>
@@ -81,7 +78,10 @@
     <a class="nav-link" href="section3.html">Data Connections</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="section4.html">Lab</a>
+    <a class="nav-link" href="section4.html">Demo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section5.html">Lab</a>
   </li>
 </ul>
   </li>
@@ -165,7 +165,7 @@ RHOAI exposes the JupyterLab URL through an OpenShift route so that you can use 
 <div class="paragraph">
 <p>Data science projects can include more than one workbench.
 This is useful when you need to run different experiments that belong to the same project, but with different tooling.
-For example, you might want to train a simple model with Scikit-learn and another model with PyTorch.
+For example, you might want to train a simple model with <em>scikit-learn</em> and another model with <em>PyTorch</em>.
 Or you might have a workbench only for data exploration and another workbench for model training.</p>
 </div>
 </div>
@@ -179,9 +179,13 @@ Or you might have a workbench only for data exploration and another workbench fo
 <p>Create a data science project (or use an existing one) and navigate to the project dashboard page.</p>
 </div>
 <div class="paragraph">
-<p>From this page, click <b class="button">Create workbench</b>.
-In the workbench creation page, enter the workbench name, select the workbench image, and the image version.
-For this particular example, use the recommended version of the <code>Minimal Python</code> image.</p>
+<p>From this page, click <b class="button">Create workbench</b>.</p>
+</div>
+<div class="paragraph">
+<p>In the workbench creation page, enter the workbench name, select the workbench image, and the image version.</p>
+</div>
+<div class="paragraph">
+<p>For this particular example, use the recommended version of the <code>Minimal Python</code> image.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -221,9 +225,13 @@ Select <code>Small</code> in this case.</p>
 In this way, the application, or in this case the RHOAI workbench, is decoupled from the working environment.</p>
 </div>
 <div class="paragraph">
-<p>Scroll down to the <b class="button">Environment variables</b> section and click <b class="button">Add variable</b>.
-Choose whether you want to create a ConfigMap or a Secret.
-You can define multiple key/value pairs or upload a file.</p>
+<p>Scroll down to the <b class="button">Environment variables</b> section and click <b class="button">Add variable</b>.</p>
+</div>
+<div class="paragraph">
+<p>Choose whether you want to create a <code>ConfigMap</code> or a <code>Secret</code>.</p>
+</div>
+<div class="paragraph">
+<p>You can define multiple key/value pairs or upload a file.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -231,9 +239,13 @@ You can define multiple key/value pairs or upload a file.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Each ConfigMap or Secret can contain multiple key/value items.
-To add more items to a ConfigMap or a Secret, click <b class="button">Add another key / value pair</b>.
-Alternatively, you can upload a file that includes multiple key/value pairs.</p>
+<p>Each <code>ConfigMap</code> or <code>Secret</code> can contain multiple key/value items.</p>
+</div>
+<div class="paragraph">
+<p>To add more items to a <code>ConfigMap</code> or a <code>Secret</code>, click <b class="button">Add another key / value pair</b>.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can upload a file that includes multiple key/value pairs.</p>
 </div>
 </div>
 <div class="sect2">
@@ -242,9 +254,13 @@ Alternatively, you can upload a file that includes multiple key/value pairs.</p>
 <p>Workbenches require persistent storage to ensure that your progress is not lost when you stop or remove the workbench.</p>
 </div>
 <div class="paragraph">
-<p>Scroll down to the <b class="button">Cluster storage</b> section.
-Verify that RHOAI automatically selects the <b class="button">Create new persistent storage</b> option.
-This is the default behavior.
+<p>Scroll down to the <b class="button">Cluster storage</b> section.</p>
+</div>
+<div class="paragraph">
+<p>Verify that RHOAI automatically selects the <b class="button">Create new persistent storage</b> option.</p>
+</div>
+<div class="paragraph">
+<p>This is the default behavior.
 RHOAI creates a dedicated persistent storage for each workbench and mounts the storage in the root directory of the container.</p>
 </div>
 <div class="paragraph">
@@ -337,9 +353,13 @@ The dashboard should also display the persistent storage associated with the wor
 <div class="sect2">
 <h3 id="_inspect_the_workbench"><a class="anchor" href="#_inspect_the_workbench"></a>Inspect the Workbench</h3>
 <div class="paragraph">
-<p>In the data science project page, click the <b class="button">&gt;</b> icon to view more details about the workbench.
-The card that slides down displays the workbench details, including storage usage.
-You can use the <b class="button">Add storage</b> button to add more storage mount points to the workbench.</p>
+<p>In the data science project page, click the <b class="button">&gt;</b> icon to view more details about the workbench.</p>
+</div>
+<div class="paragraph">
+<p>The card that slides down displays the workbench details, including storage usage.</p>
+</div>
+<div class="paragraph">
+<p>You can use the <b class="button">Add storage</b> button to add more storage mount points to the workbench.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -351,9 +371,13 @@ You can use the <b class="button">Add storage</b> button to add more storage mou
 <h3 id="_open_the_workbench"><a class="anchor" href="#_open_the_workbench"></a>Open the Workbench</h3>
 <div class="paragraph">
 <p>Click <b class="button">Open</b>.
-On the browser tab that opens, enter your credentials to authenticate to the workbench&#8217;s JupyterLab.
-Next, allow the selected permissions to access JupyterLab.
-Click <b class="button">Allow selected permissions</b>.</p>
+On the browser tab that opens, enter your credentials to authenticate to the workbench&#8217;s JupyterLab.</p>
+</div>
+<div class="paragraph">
+<p>Next, allow the selected permissions to access JupyterLab.</p>
+</div>
+<div class="paragraph">
+<p>Click <b class="button">Allow selected permissions</b>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -369,8 +393,10 @@ Click <b class="button">Allow selected permissions</b>.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>In the right pane, click the <b class="button">Terminal</b> item to open a new terminal.
-In the terminal, verify that the <code>DATA_FILE</code> environment variable has been injected into the workbench:</p>
+<p>In the right pane, click the <b class="button">Terminal</b> item to open a new terminal.</p>
+</div>
+<div class="paragraph">
+<p>In the terminal, verify that the <code>DATA_FILE</code> environment variable has been injected into the workbench:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -417,8 +443,10 @@ Press <kbd>F5</kbd> to refresh the page.</p>
 <div class="sect2">
 <h3 id="_edit_the_workbench"><a class="anchor" href="#_edit_the_workbench"></a>Edit the Workbench</h3>
 <div class="paragraph">
-<p>Return to the RHOAI data science project page.
-Click the workbench <b class="button">⋮</b> button, then click <b class="button">Edit workbench</b>.</p>
+<p>Return to the RHOAI data science project page.</p>
+</div>
+<div class="paragraph">
+<p>Click the workbench <b class="button">⋮</b> button, then click <b class="button">Edit workbench</b>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -463,8 +491,13 @@ Click the workbench <b class="button">⋮</b> button, then click <b class="butto
 <div class="sect2">
 <h3 id="_delete_the_workbench"><a class="anchor" href="#_delete_the_workbench"></a>Delete the Workbench</h3>
 <div class="paragraph">
-<p>From the project dashboard, click the workbench <b class="button">⋮</b> button, then click <b class="button">Delete workbench</b>.
-In the delete window, type the workbench name to confirm the operation:</p>
+<p>From the project dashboard, click the workbench <b class="button">⋮</b> button</p>
+</div>
+<div class="paragraph">
+<p>Click <b class="button">Delete workbench</b>.</p>
+</div>
+<div class="paragraph">
+<p>In the delete window, type the workbench name to confirm the operation:</p>
 </div>
 <div class="imageblock">
 <div class="content">
