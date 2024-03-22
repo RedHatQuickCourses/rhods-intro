@@ -122,6 +122,13 @@ Complete the form with your S3 connection parameters.
 
 image::dataconnection-new.png[]
 
+[IMPORTANT]
+====
+For S3 buckets where the region is not relevant, such as Minio, you still have to enter a placeholder value in the btn:[Region] field.
+A non-empty region is required to pass `boto3` validations.
+Otherwise, you might get an `Invalid region` error.
+====
+
 To create a workbench, click btn:[Create workbench].
 
 This option creates the data connection and assigns it to the workbench that you are creating.
