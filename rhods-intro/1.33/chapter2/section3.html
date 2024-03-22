@@ -316,8 +316,10 @@ Model Serving downloads the model files from S3 by using a data connection.</p>
 <p>Before you start with this exercise, you must configure an S3 bucket.</p>
 </div>
 <div class="paragraph">
-<p>If you do not have an S3 object store available, follow the <a href="https://ai-on-openshift.io/tools-and-applications/minio/minio/">guide to create an S3 bucket by using <em>Minio</em></a>.
-Note that you do not necessarily have to create a Data Science project to deploy Minio, as suggested in the guide.
+<p>If you do not have an S3 object store available, follow the <a href="https://ai-on-openshift.io/tools-and-applications/minio/minio/">guide to create an S3 bucket by using <em>Minio</em></a>.</p>
+</div>
+<div class="paragraph">
+<p>Note that you do not necessarily have to create a Data Science project to deploy Minio, as suggested in the guide.
 For the purposes of these courses, you can create you own dedicated OpenShift project to deploy the Minio instance.</p>
 </div>
 </div>
@@ -344,24 +346,11 @@ This image contains the <code>boto3</code> library, required for the second part
 </tr>
 </table>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
 <div class="paragraph">
-<p>Alternatively, you can add a data connection to an existing workbench by editing the workbench.</p>
-</div>
-</td>
-</tr>
-</table>
+<p>Scroll down to the <b class="button">Data connections</b> section and select <code>Use a data connection</code>.</p>
 </div>
 <div class="paragraph">
-<p>Scroll down to the <b class="button">Data connections</b> section, check <b class="button">Use a data connection</b> box and select <b class="button">Create data connection</b>.
-This option creates the data connection and assigns it to the workbench that you are creating.
-Complete the form with your S3 connection parameters.</p>
+<p>Complete the form with your S3 connection parameters.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -385,8 +374,27 @@ Otherwise, you might get an <code>Invalid region</code> error.</p>
 </table>
 </div>
 <div class="paragraph">
-<p>Save the workbench.
-In the data science project page, notice the newly created data connection, which is associated with the workbench.</p>
+<p>To create a workbench, click <b class="button">Create workbench</b>.</p>
+</div>
+<div class="paragraph">
+<p>This option creates the data connection and assigns it to the workbench that you are creating.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Alternatively, you can add a data connection to an existing workbench by editing the workbench. Save the workbench.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In the data science project page, notice the newly created data connection, which is associated with the workbench.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -421,8 +429,13 @@ In the data science project page, notice the newly created data connection, whic
 <div class="sect2">
 <h3 id="_edit_a_data_connection"><a class="anchor" href="#_edit_a_data_connection"></a>Edit a Data connection</h3>
 <div class="paragraph">
-<p>Next, click the <b class="button">⋮</b> button of the data connection, then click <b class="button">Edit data connection</b>.
-Note that you can assign more workbenches to the same data connection.</p>
+<p>Note that you can assign more workbenches to the same data connection.</p>
+</div>
+<div class="paragraph">
+<p>Create new workbench.</p>
+</div>
+<div class="paragraph">
+<p>Next, click the <b class="button">⋮</b> button of the data connection, then click <b class="button">Edit data connection</b>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -496,12 +509,16 @@ Deleting a data connection that is assigned to a workbench results in a workbenc
 <p>In the file explorer, navigate to the <code>rhods-intro/notebooks/data-connections</code> directory.</p>
 </li>
 <li>
-<p>Open the <code>exercise.ipynb</code> notebook.</p>
+<p>Open the <code>exercise.ipynb</code> notebook.
+This exercise covers the basic use of the <code>boto3</code> library, which is the AWS SDK for Python.
+This library is included in some workbench images included in RHOAI, such as <code>Standard Data Science</code>.</p>
 </li>
 <li>
 <p>Follow the instructions in the notebook.
-Click the first cell, then press <b class="button">Shift+Enter</b> to execute the cell and move to the next one.
-Next, execute and review the rest of the cells.
+Click the first cell, then press <b class="button">Shift+Enter</b> to execute the cell and move to the next one.</p>
+</li>
+<li>
+<p>Next, execute and review the rest of the cells.
 Keep pressing <b class="button">Shift+Enter</b> until you reach the bottom.</p>
 </li>
 </ol>
