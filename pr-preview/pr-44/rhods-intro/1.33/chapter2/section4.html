@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Assessment Lab: Working with Data Science Projects :: Introduction to Red Hat OpenShift AI</title>
+    <title>Demo :: Introduction to Red Hat OpenShift AI</title>
     <link rel="prev" href="section3.html">
-    <link rel="next" href="../chapter3/index.html">
+    <link rel="next" href="section5.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -56,10 +56,7 @@
     <a class="nav-link" href="../chapter1/section2.html">Architecture</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../chapter1/section3.html">Demo</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../chapter1/section4.html">Conclusion</a>
+    <a class="nav-link" href="../chapter1/section3.html">Conclusion</a>
   </li>
 </ul>
   </li>
@@ -81,7 +78,10 @@
     <a class="nav-link" href="section3.html">Data Connections</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="section4.html">Lab</a>
+    <a class="nav-link" href="section4.html">Demo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section5.html">Lab</a>
   </li>
 </ul>
   </li>
@@ -142,7 +142,7 @@
   <ul>
     <li><a href="../index.html">Introduction to Red Hat OpenShift AI</a></li>
     <li><a href="index.html">Working with Data Science Projects</a></li>
-    <li><a href="section4.html">Lab</a></li>
+    <li><a href="section4.html">Demo</a></li>
   </ul>
 </nav>
 </div>
@@ -151,235 +151,121 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Assessment Lab: Working with Data Science Projects</h1>
-<div id="preamble">
-<div class="sectionbody">
+<h1 class="page">Demo</h1>
 <div class="paragraph">
-<p>In this exercise, you will practice the use of data science projects, permissions, workbenches, environment variables, and data connections.</p>
+<p>In this exercise, you will use RHOAI to train and evaluate a simple machine learning model, by using JupyterLab and other common ML libraries.</p>
 </div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p><strong>Prerequisites</strong></p>
-</div>
-<div class="paragraph">
-<p>To perform this exercise, ensure that your platform meets the following conditions:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>An S3 bucket.</p>
-</li>
-<li>
-<p>The <code>data-scientists</code> user group exists in OpenShift.</p>
-</li>
-<li>
-<p>The <code>user4</code> and <code>user5</code> users exist in OpenShift and are assigned to the <code>data-scientists</code> group.</p>
-</li>
-<li>
-<p>The <code>oc</code> CLI installed on your computer.
-Alternatively, you can use the OpenShift web console.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The identity provided of your demo platform already includes these users.
-To create the group, log in as an administrator user in OpenShift and then apply the <a href="https://raw.githubusercontent.com/RedHatQuickCourses/rhods-qc-apps/main/1.intro/chapter2/lab/group.yaml" class="bare">https://raw.githubusercontent.com/RedHatQuickCourses/rhods-qc-apps/main/1.intro/chapter2/lab/group.yaml</a> file.</p>
-</div>
-<div class="paragraph">
-<p>If you use the <code>oc</code> CLI in your computer, then you can run:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ <strong>oc create -f \
-https://raw.githubusercontent.com/RedHatQuickCourses/rhods-qc-apps/main/1.intro/chapter2/lab/group.yaml</strong></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_specifications"><a class="anchor" href="#_specifications"></a>Specifications</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Create two data science projects as <code>user1</code>: <code>intro-projects-a</code> and <code>intro-projects-b</code>.</p>
-</li>
-<li>
-<p>Create a workbench in <code>intro-projects-a</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Use the <code>Standard Data Science</code> image.</p>
-</li>
-<li>
-<p>This workbench must be connected to the S3 bucket that is available in your demo platform.</p>
-</li>
-<li>
-<p>Clone the <a href="https://github.com/RedHatQuickCourses/rhods-qc-apps" class="bare">https://github.com/RedHatQuickCourses/rhods-qc-apps</a> repository in this workbench.</p>
-</li>
-<li>
-<p>Execute the <code>rhods-qc-apps/1.intro/chapter2/lab/test_connection.ipynb</code> notebook in this workbench.
-This notebook contains code to verify that the connection to S3.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Create a workbench in <code>intro-projects-b</code>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Select any image for this workbench.</p>
-</li>
-<li>
-<p>Pass your name in the <code>STUDENT_NAME</code> environment variable.</p>
-</li>
-<li>
-<p>Clone the <a href="https://github.com/RedHatQuickCourses/rhods-qc-apps" class="bare">https://github.com/RedHatQuickCourses/rhods-qc-apps</a> repository in this workbench.</p>
-</li>
-<li>
-<p>Execute the <code>rhods-qc-apps/1.intro/chapter2/lab/test_env_vars.ipynb</code> notebook in this workbench.
-This notebook contains code to read the environment variable.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>The <code>data-scientists</code> group must have edit permissions in <code>intro-projects-a</code>.</p>
-</li>
-<li>
-<p>Only the <code>user4</code> user must have edit permissions in <code>intro-projects-b</code>.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_solution"><a class="anchor" href="#_solution"></a>Solution</h2>
-<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Create the projects.</p>
+<p><strong>Open the RHOAI dashboard.</strong></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>From your RHOAI dashboard, click <b class="button">Data Science Projects</b> in the left navigation pane.</p>
+<p>In a web browser, navigate to the web console of your Red&#160;Hat OpenShift cluster.
+You might need to enter your credentials to access the dashboard.</p>
 </li>
 <li>
-<p>In the <b class="button">Data science projects</b> page, click <b class="button">Create data science project</b>.</p>
-</li>
-<li>
-<p>Enter <code>intro-projects-a</code> as the project name and click <b class="button">Create</b>.</p>
-</li>
-<li>
-<p>Repeat the same steps to create <code>intro-projects-b</code>.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Create a workbench connected to S3 in <code>intro-projects-a</code>.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Navigate the <code>intro-projects-a</code> dashboard and click <b class="button">Create workbench</b>.
-In the workbench creation page, enter the workbench name, select the workbench image, and the image version.</p>
-</li>
-<li>
-<p>Select <b class="button">Small</b> as the container size.</p>
-</li>
-<li>
-<p>In the <b class="button">Data connections</b> section, select <b class="button">Use a data connection</b>.</p>
-</li>
-<li>
-<p>Enter the configuration values of your S3 connection.</p>
-</li>
-<li>
-<p>Click <b class="button">Create workbench</b> to finish the creation of the workbench and the data connection.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Verify the connection of the workbench in <code>intro-projects-a</code>.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Open the workbench of the <code>intro-projects-a</code> project.</p>
-</li>
-<li>
-<p>Log in to JupyterLab and accept the access form.</p>
-</li>
-<li>
-<p>Clone the <a href="https://github.com/RedHatQuickCourses/rhods-qc-apps" class="bare">https://github.com/RedHatQuickCourses/rhods-qc-apps</a> repository.</p>
-</li>
-<li>
-<p>Navigate to <code>rhods-qc-apps/1.intro/chapter2/lab</code> and run the <code>test_connection.ipynb</code> notebook.
-You should see the buckets available in S3.</p>
-<div class="imageblock">
+<p>Click the applications menu in the top navigation bar of OpenShift,
+then click <b class="button">Red&#160;Hat OpenShift AI</b>.</p>
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/lab-test-connection.png" alt="lab test connection">
+<img src="_images/ocp-top-bar.png" alt="ocp top bar" width="35%">
 </div>
 </div>
+</li>
+<li>
+<p>If prompted, log in with your Red&#160;Hat OpenShift cluster credentials.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Create a workbench that receives the <code>STUDENT_NAME</code> environment variable in <code>intro-projects-b</code>.</p>
+<p><strong>Configure the workbench of your data science project.</strong></p>
+<div class="paragraph">
+<p>A RHOAI workbench is a containerized application that includes commonly used data science tools and libraries, such as JupyterLab, TensorFlow, and PyTorch.
+RHOAI provides you with a collection of workbench container images, each one preconfigured and tailored to a specific data science use case.</p>
+</div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Navigate the <code>intro-projects-b</code> dashboard and click <b class="button">Create workbench</b>.
-In the workbench creation page, enter the workbench name, select the workbench image, and the image version.</p>
-</li>
-<li>
-<p>Select <b class="button">Small</b> as the container size.</p>
-</li>
-<li>
-<p>In the <b class="button">Environment variables</b> section, click <b class="button">Add variable</b>.</p>
-</li>
-<li>
-<p>Select <b class="button">Config Map</b> as the environment variable type.
-Then select <b class="button">Key/value</b>.</p>
-</li>
-<li>
-<p>Enter <code>STUDENT_NAME</code> as the key, and your name as the value.</p>
-<div class="imageblock">
+<p>Click <b class="button">Data Science Projects</b> in the left sidebar.</p>
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/lab-env-vars.png" alt="lab env vars">
+<img src="_images/rhods-side-menu.png" alt="rhods side menu" width="35%">
 </div>
 </div>
 </li>
 <li>
-<p>Click <b class="button">Create workbench</b> to finish the creation of the workbench and the data connection.</p>
-</li>
-</ol>
+<p>Create a data science project.</p>
+<div class="paragraph">
+<p>Click <b class="button">Create data science project</b>.</p>
 </div>
-</li>
-<li>
-<p>Verify the variable injected in the workbench in <code>intro-projects-b</code>.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Open the workbench of the <code>intro-projects-b</code> project.</p>
-</li>
-<li>
-<p>Log in to JupyterLab and accept the access form.</p>
-</li>
-<li>
-<p>Clone the <a href="https://github.com/RedHatQuickCourses/rhods-qc-apps" class="bare">https://github.com/RedHatQuickCourses/rhods-qc-apps</a> repository.</p>
-</li>
-<li>
-<p>Navigate to <code>rhods-qc-apps/1.intro/chapter2/lab</code> and run the <code>test_env_vars.ipynb</code> notebook.
-You should see a hello message that includes your name.</p>
-<div class="imageblock">
+<div class="paragraph">
+<p>In the modal window that opens, enter a name and click <b class="button">Create</b>.</p>
+</div>
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/lab-test-env-vars.png" alt="lab test env vars">
+<img src="_images/rhoai-create-project.png" alt="rhoai create project" width="50%">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you are using Red&#160;Hat OpenShift from the developer sandbox, then a project is already created for you.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Click the newly created project.</p>
+</li>
+<li>
+<p>In the project page, click <b class="button">Create workbench</b> and complete the form with the following values.</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>intro</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Notebook image</strong> - Image selection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TensorFlow</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Notebook image</strong> - Version selection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the recommended option</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Do not modify the default values of the rest of the fields. For example,</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/rhoai-create-workbench.png" alt="rhoai create workbench" width="50%">
+</div>
+</div>
+</li>
+<li>
+<p>Click <b class="button">Create workbench</b>.</p>
+<div class="paragraph">
+<p>RHOAI creates the workbench and the associated persistent storage.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/created-workbench.png" alt="created workbench" width="90%">
 </div>
 </div>
 </li>
@@ -387,52 +273,88 @@ You should see a hello message that includes your name.</p>
 </div>
 </li>
 <li>
-<p>Set the project permissions of <code>intro-projects-a</code>.</p>
+<p><strong>Open the workbench and clone the demo code.</strong></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Navigate the <code>intro-projects-a</code> dashboard and click <b class="button">Permissions</b>.</p>
+<p>Make sure that the <code>intro</code> workbench is running and click <b class="button">Open</b>.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/rhoai-intro-workbench.png" alt="rhoai intro workbench" width="90%">
+</div>
+</div>
 </li>
 <li>
-<p>Click <b class="button">Add group</b> and enter <code>data-scientists</code> as the group name.
-Verify that the <b class="button">Permission selector</b> is set to <b class="button">Edit</b> and click the <b class="button">✓</b> button.</p>
+<p>If prompted, log in with your Red&#160;Hat OpenShift credentials.</p>
 </li>
 <li>
-<p>Log out and log back in with both <code>user4</code> and <code>user5</code> users.
-Verify that both users have access to the <code>intro-projects-a</code> project.</p>
+<p>Click <b class="button">Allow selected permissions</b> to grant the workbench access to your data science project.</p>
+</li>
+<li>
+<p>Verify that the JupyterLab interface opens in a new browser tab.</p>
+</li>
+<li>
+<p>Click the <b class="button">Git</b> icon in the left sidebar.</p>
+</li>
+<li>
+<p>Click <b class="button">Clone a repository</b>.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/git-clone-menu.png" alt="git clone menu" width="40%">
+</div>
+</div>
+</li>
+<li>
+<p>Enter <a href="https://github.com/RedHatQuickCourses/rhods-qc-apps.git" class="bare">https://github.com/RedHatQuickCourses/rhods-qc-apps.git</a> as the repository, and click <b class="button">Clone</b>.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Set the project permissions of <code>intro-projects-b</code>.</p>
+<p><strong>Open and run the notebook.</strong></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Log out and log back in as <code>user1</code>.</p>
+<p>In the file explorer, navigate to the <code>rhods-qc-apps/1.intro/chapter1/intro-demo</code> directory.</p>
 </li>
 <li>
-<p>Navigate the <code>intro-projects-b</code> dashboard and click <b class="button">Permissions</b>.</p>
+<p>To open the notebook, double click <code>notebook.ipynb</code>.
+The notebook includes instructions and code.
+This is a minimal example about how you can use common data science libraries in RHOAI to train an AI model.</p>
 </li>
 <li>
-<p>Click <b class="button">Add user</b> and enter <code>user4</code> as the username.
-Verify that the <b class="button">Permission selector</b> is set to <b class="button">Edit</b> and click the <b class="button">✓</b> button.</p>
+<p>Click the first cell, then press <b class="button">Shift+Enter</b> to execute the cell and move to the next one.</p>
 </li>
 <li>
-<p>Log out and log back in with both <code>user4</code> and <code>user5</code> users.
-Verify that <code>user4</code> can access the <code>intro-projects-b</code> project.
-Next, verify that <code>user5</code> cannot access the <code>intro-projects-b</code> project.</p>
+<p>Execute and review the rest of the cells.
+Keep pressing <b class="button">Shift+Enter</b> until you reach the bottom.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Run the <code>intro-text-generation</code> notebook</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the data science project dashboard, create a new workbench with the default image for <code>PyTorch</code>.</p>
+</li>
+<li>
+<p>In the new workbench, open JupyterLab and clone the <a href="https://github.com/RedHatQuickCourses/rhods-qc-apps.git" class="bare">https://github.com/RedHatQuickCourses/rhods-qc-apps.git</a> repository as you did in the previous step.
+This demo shows you how to fine-tune a pretrained language model for text generation by using <em>Causal language modeling</em>.</p>
+</li>
+<li>
+<p>Open the <code>rhods-qc-apps/1.intro/chapter1/intro-text-generation/notebook.ipynb</code> notebook in JupyterLab and execute the steps.
+The instructions are embedded in the notebook.</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
-</div>
-</div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="section3.html">Data Connections</a></span>
-  <span class="next"><a href="../chapter3/index.html">Jupyter Notebooks</a></span>
+  <span class="next"><a href="section5.html">Lab</a></span>
 </nav>
 </article>
   </div>

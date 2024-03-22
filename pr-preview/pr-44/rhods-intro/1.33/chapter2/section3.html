@@ -56,10 +56,7 @@
     <a class="nav-link" href="../chapter1/section2.html">Architecture</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../chapter1/section3.html">Demo</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../chapter1/section4.html">Conclusion</a>
+    <a class="nav-link" href="../chapter1/section3.html">Conclusion</a>
   </li>
 </ul>
   </li>
@@ -81,7 +78,10 @@
     <a class="nav-link" href="section3.html">Data Connections</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="section4.html">Lab</a>
+    <a class="nav-link" href="section4.html">Demo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section5.html">Lab</a>
   </li>
 </ul>
   </li>
@@ -359,18 +359,30 @@ This image contains the <code>boto3</code> library, required for the second part
 </table>
 </div>
 <div class="paragraph">
-<p>Scroll down to the <b class="button">Data connections</b> section and click <b class="button">Add data connection</b>.</p>
-</div>
-<div class="paragraph">
-<p>This option creates the data connection and assigns it to the workbench that you are creating.</p>
-</div>
-<div class="paragraph">
-<p>Complete the form with your S3 connection parameters.</p>
+<p>Scroll down to the <b class="button">Data connections</b> section, check <b class="button">Use a data connection</b> box and select <b class="button">Create data connection</b>.
+This option creates the data connection and assigns it to the workbench that you are creating.
+Complete the form with your S3 connection parameters.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/dataconnection-new.png" alt="dataconnection new">
 </div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For S3 buckets where the region is not relevant, such as Minio, you still have to enter a placeholder value in the <b class="button">Region</b> field.
+A non-empty region is required to pass <code>boto3</code> validations.
+Otherwise, you might get an <code>Invalid region</code> error.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Save the workbench.
@@ -409,10 +421,8 @@ In the data science project page, notice the newly created data connection, whic
 <div class="sect2">
 <h3 id="_edit_a_data_connection"><a class="anchor" href="#_edit_a_data_connection"></a>Edit a Data connection</h3>
 <div class="paragraph">
-<p>Next, click the <b class="button">⋮</b> button of the data connection, then click <b class="button">Edit data connection</b>.</p>
-</div>
-<div class="paragraph">
-<p>Note that you can assign more workbenches to the same data connection.</p>
+<p>Next, click the <b class="button">⋮</b> button of the data connection, then click <b class="button">Edit data connection</b>.
+Note that you can assign more workbenches to the same data connection.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -504,7 +514,7 @@ Keep pressing <b class="button">Shift+Enter</b> until you reach the bottom.</p>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="section2.html">Workbenches</a></span>
-  <span class="next"><a href="section4.html">Lab</a></span>
+  <span class="next"><a href="section4.html">Demo</a></span>
 </nav>
 </article>
   </div>
