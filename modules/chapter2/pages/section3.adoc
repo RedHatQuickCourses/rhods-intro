@@ -108,7 +108,7 @@ For the purposes of these courses, you can create you own dedicated OpenShift pr
 
 From a data science project page, click btn:[Create Workbench].
 
-Select the btn `Standard Data Science` notebook image for this workbench.
+Select the btn //should this be button? `Standard Data Science` notebook image for this workbench.
 
 [IMPORTANT]
 ====
@@ -174,7 +174,7 @@ Deleting a data connection that is assigned to a workbench results in a workbenc
 
 After you have created the data connection and assigned it to your workbench, follow these steps:
 
-1. *Clone the demo code.*
+1. *Clone the demo code*
 
 a. Open the workbench JupyterLab URL.
 
@@ -190,7 +190,7 @@ image::git-clone-menu.png[width=40%,align="center"]
 
 f. Enter https://github.com/RedHatQuickCourses/rhods-intro.git as the repository, and click btn:[Clone].
 
-2. *Open and run the notebook.*
+2. *Open and run the notebook*
 
 a. In the file explorer, navigate to the `rhods-intro/notebooks/data-connections` directory.
 

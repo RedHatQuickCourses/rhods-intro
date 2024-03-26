@@ -2,10 +2,10 @@
 :navtitle: Architecture
 
 
-Red{nbsp}Hat OpenShift AI (RHOAI) is a unified platform for data scientists, developers, machine learning engineers, and IT ops.
-The platform is designed to manage the complete lifecycle of AI/ML projects in the hybrid cloud.
+Red{nbsp}Hat OpenShift AI (RHOAI) is a unified platform for data scientists, developers, machine learning engineers, and IT operations.
+It is designed to manage the complete lifecycle of AI/ML projects in the hybrid cloud.
 
-As the following diagram shows, RHOAI is deployed as an operator, and includes several components to handle AI/ML development/training, automation pipelines, and model serving:
+As the following diagram shows, RHOAI is deployed as an operator, and includes several components to handle - AI/ML development/training, automation pipelines, and model serving:
 
 image::architecture.svg[]
 
@@ -13,9 +13,9 @@ The following are the main concepts and terminology as it relates to RHOAI:
 
 Models::
 An _AI model_, _machine learning model_, or just _model_ is a system or algorithm designed to simulate human capabilities, by performing tasks or making decisions that usually require human intervention.
-Internally, a model is typically a probabilistic or algebraic algorithm (e.g. a matrix).
+Internally, a model is typically a probabilistic or algebraic algorithm (For example, a matrix).
 +
-In short, a model takes input data, applies the algorithm (decision tree, neural network, naive Bayes, etc) and produces the output.
+In short, a model takes input data, applies the algorithm (decision tree, neural network, naive Bayes, etc.) and produces the output.
 Generally, the training process repeatedly adjusts the coefficients of these algorithms until the output values are similar to the training data.
 
 Notebooks::
@@ -35,7 +35,7 @@ To use the RHOAI GPU capabilities, the NVIDIA GPU operator must be installed.
 
 
 Workbench Images::
-Container images to be used as workbench containers.
+Container images are to be used as workbench containers.
 RHOAI includes a number of images ready to use for different common working environments.
 Each image contains a different set of libraries and versions.
 `Pytorch`, `TensorFlow`, `Minimal Python`, or `Standard Data Science` are examples of these images.
@@ -63,7 +63,7 @@ Model servers require a data connection to download the model files from the clo
 
 RHOAI is based on the _Open Data Hub_ upstream project.
 https://opendatahub.io/[Open Data Hub] is an open source, community-driven AI platform, designed for the hybrid cloud, and built on popular AI open source tools.
-RHOAI is a subset of Open Data Hub, delivered both as a cloud service or self-managed.
+RHOAI is a subset of Open Data Hub, delivered both as a cloud service or is self-managed.
 RHOAI can be optionally delivered with additional independent software vendor (ISV) features.
 Some major differences between RHOAI and Open Data Hub are as follows:
 
@@ -73,7 +73,7 @@ Some major differences between RHOAI and Open Data Hub are as follows:
 
 | Type
 | Community project
-| Red{nbsp}Hat product, part or Red{nbsp}Hat OpenShift AI
+| Red{nbsp}Hat product, part of Red{nbsp}Hat OpenShift AI
 
 | Offerings
 | Self-managed
@@ -100,7 +100,7 @@ The following workflow is common in AI/ML projects:
 Ingest data::
 In this phase, data scientists load data into the workbench.
 For example, the data scientist can upload files to the workbench, download the files from S3, query data from a database, or read a data stream.
-RHOAI includes the Pandas library in many of the preexisting workbenches.
+RHOAI includes the Pandas library in many of the pre-existing workbenches.
 Pandas offers functions to load data from different sources, such as CSV, JSON or SQL.
 +
 Users can also add specific data ingestion capabilities by using certified ISV ecosystem apps from the Red{nbsp}Hat Marketplace.

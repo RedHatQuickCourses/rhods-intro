@@ -1,7 +1,7 @@
 = Data Science Projects
 
 In RHOAI, a _data science project_ is the preferred way to organize resources when working on an AI/ML application.
-Similarly to how you use projects in OpenShift for other workloads, you can use and should use data science projects to organize the different elements that you need for your AI applications, such as workbenches, model servers, or persistent storage.
+Similar to how you use projects in OpenShift for other workloads, you can use, and should use data science projects to organize the different elements that you need for your AI applications, such as workbenches, model servers, or persistent storage.
 
 You can create and manage data science projects by using the RHOAI dashboard.
 
