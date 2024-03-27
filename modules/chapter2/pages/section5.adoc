@@ -36,7 +36,7 @@ https://raw.githubusercontent.com/RedHatQuickCourses/rhods-qc-apps/main/1.intro/
 * The `oc` CLI installed on your computer.
 Alternatively, you can use the OpenShift web console.
 
-The identity provided of your demo platform already includes these users (`user4` and `user5`).
+The identity provider of your demo platform already includes these users (`user4` and `user5`).
 
 
 // TODO adjust yaml URL after merging to main
