@@ -2,7 +2,8 @@
 
 Red{nbsp}Hat OpenShift AI (RHOAI) is a platform for data scientists, machine learning engineers, and operation teams to implement the full lifecycle of AI-based applications.
 
-With RHOAI, users can gather data, use the data to train and evaluate their AI models, and serve and monitor those models.
+With RHOAI, users can gather data, use the data to train and evaluate their AI models, and serve and 
+monitor those models.
 
 Users can also create _Data Science Pipelines_ to implement and automate model workflows.
 
@@ -15,7 +16,7 @@ Users can also create _Data Science Pipelines_ to implement and automate model w
 
 To solve this problem, RHOAI helps data scientists, developers and administrators to operationalize the lifecycle of AI models and bring those models to production.
 
-> **Obstacle 2**: AI practitioners often struggle with the myriad tools, libraries and versions to maintain during the development and maintenance of AI-based applications, not to mention the significant effort required to configure GPU support and drivers.
+> **Obstacle 2**: AI practitioners often struggle with the myriad tools, libraries, and versions to maintain during the development and maintenance of AI-based applications. Additionally, significant efforts are required to configure GPU support and drivers.
 
 To solve this problem, RHOAI provides data scientists with functional ability to interact with the industry norms and standard tools of the AI/ML ecosystem.
 
@@ -29,17 +30,19 @@ Jupyter notebooks provide interactive/executable Python documents and shells on 
 
 Portable Working Environments::
 Each environment is made available as a container image.
-Users can create pods based on the specific container image that they need (e.g. Python 3.11).
+Users can create pods based on the specific 
+container image that they need (e.g. Python 3.11).
 RHOAI provides many of these images but users can create custom ones.
 
 GPU-Ready Environments::
 RHOAI provides stable working environments that are preconfigured for CUDA and NVIDIA GPUs.
 
 Cloud-First Model Serving::
-RHOAI ships with OpenVino, which allows users to serve their models right after training them, without having to develop specific APIs.
+RHOAI ships with OpenVino, which allows users to serve their models right after training them, 
+without having to develop specific APIs.
 
 Data Science Pipelines::
-Users can automate the workflow of data gathering, model training, evaluation, and release instead of performing these tasks manually
+Users can automate the workflow of data gathering, model training, evaluation, and release instead of performing these tasks manually.
 
 Model Monitoring::
 You can monitor the performance of AI models in production with Prometheus and Grafana dashboards.
