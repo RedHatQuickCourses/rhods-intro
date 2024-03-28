@@ -84,8 +84,7 @@ Some major differences between RHOAI and Open Data Hub are as follows:
 | Community projects + Red{nbsp}Hat Ecosystem Catalog
 
 | GUI
-| Open Data Science UI
-| UI Integrated in OpenShift
+2+| UI Dashboard integrated in OpenShift
 |===
 
 
