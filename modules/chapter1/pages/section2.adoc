@@ -38,7 +38,7 @@ Workbench Images::
 Container images are to be used as workbench containers.
 RHOAI includes a number of images ready to use for different common working environments.
 Each image contains a different set of libraries and versions.
-`Pytorch`, `TensorFlow`, `Minimal Python`, or `Standard Data Science` are examples of these images.
+`PyTorch`, `TensorFlow`, `Minimal Python`, or `Standard Data Science` are examples of these images.
 +
 You can use the provided workbench images or you can create custom workbench images adapted to your needs.
 
@@ -69,11 +69,12 @@ Some major differences between RHOAI and Open Data Hub are as follows:
 
 [cols="1,1,1"]
 |===
-| {nbsp} | Open Data Hub | RHOAI
+| {nbsp} | Open Data Hub | Red{nbsp}Hat OpenShift AI (RHOAI)
 
 | Type
 | Community project
-| Red{nbsp}Hat product, part of Red{nbsp}Hat OpenShift AI
+=======
+| Red{nbsp}Hat product
 
 | Offerings
 | Self-managed
@@ -84,8 +85,7 @@ Some major differences between RHOAI and Open Data Hub are as follows:
 | Community projects + Red{nbsp}Hat Ecosystem Catalog
 
 | GUI
-| Open Data Science UI
-| UI Integrated in OpenShift
+2+| UI Dashboard integrated in OpenShift
 |===
 
 
