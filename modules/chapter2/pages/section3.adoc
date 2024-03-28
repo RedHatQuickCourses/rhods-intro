@@ -108,7 +108,7 @@ For the purposes of these courses, you can create you own dedicated OpenShift pr
 
 From a data science project page, click btn:[Create Workbench].
 
-Select the btn `Standard Data Science` notebook image for this workbench.
+Select the `Standard Data Science` notebook image for this workbench.
 
 [IMPORTANT]
 ====
