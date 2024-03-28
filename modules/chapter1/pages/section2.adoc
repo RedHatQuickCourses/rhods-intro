@@ -69,11 +69,11 @@ Some major differences between RHOAI and Open Data Hub are as follows:
 
 [cols="1,1,1"]
 |===
-| {nbsp} | Open Data Hub | RHOAI
+| {nbsp} | Open Data Hub | Red{nbsp}Hat OpenShift AI (RHOAI)
 
 | Type
 | Community project
-| Red{nbsp}Hat product, part or Red{nbsp}Hat OpenShift AI
+| Red{nbsp}Hat product
 
 | Offerings
 | Self-managed
