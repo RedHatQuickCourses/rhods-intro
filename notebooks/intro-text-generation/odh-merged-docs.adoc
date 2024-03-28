@@ -1687,7 +1687,7 @@ endif::[]
 | TensorFlow is an open source platform for machine learning. With TensorFlow, you can build, train and deploy your machine learning models. TensorFlow contains advanced data visualization features, such as computational graph visualizations. It also allows you to easily monitor and track the progress of your models.
 
 | PyTorch
-| PyTorch is an open source machine learning library optimized for deep learning. If you are working with computer vision or natural language processing models, use the Pytorch notebook image.
+| PyTorch is an open source machine learning library optimized for deep learning. If you are working with computer vision or natural language processing models, use the PyTorch notebook image.
 // RHODS-1598 -  using GPUs and CPUs
 
 | Minimal Python
