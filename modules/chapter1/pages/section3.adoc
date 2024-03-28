@@ -5,7 +5,7 @@
 In this chapter, you learned:
 
 * RHOAI helps teams bridge gap between data science and engineering, by operationalizing the lifecycle of AI projects.
-* RHOAI is based on the upstream open source OpenDataHub project.
+* RHOAI is based on the upstream open source Open Data Hub project.
 * RHOAI provides users with ready-to-use environments that include stable versions of the most common AI/ML tools.
 * Users can seamlessly run training pipelines, deploy, and monitor their models in production environments.
 
