@@ -73,7 +73,6 @@ Some major differences between RHOAI and Open Data Hub are as follows:
 
 | Type
 | Community project
-=======
 | Red{nbsp}Hat product
 
 | Offerings
