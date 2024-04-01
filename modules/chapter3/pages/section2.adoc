@@ -164,9 +164,11 @@ Notice that GitHub can render the notebook in view-only mode.
 To work with the latest version of the code, you should regularly pull changes from the remote repository.
 To pull changes from a remote repository, you can use the btn:[down arrow cloud] icon.
 
+image::git-pull-change.png[width=50%, height=50%, align="center"]
+
 If you have uncommitted changes in your workbench, then you might see a message indicating that your changes forbid pulling the changes, as follows:
 
-image::git-forbid-changes.png[]
+image::git-forbid-changes.png[align="center"]
 
 To solve this problem, commit your changes in the workbench before pulling.
 
