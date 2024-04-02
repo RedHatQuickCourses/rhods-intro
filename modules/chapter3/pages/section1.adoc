@@ -111,7 +111,7 @@ image::jupyter-terminal-open.png[]
 
 If you cannot run the previous exercises, you can see the following demo:
 
-video::jupyter-intro.mkv[width=100%]
+video::2mqsQc954Ts[youtube,title=Jupyter Notebooks in RHOAI,width=800,height=600]
 
 == Working with Git
 
