@@ -5,7 +5,7 @@
 // Customize notebooks by installing third-party packages
 
 RHOAI provides preconfigured notebook images to create workbenches.
-Each of these images is designed to support your data science workflow in specific and popular technological stacks.
+Each of these image is designed to support your data science workflow in specific and popular technological stacks.
 For example, if you plan to work with PyTorch, then you might want to use the `PyTorch` image.
 
 The notebook image that you pick, however, might not include all the libraries that you need for your project.
@@ -24,7 +24,7 @@ The second option is covered in the https://redhatquickcourses.github.io/rhods-a
 
 RHOAI ships with a collection of notebooks images, which are optimized and supported by Red{nbsp}Hat and independent software vendors (ISVs).
 These images are designed for data scientists, providing them with the necessary tools to start working quickly.
-Moreover, Red{nbsp}Hat provides support for these images for at least one year, and releases major versions of each image typically every six months.
+Moreover, Red{nbsp}Hat provides support for these images for atleast one year, and releases major versions of each image typically every six months.
 
 By default, RHOAI includes these images:
 

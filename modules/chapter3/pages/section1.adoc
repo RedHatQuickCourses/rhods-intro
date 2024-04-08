@@ -7,11 +7,12 @@ Jupyter notebooks have become a popular tool for data scientists who work in dat
 To fully understand the Jupyter ecosystem, you must understand the following three concepts:
 
 Notebook file::
-A notebook file, also called _Jupyter notebook_, or just _notebook_, is a file that contains code and multimedia content, including text, images, and audio.
-This files typically use the `.ipynb` extension.
+A notebook file, also called as _Jupyter notebook_, or just _notebook_, is a file that contains code and multimedia content, including text, images, and audio.
+This file typically uses the `.ipynb` extension.
 +
 A notebook contains cells.
 These cells can contain either Markdown or executable code.
+
 
 JupyterLab::
 JupyterLab is the execution environment that runs the notebook files.
@@ -25,10 +26,11 @@ It also provided a notebook execution environment and a web interface.
 Note that the naming of the classic Jupyter Notebook environment can lead to confusion, because the _Jupyter notebook_ term can also refer to a notebook file.
 ====
 +
-There are many ways to run an execution environment for notebooks.
-You can install JupyterLab with `pip` and run it on your computer.
-You can use the JupyterLab instances included in the RHOAI workspaces.
-You can use online notebook execution environments, such as Binder, Kaggle, or Google Colab.
+There are many ways to run an execution environment for notebooks. They are as follows :
+
+* You can install JupyterLab with `pip` and run it on your computer.
+* You can use the JupyterLab instances included in the RHOAI workspaces.
+* You can use online notebook execution environments, such as Binder, Kaggle, or Google Colab.
 
 Project Jupyter::
 This is the umbrella open source project that defines the notebook file format and develops and maintains the JupyterLab and the Jupyter Notebook environments.
@@ -55,9 +57,9 @@ These cells contain Markdown content and are intended to add rich text to the no
 Code cells::
 These cells contain executable code.
 JupyterLab includes support for cells that run Python code, but you can add other execution environments.
-These environments are called _kernels_.
+These environments are called as  _kernels_.
 
-The exercise bellow covers cells in more detail.
+The exercise below covers cells in more detail.
 
 == Kernels
 

@@ -1,6 +1,6 @@
 = Jupyter Notebooks
 
-This chapter introduces you to Jupyter notebooks, why they are considered a useful tool for data science, and how you can use them.
+This chapter introduces you to Jupyter notebooks, explains why they are considered a useful tool for data science, and shows you how to use them.
 
 Chapter goals:
 
