@@ -24,7 +24,7 @@ The second option is covered in the https://redhatquickcourses.github.io/rhods-a
 
 RHOAI ships with a collection of notebooks images, which are optimized and supported by Red{nbsp}Hat and independent software vendors (ISVs).
 These images are designed for data scientists, providing them with the necessary tools to start working quickly.
-Moreover, Red{nbsp}Hat provides support for these images for atleast one year, and releases major versions of each image typically every six months.
+Moreover, Red{nbsp}Hat provides support for these images for at least one year, and releases major versions of each image typically every six months.
 
 By default, RHOAI includes these images:
 
