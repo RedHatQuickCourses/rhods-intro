@@ -57,7 +57,7 @@ These cells contain Markdown content and are intended to add rich text to the no
 Code cells::
 These cells contain executable code.
 JupyterLab includes support for cells that run Python code, but you can add other execution environments.
-These environments are called as  _kernels_.
+These environments are known as  _kernels_.
 
 The exercise below covers cells in more detail.
 
