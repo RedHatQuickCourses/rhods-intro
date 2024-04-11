@@ -59,7 +59,7 @@ You have now created your first notebook.
 +
 [IMPORTANT]
 ====
-Before creating a notebook, verify that your are at the directory where you wish to create the notebook file.
+Before creating a notebook, verify that you are at the directory where you wish to create the notebook file.
 Use the JupyterLab file browser to navigate to the right directory.
 ====
 
